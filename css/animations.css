@@ -1,0 +1,818 @@
+/* =============================================================
+   VMM TRADERS — ANIMATION LIBRARY
+   Reusable keyframes, scroll-reveal utilities, micro-interactions
+   Philosophy: Smooth & luxurious. Never over-animated.
+   ============================================================= */
+
+
+/* ─────────────────────────────────────────────────────────────
+   §1  KEYFRAME DEFINITIONS
+   ───────────────────────────────────────────────────────────── */
+
+/* ── Fade variants ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Scale / Zoom ── */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.70); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scaleInBounce {
+  0%   { opacity: 0; transform: scale(0.72); }
+  60%  { opacity: 1; transform: scale(1.04); }
+  100% {             transform: scale(1); }
+}
+
+/* ── Slide ── */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ── Spring reveals ── */
+@keyframes revealUp {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.96); filter: blur(6px); }
+  60%  { opacity: 1; transform: translateY(-4px) scale(1.01); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1);       filter: blur(0); }
+}
+
+@keyframes revealScale {
+  0%   { opacity: 0; transform: scale(0.85); filter: blur(8px); }
+  60%  { opacity: 1; transform: scale(1.02); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1);    filter: blur(0); }
+}
+
+/* ── Shimmer ── */
+@keyframes shimmerFlow {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Card entrance ── */
+@keyframes cardFloatIn {
+  0%   { opacity: 0; transform: translateY(30px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ── Float (continuous) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%       { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-10px) scale(1.04); }
+}
+
+/* ── Parallax base (JS applies translateY via style) ── */
+@keyframes parallaxBg {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-80px); }
+}
+
+/* ── Shake (form error) ── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+/* ── Orange glow pulse ── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(245,124,0,0.22); }
+  50%       { box-shadow: 0 0 50px rgba(245,124,0,0.55); }
+}
+
+/* ── Shimmer sweep ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Rotate ── */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Bounce ── */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-18px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* ── Ping (notification dot) ── */
+@keyframes ping {
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ── Pulsate ── */
+@keyframes pulsate {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+/* ── Gradient shift (animated backgrounds) ── */
+@keyframes gradientShift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* ── Blob morph (decorative shapes) ── */
+@keyframes blobMorph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    border-radius: 40% 60% 50% 50% / 40% 50% 60% 50%;
+    transform: rotate(4deg) scale(1.03);
+  }
+  66% {
+    border-radius: 30% 70% 60% 40% / 50% 60% 30% 60%;
+    transform: rotate(-4deg) scale(0.97);
+  }
+}
+
+/* ── Glass reflection sweep ── */
+@keyframes glassReflect {
+  0%   { left: -100%; opacity: 0; }
+  20%  { opacity: 0.6; }
+  60%  { opacity: 0; }
+  100% { left: 130%; opacity: 0; }
+}
+
+/* ── Counter tick up ── */
+@keyframes countFlip {
+  0%   { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Timeline line draw ── */
+@keyframes drawLine {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* ── Image reveal (mask) ── */
+@keyframes imageReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0%   0 0); }
+}
+
+/* ── Ripple expand (buttons) ── */
+@keyframes rippleExpand {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ── Scroll arrow bounce ── */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50%       { transform: translateY(8px) translateX(-50%); }
+}
+
+/* ── Typewriter cursor blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Star / sparkle twinkle ── */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.3); }
+}
+
+/* ── Navbar entrance ── */
+@keyframes navbarEnter {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ── Progress bar fill ── */
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: var(--target-width, 100%); }
+}
+
+/* ── Wave bar (loading / audio) ── */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.4); }
+  50%       { transform: scaleY(1.6); }
+}
+
+/* ── Ticker / horizontal scroll ── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §2  SCROLL-REVEAL CLASSES
+   Initial hidden states — applied in HTML.
+   JavaScript (animations.js) adds .revealed when in viewport.
+   ───────────────────────────────────────────────────────────── */
+
+/* Fade Up — premium blur-in */
+.reveal {
+  will-change: transform, opacity, filter;
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(6px);
+  transition:
+    opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Fade Down */
+.reveal-down {
+  will-change: transform, opacity, filter;
+  opacity: 0;
+  transform: translateY(-50px);
+  filter: blur(6px);
+  transition:
+    opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Fade Left */
+.reveal-left {
+  will-change: transform, opacity, filter;
+  opacity: 0;
+  transform: translateX(-60px);
+  filter: blur(6px);
+  transition:
+    opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Fade Right */
+.reveal-right {
+  will-change: transform, opacity, filter;
+  opacity: 0;
+  transform: translateX(60px);
+  filter: blur(6px);
+  transition:
+    opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
+    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Scale In — with blur */
+.reveal-scale {
+  will-change: transform, opacity, filter;
+  opacity: 0;
+  transform: scale(0.85);
+  filter: blur(4px);
+  transition:
+    opacity   0.80s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.80s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter    0.80s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Zoom In */
+.reveal-zoom {
+  will-change: transform, opacity, filter;
+  opacity: 0;
+  transform: scale(0.65);
+  filter: blur(8px);
+  transition:
+    opacity   0.80s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.80s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter    0.80s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Fade only */
+.reveal-fade {
+  will-change: opacity;
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Image reveal with clip-path */
+.reveal-image {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition:
+    opacity    0.80s cubic-bezier(0.32, 0.72, 0, 1),
+    clip-path  0.80s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Parallax element (JS updates translateY) */
+.reveal-parallax {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ── Revealed / Visible state — resolve all transforms ── */
+.revealed {
+  opacity:   1 !important;
+  transform: none !important;
+  filter: blur(0) !important;
+  clip-path: inset(0 0% 0 0) !important;
+}
+
+/* ── Stagger delays ── */
+.delay-1 { transition-delay: 0.08s !important; }
+.delay-2 { transition-delay: 0.16s !important; }
+.delay-3 { transition-delay: 0.24s !important; }
+.delay-4 { transition-delay: 0.32s !important; }
+.delay-5 { transition-delay: 0.40s !important; }
+.delay-6 { transition-delay: 0.50s !important; }
+.delay-7 { transition-delay: 0.60s !important; }
+.delay-8 { transition-delay: 0.72s !important; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   §3  INSTANT ANIMATION UTILITY CLASSES
+   Apply directly to elements for one-shot CSS animations.
+   ───────────────────────────────────────────────────────────── */
+
+.anim-fade-in       { animation: fadeIn       0.55s cubic-bezier(0.32,0.72,0,1) both; }
+.anim-fade-in-up    { animation: fadeInUp     0.65s cubic-bezier(0.32,0.72,0,1) both; }
+.anim-fade-in-down  { animation: fadeInDown   0.65s cubic-bezier(0.32,0.72,0,1) both; }
+.anim-fade-in-left  { animation: fadeInLeft   0.75s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+.anim-fade-in-right { animation: fadeInRight  0.75s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+.anim-scale-in      { animation: scaleIn      0.65s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+.anim-zoom-in       { animation: zoomIn       0.65s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+.anim-slide-up      { animation: slideUp      0.7s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+
+/* Continuous */
+.anim-float        { animation: float       4s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-float-slow   { animation: floatSlow   6s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-float-card   { animation: floatCard   5s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-float-icon   { animation: floatIcon   3.5s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-rotate       { animation: rotate      8s linear infinite; }
+.anim-rotate-slow  { animation: rotateSlow  20s linear infinite; }
+.anim-bounce       { animation: bounce      1.3s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-ping         { animation: ping        1.2s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-pulsate      { animation: pulsate     2s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-glow-pulse   { animation: glowPulse   2.5s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-blob         { animation: blobMorph   9s cubic-bezier(0.32,0.72,0,1) infinite; }
+.anim-ticker       { animation: ticker      30s linear infinite; }
+
+/* Gradient animated background */
+.anim-gradient-shift {
+  background-size: 300% 300%;
+  animation: gradientShift 8s cubic-bezier(0.32, 0.72, 0, 1) infinite;
+}
+
+/* Shimmer text (orange shimmer) */
+.anim-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #C66200 0%,
+    #F9A825 35%,
+    #F57C00 50%,
+    #F9A825 65%,
+    #C66200 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3.5s linear infinite;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §4  HOVER MICRO-ANIMATIONS
+   ───────────────────────────────────────────────────────────── */
+
+/* Lift */
+.hover-lift {
+  transition: transform var(--tr-bounce), box-shadow var(--tr-base);
+}
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Scale */
+.hover-scale {
+  transition: transform var(--tr-bounce);
+}
+.hover-scale:hover { transform: scale(1.04); }
+
+/* Orange glow on hover */
+.hover-glow {
+  transition: box-shadow var(--tr-base);
+}
+.hover-glow:hover { box-shadow: var(--shadow-orange); }
+
+/* Underline grow */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-orange);
+  border-radius: var(--radius-full);
+  transition: width var(--tr-base);
+}
+.hover-underline:hover::after { width: 100%; }
+
+/* Button underline (preserves btn inline‑flex) */
+.btn-hover-underline {
+  position: relative;
+}
+.btn-hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-orange);
+  border-radius: var(--radius-full);
+  transition: width var(--tr-base);
+}
+.btn-hover-underline:hover::after { width: 100%; }
+
+/* Icon rotate on parent hover */
+.hover-rotate-icon:hover svg { animation: rotate 0.45s ease; }
+
+/* Glass reflection on card hover */
+.hover-glass-reflect {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-glass-reflect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hover-glass-reflect:hover::before {
+  animation: glassReflect 0.65s ease;
+}
+
+/* Orange border on hover */
+.hover-orange-border {
+  border: 1px solid var(--clr-border);
+  transition: border-color var(--tr-base), box-shadow var(--tr-base);
+}
+.hover-orange-border:hover {
+  border-color: rgba(245,124,0,0.45);
+  box-shadow: var(--shadow-card-hover);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §5  FLOATING CARDS & ICONS (decorative hero elements)
+   ───────────────────────────────────────────────────────────── */
+
+/* Floating UI card widget */
+.floating-card {
+  position: absolute;
+  background: var(--clr-white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--shadow-xl);
+  padding: var(--sp-4) var(--sp-5);
+  animation: floatCard 5s cubic-bezier(0.32, 0.72, 0, 1) infinite;
+  z-index: var(--z-raised);
+}
+
+.floating-card--delay-1 { animation-delay: -1.5s; }
+.floating-card--delay-2 { animation-delay: -3.0s; }
+.floating-card--delay-3 { animation-delay: -4.5s; }
+
+/* Floating icon badge */
+.floating-icon {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: var(--clr-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  box-shadow: var(--shadow-orange);
+  animation: floatIcon 3.5s cubic-bezier(0.32, 0.72, 0, 1) infinite;
+  z-index: var(--z-raised);
+}
+
+.floating-icon svg { width: 24px; height: 24px; }
+.floating-icon--delay-1 { animation-delay: -1s; }
+.floating-icon--delay-2 { animation-delay: -2.5s; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   §6  COUNTER ANIMATION
+   Used with counter.js — [data-counter] elements
+   ───────────────────────────────────────────────────────────── */
+
+[data-counter] {
+  display: inline-block;
+}
+
+.counter--done {
+  animation: countFlip 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §7  TIMELINE ANIMATIONS
+   Used with timeline.js — .timeline__item elements
+   ───────────────────────────────────────────────────────────── */
+
+.timeline__item {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition:
+    opacity   0.60s cubic-bezier(0.32,0.72,0,1),
+    transform 0.60s cubic-bezier(0.32,0.72,0,1);
+}
+
+.timeline__item:nth-child(even) {
+  transform: translateX(30px);
+}
+
+.timeline__item--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Vertical connecting line */
+.timeline__line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--clr-border);
+  transform: translateX(-50%);
+  transform-origin: top center;
+}
+
+.timeline__line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--line-progress, 0%);
+  background: linear-gradient(to bottom, var(--clr-orange) 0%, var(--clr-orange-soft) 100%);
+  border-radius: var(--radius-full);
+  transition: height 0.4s ease;
+}
+
+/* Timeline dot */
+.timeline__dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--clr-orange);
+  border: 3px solid var(--clr-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-orange-sm);
+  z-index: var(--z-raised);
+  transition: transform var(--tr-bounce), box-shadow var(--tr-base);
+}
+
+.timeline__item--visible .timeline__dot {
+  transform: scale(1.2);
+  box-shadow: var(--shadow-orange);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §8  IMAGE REVEAL
+   ───────────────────────────────────────────────────────────── */
+
+.img-reveal-wrap {
+  overflow: hidden;
+  border-radius: var(--radius-img);
+}
+
+.img-reveal-wrap img {
+  transform: scale(1.08);
+  transition: transform 0.90s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.img-reveal-wrap.revealed img { transform: scale(1); }
+
+
+/* ─────────────────────────────────────────────────────────────
+   §9  SCROLL INDICATOR (hero arrow)
+   ───────────────────────────────────────────────────────────── */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--sp-10);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  animation: scrollBounce 2s cubic-bezier(0.32, 0.72, 0, 1) infinite;
+  cursor: pointer;
+  z-index: var(--z-raised);
+}
+
+.scroll-indicator__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--clr-muted);
+}
+
+.scroll-indicator__arrow {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--clr-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-orange);
+}
+
+.scroll-indicator__arrow svg { width: 16px; height: 16px; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   §10  TICKER / MARQUEE STRIP
+   ───────────────────────────────────────────────────────────── */
+
+.ticker-wrap {
+  overflow: hidden;
+  width: 100%;
+  padding: var(--sp-3) 0;
+}
+
+.ticker-inner {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-inner:hover { animation-play-state: paused; }
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding-inline: var(--sp-8);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--clr-body);
+  white-space: nowrap;
+}
+
+.ticker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clr-orange);
+  flex-shrink: 0;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §11  LOADING STATE SPINNER
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.spinner {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid rgba(245,124,0,0.20);
+  border-top-color: var(--clr-orange);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.spinner--white {
+  border-color: rgba(255,255,255,0.25);
+  border-top-color: var(--clr-white);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §12  ACCESSIBILITY — REDUCED MOTION
+   ───────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:       0.01ms !important;
+    animation-iteration-count: 1    !important;
+    transition-duration:      0.01ms !important;
+    scroll-behavior:          auto  !important;
+  }
+
+  /* Instantly reveal scroll-reveal elements */
+  .reveal,
+  .reveal-down,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-zoom,
+  .reveal-fade,
+  .reveal-image,
+  .timeline__item {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  .orb { display: none; }
+
+  .floating-card,
+  .floating-icon {
+    animation: none;
+    position: static;
+  }
+}

@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ══ SEO ══════════════════════════════════════════════════ -->
+  <title>VMM Traders — Your Trusted Wholesale & Retail Partner | Est. 2004</title>
+  <meta name="description"
+        content="VMM Traders is your trusted wholesale and departmental store partner with 20+ years of experience. 10,000+ products, 500+ top brands, serving 50,000+ customers across India. Download our app today." />
+  <meta name="keywords"
+        content="VMM Traders, wholesale, retail, departmental store, FMCG, grocery, distribution, bulk supply, India" />
+  <meta name="author" content="VMM Traders" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="index.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="VMM Traders — Trusted Wholesale & Retail Partner" />
+  <meta property="og:description" content="20+ years of excellence in wholesale distribution and departmental retail. Serving 50,000+ customers with 10,000+ quality products." />
+  <meta property="og:url"         content="index.html" />
+  <meta property="og:site_name"   content="VMM Traders" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+  <link rel="apple-touch-icon"          href="assets/logo/apple-touch-icon.png" />
+
+  <!-- Fonts — Plus Jakarta Sans + DM Sans (design system tokens) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+        media="print" onload="this.media='all'" />
+
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="css/home.css" />
+
+  <!-- Responsive last -->
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <meta name="theme-color" content="#F57C00" />
+
+  <!-- Preload hero image for LCP -->
+  <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1800&q=85&fit=crop"
+        imagesrcset="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&q=85&fit=crop 600w,
+                     https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1200&q=85&fit=crop 1200w,
+                     https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1800&q=85&fit=crop 1800w"
+        imagesizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
+
+  <!-- Noscript fallback for fonts -->
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" />
+  </noscript>
+</head>
+<body>
+
+  <!-- Grain / noise texture overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition-overlay" id="page-overlay" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVIGATION (global component)
+       ══════════════════════════════════════════════════════════ -->
+  <header id="navbar" class="navbar navbar--transparent" role="banner">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="VMM Traders — Go to homepage">
+        <div class="navbar__logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="12" fill="#F57C00"/>
+            <path d="M10 30L16 14L22 26L28 18L34 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="11" r="3" fill="white"/>
+          </svg>
+        </div>
+        <div class="navbar__logo-wordmark">
+          <span class="navbar__logo-name">VMM <span>Traders</span></span>
+          <span class="navbar__logo-tagline">Since 2004 · Trusted Wholesale</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="navbar__link active" aria-current="page" >Home</a>
+        <a href="about.html"    class="navbar__link">About Us</a>
+        <a href="solutions.html" class="navbar__link">Solutions</a>
+        <a href="contact.html"  class="navbar__link">Contact</a>
+      </nav>
+
+      <!-- CTA -->
+      <a href="#app-section" class="navbar__cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l4-4 4 4M12 8v8"/></svg>
+        Download App
+      </a>
+
+      <!-- Hamburger -->
+      <button class="navbar__toggle" id="nav-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="navbar__bar"></span>
+        <span class="navbar__bar"></span>
+        <span class="navbar__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="navbar__mobile" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+    <nav class="navbar__mobile-nav">
+      <a href="index.html" class="navbar__mobile-link active" aria-current="page" >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="about.html"    class="navbar__mobile-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        About Us
+      </a>
+      <a href="solutions.html" class="navbar__mobile-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        Solutions
+      </a>
+      <a href="contact.html"  class="navbar__mobile-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.7 12.1a19.79 19.79 0 01-3.07-8.67A2 2 0 013.62 1.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 8.91a16 16 0 006 6z"/></svg>
+        Contact
+      </a>
+      <a href="#app-section" class="btn btn-primary navbar__mobile-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l4-4 4 4M12 8v8"/></svg>
+        Download App
+      </a>
+    </nav>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ══════════════════════════════════════════════════════════ -->
+  <main id="main-content" role="main">
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §1  HERO SECTION — Full-screen
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="hero" aria-label="VMM Traders — Welcome" id="hero">
+
+      <!-- Background image -->
+      <div class="hero__bg" aria-hidden="true">
+<img
+            src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1800&q=85&fit=crop"
+            alt=""
+            class="hero__bg-img"
+            width="1800" height="1200"
+            loading="eager"
+            fetchpriority="high"
+          />
+        <div class="hero__overlay anim-gradient-shift"></div>
+        <canvas id="hero-three-canvas" class="hero__three-canvas"></canvas>
+      </div>
+
+      <!-- Animated decorative orbs -->
+      <div class="hero__orbs" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+      </div>
+
+      <div class="container hero__container">
+        <div class="hero__content-grid">
+
+          <!-- Left: Content -->
+          <div class="hero__content">
+
+            <!-- Badge -->
+            <div class="hero__badge">
+              <span class="hero__badge-dot" aria-hidden="true"></span>
+              Trusted Since 2004 &nbsp;·&nbsp; 20+ Years of Excellence
+            </div>
+
+            <!-- Headline -->
+            <h1 class="hero__headline">
+              Your Trusted Partner for
+              <span class="hero__headline-highlight">Wholesale &amp; Retail</span>
+              Excellence
+            </h1>
+
+            <!-- Supporting paragraph -->
+            <p class="hero__subtext">
+              VMM Traders is a premier departmental and wholesale distribution company delivering
+              quality products across 10,000+ SKUs, partnering with 500+ top brands, and serving
+              50,000+ satisfied customers throughout India. Experience commerce the right way —
+              reliable, affordable, and always on time.
+            </p>
+
+            <!-- CTAs -->
+            <div class="hero__actions">
+              <a href="solutions.html" class="btn btn-primary btn-lg" id="hero-explore-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Explore Our Services
+              </a>
+              <a href="#app-section" class="btn btn-white btn-lg" id="hero-app-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                Download Free App
+              </a>
+            </div>
+
+            <!-- Mini trust pills -->
+            <div class="hero__trust">
+              <div class="hero__trust-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                GST Registered
+              </div>
+              <div class="hero__trust-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                FSSAI Certified
+              </div>
+              <div class="hero__trust-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                24/7 Support
+              </div>
+            </div>
+
+          </div><!-- /hero__content -->
+
+          <!-- Right: Visual -->
+          <div class="hero__visual" aria-hidden="true">
+
+            <!-- QR code card — Large & Attractive -->
+            <div class="hero__qr-card" data-tilt="true" data-tilt-x="15" data-tilt-y="15">
+              <div class="hero__qr-code" aria-label="Scan to download the VMM Traders app">
+                <!-- QR Pattern (SVG grid) -->
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QR Code to download VMM Traders app">
+                  <rect x="10" y="10" width="25" height="25" rx="3" fill="#222"/>
+                  <rect x="13" y="13" width="19" height="19" rx="2" fill="white"/>
+                  <rect x="17" y="17" width="11" height="11" rx="1" fill="#222"/>
+                  <rect x="65" y="10" width="25" height="25" rx="3" fill="#222"/>
+                  <rect x="68" y="13" width="19" height="19" rx="2" fill="white"/>
+                  <rect x="72" y="17" width="11" height="11" rx="1" fill="#222"/>
+                  <rect x="10" y="65" width="25" height="25" rx="3" fill="#222"/>
+                  <rect x="13" y="68" width="19" height="19" rx="2" fill="white"/>
+                  <rect x="17" y="72" width="11" height="11" rx="1" fill="#222"/>
+                  <rect x="42" y="10" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="52" y="10" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="42" y="18" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="52" y="18" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="42" y="26" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="10" y="42" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="18" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="26" y="42" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="42" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="52" y="42" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="60" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="68" y="42" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="76" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="84" y="42" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="42" y="52" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="52" y="52" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="60" y="52" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="68" y="52" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="76" y="52" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="42" y="60" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="52" y="60" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="42" y="68" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="52" y="68" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="60" y="68" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="68" y="76" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="76" y="76" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="84" y="76" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="42" y="76" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="52" y="76" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="60" y="84" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="68" y="84" width="6" height="6" rx="1" fill="#222"/>
+                  <rect x="76" y="84" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="84" y="84" width="6" height="6" rx="1" fill="#222"/>
+                </svg>
+              </div>
+              <div class="hero__qr-body">
+                <div class="hero__qr-text">
+                  <strong>Scan to Download</strong>
+                  <span>VMM Traders App</span>
+                </div>
+                <div class="hero__qr-rating">
+                  <span class="hero__qr-stars" aria-label="5 stars">★★★★★</span>
+                  <span class="hero__qr-rating-text">4.9 &middot; 12K+ Reviews</span>
+                </div>
+                <div class="hero__qr-badges">
+                  <span class="hero__qr-badge">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store
+                  </span>
+                  <span class="hero__qr-badge">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.65.2.98.08l12.76-7.37-2.83-2.83-10.91 10.12zm-1.18-2.3V2.54c0-.42.12-.78.32-1.05L13.2 12 2.32 22.51c-.2-.27-.32-.63-.32-1.05zM21.47 10.6l-2.45-1.42-3.27 3.27 3.27 3.27 2.48-1.43c.7-.41.7-1.29-.03-1.69zm-18.29-8.3l10.91 10.13-2.83 2.83L3.52 1.02c-.33-.19-.68-.16-.98.08.14-.08.31-.13.49-.13.37 0 .76.13 1.06.33z"/></svg>
+                    Google Play
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /hero__visual -->
+
+        </div><!-- /hero__content-grid -->
+      </div><!-- /container -->
+
+      <!-- Scroll indicator -->
+      <a href="#stats" class="scroll-indicator" aria-label="Scroll down to see more">
+        <span class="scroll-indicator__label">Scroll</span>
+        <div class="scroll-indicator__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </a>
+
+    </section><!-- /hero -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §2  TRUST STATISTICS — Animated counters
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="stats-section section" id="stats" aria-label="VMM Traders by the numbers">
+      <div class="container">
+
+        <div class="stats-section__header text-center reveal">
+          <span class="label">Our Achievements</span>
+          <h2 class="section-title">Decades of Trust, <span class="highlight">Numbers Prove It</span></h2>
+          <p class="section-subtitle mx-auto">
+            Built over two decades of relentless dedication, VMM Traders stands tall as one of the most
+            dependable wholesale and retail partners in India.
+          </p>
+        </div>
+
+        <div class="stats-grid" role="list">
+
+          <div class="stat-glass-card reveal" data-delay="1" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+            <div class="stat-glass-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="stat-glass-card__number">
+              <span data-counter data-target="20" data-suffix="+">0</span>
+            </div>
+            <div class="stat-glass-card__label">Years of Excellence</div>
+            <div class="stat-glass-card__desc">Serving India since 2004 with unwavering commitment to quality and trust.</div>
+          </div>
+
+          <div class="stat-glass-card reveal" data-delay="2" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+            <div class="stat-glass-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            </div>
+            <div class="stat-glass-card__number">
+              <span data-counter data-target="10000" data-suffix="+" data-separator=",">0</span>
+            </div>
+            <div class="stat-glass-card__label">Products in Stock</div>
+            <div class="stat-glass-card__desc">A massive catalogue covering every department of your daily needs.</div>
+          </div>
+
+          <div class="stat-glass-card reveal" data-delay="3" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+            <div class="stat-glass-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <div class="stat-glass-card__number">
+              <span data-counter data-target="500" data-suffix="+">0</span>
+            </div>
+            <div class="stat-glass-card__label">Top Brands Stocked</div>
+            <div class="stat-glass-card__desc">Partnered with 500+ leading FMCG and consumer goods brands nationally.</div>
+          </div>
+
+          <div class="stat-glass-card reveal" data-delay="4" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+            <div class="stat-glass-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="stat-glass-card__number">
+              <span data-counter data-target="50000" data-suffix="+" data-separator=",">0</span>
+            </div>
+            <div class="stat-glass-card__label">Happy Customers</div>
+            <div class="stat-glass-card__desc">Retailers, businesses, and households who trust VMM Traders every day.</div>
+          </div>
+
+        </div><!-- /stats-grid -->
+
+        <!-- Trust badges row -->
+        <div class="stats-trust-row reveal" data-delay="2">
+          <div class="stats-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>FSSAI Certified</span>
+          </div>
+          <div class="stats-trust-divider" aria-hidden="true"></div>
+          <div class="stats-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <span>GST Registered Business</span>
+          </div>
+          <div class="stats-trust-divider" aria-hidden="true"></div>
+          <div class="stats-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>ISO Quality Standards</span>
+          </div>
+          <div class="stats-trust-divider" aria-hidden="true"></div>
+          <div class="stats-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Same-Day Dispatch</span>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /stats -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §3  ABOUT PREVIEW — Who we are
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="about-preview section section--warm" id="about-preview" aria-label="About VMM Traders">
+      <div class="container">
+        <div class="about-preview__grid">
+
+          <!-- Image Side -->
+          <div class="about-preview__visual">
+            <div class="about-preview__img-wrap img-reveal-wrap reveal-left">
+              <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=760&q=85&fit=crop"
+                alt="VMM Traders store interior with stocked shelves and products"
+                class="about-preview__img"
+                width="760" height="580"
+                loading="lazy"
+              />
+            </div>
+            <!-- Experience badge -->
+            <div class="about-preview__exp-badge reveal-scale" data-delay="2">
+              <span class="about-preview__exp-num">20<sup>+</sup></span>
+              <span class="about-preview__exp-text">Years of<br>Trusted Service</span>
+            </div>
+            <!-- Decoration card -->
+            <div class="about-preview__deco-card reveal-scale" data-delay="3">
+              <div class="about-preview__deco-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div>
+                <strong>4.9 / 5</strong>
+                <span>Customer Rating</span>
+              </div>
+            </div>
+          </div><!-- /visual -->
+
+          <!-- Content Side -->
+          <div class="about-preview__content">
+            <span class="label reveal">Who We Are</span>
+
+            <h2 class="section-title reveal" data-delay="1">
+              A Legacy Built on <span class="highlight">Quality</span> and Community Trust
+            </h2>
+
+            <p class="about-preview__lead reveal" data-delay="2">
+              VMM Traders is a family-owned wholesale and departmental store established in 2004.
+              Over the past two decades, we have grown from a single storefront into one of India's
+              most recognised distribution and retail networks, serving thousands of retailers,
+              institutions, and households.
+            </p>
+
+            <p class="about-preview__para reveal" data-delay="3">
+              Our business is built on three core pillars: <strong>Quality Products</strong>,
+              <strong>Competitive Pricing</strong>, and <strong>Exceptional Customer Service</strong>.
+              We source directly from manufacturers and authorised distributors, ensuring every product
+              on our shelves meets the highest standards — from daily essentials to premium consumer goods.
+            </p>
+
+            <!-- Key points -->
+            <ul class="about-preview__points reveal" data-delay="3">
+              <li class="about-preview__point">
+                <span class="about-preview__point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Direct sourcing from 500+ authorised manufacturers
+              </li>
+              <li class="about-preview__point">
+                <span class="about-preview__point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Fully computerised inventory and billing systems
+              </li>
+              <li class="about-preview__point">
+                <span class="about-preview__point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Temperature-controlled warehousing for perishables
+              </li>
+              <li class="about-preview__point">
+                <span class="about-preview__point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Dedicated relationship managers for business accounts
+              </li>
+            </ul>
+
+            <div class="about-preview__actions reveal" data-delay="4">
+              <a href="about.html" class="btn btn-primary btn-lg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Our Full Story
+              </a>
+              <a href="contact.html" class="btn btn-secondary btn-lg">
+                Get In Touch
+              </a>
+            </div>
+
+          </div><!-- /content -->
+
+        </div><!-- /grid -->
+      </div>
+    </section><!-- /about-preview -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §4  WHY CHOOSE VMM TRADERS
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="why-choose section" id="why-choose" aria-label="Why choose VMM Traders">
+      <div class="container">
+
+        <div class="why-choose__header text-center">
+          <span class="label reveal">Our Advantages</span>
+          <h2 class="section-title reveal" data-delay="1">
+              Why Businesses &amp; Families <span class="highlight">Choose Us</span>
+          </h2>
+          <p class="section-subtitle mx-auto text-center reveal" data-delay="2">
+            We are more than just a store. We are a complete supply chain and retail partner
+            — built for retailers, institutions, and everyday customers who demand the best.
+          </p>
+        </div>
+
+        <div class="why-choose__grid" role="list">
+
+          <article class="why-card reveal" data-delay="1" role="listitem">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="why-card__title">Guaranteed Quality</h3>
+            <p class="why-card__desc">
+              Every product we stock is sourced from authorised distributors and reputable manufacturers.
+              We conduct regular quality checks to ensure you always receive products that meet the highest
+              standards — from packaged goods to fresh produce.
+            </p>
+            <div class="why-card__tag">100% Authentic</div>
+          </article>
+
+          <article class="why-card reveal" data-delay="2" role="listitem">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20H4a2 2 0 01-2-2V6a2 2 0 012-2h3.93a2 2 0 011.66.9l.82 1.2a2 2 0 001.66.9H20a2 2 0 012 2v1"/><circle cx="16" cy="17" r="3"/><path d="M22 22l-2-2"/></svg>
+            </div>
+            <h3 class="why-card__title">Widest Product Range</h3>
+            <p class="why-card__desc">
+              With over 10,000 SKUs spanning groceries, FMCG, household essentials, beverages, personal care,
+              dairy, and more, VMM Traders is your one-stop destination — eliminating the need to visit
+              multiple suppliers or stores.
+            </p>
+            <div class="why-card__tag">10,000+ Products</div>
+          </article>
+
+          <article class="why-card reveal" data-delay="3" role="listitem">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="why-card__title">Competitive Pricing</h3>
+            <p class="why-card__desc">
+              We leverage direct partnerships with manufacturers to offer you the most competitive prices
+              in the market. Our bulk pricing for wholesale buyers and exclusive seasonal deals for retail
+              customers ensure maximum value for your money.
+            </p>
+            <div class="why-card__tag">Best Market Price</div>
+          </article>
+
+          <article class="why-card reveal" data-delay="1" role="listitem">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3 class="why-card__title">Reliable Fast Delivery</h3>
+            <p class="why-card__desc">
+              We understand that your business cannot wait. Our efficient logistics team ensures same-day
+              dispatch for orders placed before noon and next-day delivery across our service zones —
+              with real-time tracking through our mobile app.
+            </p>
+            <div class="why-card__tag">Same-Day Dispatch</div>
+          </article>
+
+          <article class="why-card reveal" data-delay="2" role="listitem">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="why-card__title">Expert Dedicated Team</h3>
+            <p class="why-card__desc">
+              Our trained team of product specialists, relationship managers, and customer support agents
+              are available seven days a week. Whether you need product recommendations, bulk quotations,
+              or after-sale support — we are always here for you.
+            </p>
+            <div class="why-card__tag">7-Day Support</div>
+          </article>
+
+          <article class="why-card reveal" data-delay="3" role="listitem">
+            <div class="why-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="why-card__title">Smart Mobile App</h3>
+            <p class="why-card__desc">
+              The VMM Traders mobile app brings the entire store to your fingertips. Browse our full
+              catalogue, place bulk orders, track deliveries in real time, manage invoices, and get
+              exclusive app-only deals — all from your smartphone, anytime, anywhere.
+            </p>
+            <div class="why-card__tag">iOS &amp; Android</div>
+          </article>
+
+        </div><!-- /why-choose__grid -->
+
+      </div>
+    </section><!-- /why-choose -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §5  PRODUCT & SERVICE CATEGORIES
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="categories section section--cream" id="categories" aria-label="Product and service categories">
+      <div class="container">
+
+        <div class="categories__header text-center">
+          <span class="label reveal">What We Offer</span>
+          <h2 class="section-title reveal" data-delay="1">
+              Everything Your Business <span class="highlight">Needs, In One Place</span>
+          </h2>
+          <p class="section-subtitle mx-auto text-center reveal" data-delay="2">
+            From everyday grocery essentials to bulk FMCG supplies, VMM Traders covers every
+            category with unmatched depth, freshness, and variety.
+          </p>
+        </div>
+
+        <div class="categories__grid" role="list">
+
+          <!-- Grocery & FMCG -->
+          <article class="cat-card reveal" data-delay="1" role="listitem">
+            <div class="cat-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80&fit=crop"
+                alt="Fresh grocery items including vegetables and packaged goods"
+                class="cat-card__img"
+                width="600" height="400"
+                loading="lazy"
+              />
+              <div class="cat-card__overlay" aria-hidden="true"></div>
+              <div class="cat-card__badge">Most Popular</div>
+            </div>
+            <div class="cat-card__body">
+              <div class="cat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </div>
+              <h3 class="cat-card__title">Grocery &amp; FMCG</h3>
+              <p class="cat-card__desc">Rice, pulses, flour, oil, spices, packaged foods, and all fast-moving consumer goods sourced fresh and delivered promptly.</p>
+              <a href="solutions.html" class="cat-card__link" aria-label="Explore grocery and FMCG products">
+                Explore Range
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Beverages -->
+          <article class="cat-card reveal" data-delay="2" role="listitem">
+            <div class="cat-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80&fit=crop"
+                alt="Various beverages including cold drinks, juices, and water bottles"
+                class="cat-card__img"
+                width="600" height="400"
+                loading="lazy"
+              />
+              <div class="cat-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="cat-card__body">
+              <div class="cat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              </div>
+              <h3 class="cat-card__title">Beverages</h3>
+              <p class="cat-card__desc">Carbonated drinks, juices, energy drinks, mineral water, tea, coffee, and health beverages — all top brands at wholesale rates.</p>
+              <a href="solutions.html" class="cat-card__link" aria-label="Explore beverages category">
+                Explore Range
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Household Items -->
+          <article class="cat-card reveal" data-delay="3" role="listitem">
+            <div class="cat-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80&fit=crop"
+                alt="Household cleaning and home care products"
+                class="cat-card__img"
+                width="600" height="400"
+                loading="lazy"
+              />
+              <div class="cat-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="cat-card__body">
+              <div class="cat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <h3 class="cat-card__title">Household &amp; Cleaning</h3>
+              <p class="cat-card__desc">Detergents, floor cleaners, dishwash, toilet cleaners, insecticides, and every home care essential your household or business needs.</p>
+              <a href="solutions.html" class="cat-card__link" aria-label="Explore household products">
+                Explore Range
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Personal Care -->
+          <article class="cat-card reveal" data-delay="1" role="listitem">
+            <div class="cat-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80&fit=crop"
+                alt="Personal care products including shampoo, skincare, and hygiene items"
+                class="cat-card__img"
+                width="600" height="400"
+                loading="lazy"
+              />
+              <div class="cat-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="cat-card__body">
+              <div class="cat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </div>
+              <h3 class="cat-card__title">Personal Care</h3>
+              <p class="cat-card__desc">Shampoos, soaps, skincare, oral care, cosmetics, and personal hygiene products from 100+ trusted brands, always in stock.</p>
+              <a href="solutions.html" class="cat-card__link" aria-label="Explore personal care products">
+                Explore Range
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Dairy & Fresh -->
+          <article class="cat-card reveal" data-delay="2" role="listitem">
+            <div class="cat-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&q=80&fit=crop"
+                alt="Dairy products including milk, cheese, butter, and yoghurt"
+                class="cat-card__img"
+                width="600" height="400"
+                loading="lazy"
+              />
+              <div class="cat-card__overlay" aria-hidden="true"></div>
+              <div class="cat-card__badge">Fresh Daily</div>
+            </div>
+            <div class="cat-card__body">
+              <div class="cat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+              </div>
+              <h3 class="cat-card__title">Dairy &amp; Fresh</h3>
+              <p class="cat-card__desc">Temperature-controlled dairy, paneer, butter, cheese, cream, and fresh produce delivered straight from manufacturers with guaranteed freshness.</p>
+              <a href="solutions.html" class="cat-card__link" aria-label="Explore dairy and fresh products">
+                Explore Range
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Snacks & Confectionery -->
+          <article class="cat-card reveal" data-delay="3" role="listitem">
+            <div class="cat-card__img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=600&q=80&fit=crop"
+                alt="Snacks, chocolates, biscuits, and confectionery items"
+                class="cat-card__img"
+                width="600" height="400"
+                loading="lazy"
+              />
+              <div class="cat-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="cat-card__body">
+              <div class="cat-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 class="cat-card__title">Snacks &amp; Confectionery</h3>
+              <p class="cat-card__desc">Chips, biscuits, chocolates, candies, namkeen, health bars, and festive confectionery — from beloved Indian brands and international favourites.</p>
+              <a href="solutions.html" class="cat-card__link" aria-label="Explore snacks and confectionery">
+                Explore Range
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /categories__grid -->
+
+        <div class="categories__footer text-center reveal" data-delay="2">
+          <p class="text-muted mb-6">And 10,000+ more products across 30+ categories — all under one roof.</p>
+          <a href="solutions.html" class="btn btn-primary btn-lg">
+            View All Categories
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /categories -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §6  MOBILE APP SHOWCASE
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="app-section section" id="app-section" aria-label="Download the VMM Traders mobile app">
+      <div class="container">
+        <div class="app-section__grid">
+
+          <!-- Left: Content -->
+          <div class="app-section__content">
+            <span class="label reveal">Mobile App</span>
+
+            <h2 class="section-title reveal" data-delay="1">
+              Your Entire Store, <span class="highlight">Right in Your Pocket</span>
+            </h2>
+
+            <p class="app-section__intro reveal" data-delay="2">
+              The VMM Traders app is designed for retailers, wholesalers, and everyday shoppers.
+              Browse our full catalogue, compare prices, place bulk orders, and track every delivery
+              in real time — from your smartphone, 24 hours a day.
+            </p>
+
+            <!-- App Features list -->
+            <ul class="app-features reveal" data-delay="3">
+              <li class="app-feature">
+                <div class="app-feature__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <div class="app-feature__text">
+                  <strong>Live Inventory Browsing</strong>
+                  <span>Check real-time stock availability across 10,000+ products instantly.</span>
+                </div>
+              </li>
+              <li class="app-feature">
+                <div class="app-feature__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <div class="app-feature__text">
+                  <strong>Real-Time Order Tracking</strong>
+                  <span>Track your delivery from our warehouse to your doorstep, live on the map.</span>
+                </div>
+              </li>
+              <li class="app-feature">
+                <div class="app-feature__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                </div>
+                <div class="app-feature__text">
+                  <strong>Exclusive App-Only Deals</strong>
+                  <span>Get special discounts, bundle offers, and flash sales only available on the app.</span>
+                </div>
+              </li>
+              <li class="app-feature">
+                <div class="app-feature__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="app-feature__text">
+                  <strong>Digital Invoice Management</strong>
+                  <span>View, download, and share GST-compliant invoices for every order instantly.</span>
+                </div>
+              </li>
+              <li class="app-feature">
+                <div class="app-feature__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                </div>
+                <div class="app-feature__text">
+                  <strong>One-Tap Reordering</strong>
+                  <span>Save your most-ordered items and restock in a single tap — never run low again.</span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Download buttons -->
+            <div class="app-download-btns reveal" data-delay="4">
+              <a href="#" class="app-store-btn" aria-label="Download VMM Traders on the App Store">
+                <div class="app-store-btn__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                </div>
+                <div class="app-store-btn__text">
+                  <span class="app-store-btn__sub">Download on the</span>
+                  <span class="app-store-btn__name">App Store</span>
+                </div>
+              </a>
+              <a href="#" class="app-store-btn" aria-label="Get VMM Traders on Google Play">
+                <div class="app-store-btn__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.2.98.08l12.76-7.37-2.83-2.83-10.91 10.12zm-1.18-2.3V2.54c0-.42.12-.78.32-1.05L13.2 12 2.32 22.51c-.2-.27-.32-.63-.32-1.05zM21.47 10.6l-2.45-1.42-3.27 3.27 3.27 3.27 2.48-1.43c.7-.41.7-1.29-.03-1.69zm-18.29-8.3l10.91 10.13-2.83 2.83L3.52 1.02c-.33-.19-.68-.16-.98.08.14-.08.31-.13.49-.13.37 0 .76.13 1.06.33.07.05.13.1.19.15z"/></svg>
+                </div>
+                <div class="app-store-btn__text">
+                  <span class="app-store-btn__sub">Get it on</span>
+                  <span class="app-store-btn__name">Google Play</span>
+                </div>
+              </a>
+            </div>
+
+          </div><!-- /app-section__content -->
+
+          <!-- Right: Phone mockup + QR -->
+          <div class="app-section__visual reveal-right" data-delay="1">
+            <div class="app-mockup">
+              <!-- Phone frame -->
+              <div class="app-phone" aria-hidden="true">
+                <div class="app-phone__frame">
+                  <div class="app-phone__notch"></div>
+                  <div class="app-phone__screen">
+                    <!-- App screenshot illustration -->
+                    <div class="app-phone__screen-content">
+                      <div class="app-screen__header">
+                        <div class="app-screen__logo">VMM</div>
+                        <div class="app-screen__title">Good morning!</div>
+                        <div class="app-screen__subtitle">What would you like to order today?</div>
+                      </div>
+                      <div class="app-screen__search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <span>Search 10,000+ products...</span>
+                      </div>
+                      <div class="app-screen__cats">
+                        <div class="app-screen__cat app-screen__cat--active">All</div>
+                        <div class="app-screen__cat">Grocery</div>
+                        <div class="app-screen__cat">Dairy</div>
+                        <div class="app-screen__cat">Snacks</div>
+                      </div>
+                      <div class="app-screen__products">
+                        <div class="app-screen__product">
+                          <div class="app-screen__product-img" style="background:#FFF4E8;"></div>
+                          <div class="app-screen__product-info">
+                            <span class="app-screen__product-name">Tata Salt 1kg</span>
+                            <span class="app-screen__product-price">₹20</span>
+                          </div>
+                          <button class="app-screen__add" aria-label="Add to cart">+</button>
+                        </div>
+                        <div class="app-screen__product">
+                          <div class="app-screen__product-img" style="background:#FFF4E8;"></div>
+                          <div class="app-screen__product-info">
+                            <span class="app-screen__product-name">Amul Butter 500g</span>
+                            <span class="app-screen__product-price">₹275</span>
+                          </div>
+                          <button class="app-screen__add" aria-label="Add to cart">+</button>
+                        </div>
+                        <div class="app-screen__product">
+                          <div class="app-screen__product-img" style="background:#FFF4E8;"></div>
+                          <div class="app-screen__product-info">
+                            <span class="app-screen__product-name">Surf Excel 3kg</span>
+                            <span class="app-screen__product-price">₹385</span>
+                          </div>
+                          <button class="app-screen__add" aria-label="Add to cart">+</button>
+                        </div>
+                      </div>
+                      <div class="app-screen__cart-bar">
+                        <span>3 items · ₹680</span>
+                        <span>View Cart →</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="app-phone__home-indicator"></div>
+                </div>
+              </div>
+
+              <!-- Floating app badges -->
+              <div class="app-float-badge app-float-badge--1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Order Placed!</span>
+              </div>
+              <div class="app-float-badge app-float-badge--2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>Out for Delivery</span>
+              </div>
+
+            </div>
+
+            <!-- QR Card -->
+            <div class="app-qr-card reveal-scale" data-delay="3">
+              <p class="app-qr-label">Scan &amp; Download Free</p>
+              <div class="app-qr-code" aria-label="QR code to download VMM Traders app">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="5" width="20" height="20" rx="3" fill="#222"/>
+                  <rect x="7" y="7" width="16" height="16" rx="2" fill="white"/>
+                  <rect x="10" y="10" width="10" height="10" rx="1" fill="#F57C00"/>
+                  <rect x="55" y="5" width="20" height="20" rx="3" fill="#222"/>
+                  <rect x="57" y="7" width="16" height="16" rx="2" fill="white"/>
+                  <rect x="60" y="10" width="10" height="10" rx="1" fill="#F57C00"/>
+                  <rect x="5" y="55" width="20" height="20" rx="3" fill="#222"/>
+                  <rect x="7" y="57" width="16" height="16" rx="2" fill="white"/>
+                  <rect x="10" y="60" width="10" height="10" rx="1" fill="#F57C00"/>
+                  <rect x="30" y="5" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="38" y="5" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="46" y="5" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="30" y="12" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="38" y="12" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="5" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="12" y="30" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="30" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="38" y="30" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="46" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="55" y="30" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="63" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="30" y="38" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="38" y="38" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="46" y="38" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="55" y="38" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="63" y="38" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="30" y="46" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="46" y="46" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="55" y="46" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="30" y="55" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="38" y="55" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="46" y="55" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="30" y="63" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="38" y="63" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="55" y="63" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="63" y="63" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="30" y="70" width="5" height="5" rx="1" fill="#222"/>
+                  <rect x="46" y="70" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="63" y="70" width="5" height="5" rx="1" fill="#222"/>
+                </svg>
+              </div>
+              <div class="app-qr-rating">
+                <span class="app-qr-stars" aria-label="5 stars">★★★★★</span>
+                <span>4.9 · 12K+ Reviews</span>
+              </div>
+            </div>
+
+          </div><!-- /app-section__visual -->
+
+        </div><!-- /app-section__grid -->
+      </div>
+    </section><!-- /app-section -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §7  HOW IT WORKS — Horizontal Timeline
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="how-works section section--warm" id="how-it-works" aria-label="How VMM Traders works">
+      <div class="container">
+
+        <div class="how-works__header text-center">
+          <span class="label reveal">Simple Process</span>
+          <h2 class="section-title reveal" data-delay="1">
+              Start Buying Smarter in <span class="highlight">4 Easy Steps</span>
+          </h2>
+          <p class="section-subtitle mx-auto text-center reveal" data-delay="2">
+            Whether you are a first-time buyer or a seasoned wholesale purchaser, getting started
+            with VMM Traders takes less than 5 minutes.
+          </p>
+        </div>
+
+        <!-- Horizontal timeline steps -->
+        <div class="how-steps" role="list">
+
+          <!-- Connecting line -->
+          <div class="how-steps__line" aria-hidden="true">
+            <div class="how-steps__line-fill" id="timeline-line-fill"></div>
+          </div>
+
+          <div class="how-step reveal" data-delay="1" role="listitem">
+            <div class="how-step__bubble">
+              <div class="how-step__num" aria-hidden="true">01</div>
+              <div class="how-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+            </div>
+            <div class="how-step__content">
+              <h3 class="how-step__title">Create Your Account</h3>
+              <p class="how-step__desc">
+                Register for free on our app or website. Retail buyers can sign up instantly.
+                Wholesale accounts receive a dedicated relationship manager within 24 hours.
+              </p>
+            </div>
+          </div>
+
+          <div class="how-step reveal" data-delay="2" role="listitem">
+            <div class="how-step__bubble">
+              <div class="how-step__num" aria-hidden="true">02</div>
+              <div class="how-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+            </div>
+            <div class="how-step__content">
+              <h3 class="how-step__title">Browse & Select Products</h3>
+              <p class="how-step__desc">
+                Explore our catalogue of 10,000+ products across 30+ categories. Use filters,
+                compare brands, and view bulk pricing tiers to make informed buying decisions.
+              </p>
+            </div>
+          </div>
+
+          <div class="how-step reveal" data-delay="3" role="listitem">
+            <div class="how-step__bubble">
+              <div class="how-step__num" aria-hidden="true">03</div>
+              <div class="how-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </div>
+            </div>
+            <div class="how-step__content">
+              <h3 class="how-step__title">Place Your Order</h3>
+              <p class="how-step__desc">
+                Add items to your cart and place your order with a single tap. Pay securely via UPI,
+                card, net banking, or request credit terms for registered wholesale accounts.
+              </p>
+            </div>
+          </div>
+
+          <div class="how-step reveal" data-delay="4" role="listitem">
+            <div class="how-step__bubble">
+              <div class="how-step__num" aria-hidden="true">04</div>
+              <div class="how-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+            </div>
+            <div class="how-step__content">
+              <h3 class="how-step__title">Fast Delivery to Your Door</h3>
+              <p class="how-step__desc">
+                Our logistics team dispatches your order the same day (for orders before noon).
+                Track your delivery live on the app and receive a GST invoice automatically on arrival.
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /how-steps -->
+
+        <div class="how-works__cta text-center reveal" data-delay="3">
+          <a href="#app-section" class="btn btn-primary btn-lg">
+            Get Started Today — It's Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /how-works -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §8  CUSTOMER TRUST — Testimonials
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="testimonials section" id="testimonials" aria-label="What our customers say">
+      <div class="container">
+
+        <div class="testimonials__header text-center">
+          <span class="label reveal">Customer Stories</span>
+          <h2 class="section-title reveal" data-delay="1">
+              Loved by Thousands of <span class="highlight">Businesses &amp; Families</span>
+          </h2>
+          <p class="section-subtitle mx-auto text-center reveal" data-delay="2">
+            Do not just take our word for it. Here is what our customers say about their experience
+            with VMM Traders.
+          </p>
+        </div>
+
+        <!-- Overall rating bar -->
+          <div class="testimonials__rating-bar reveal" data-delay="1">
+          <div class="rating-overall">
+            <span class="rating-overall__num">4.9</span>
+            <div class="rating-overall__right">
+              <div class="rating-overall__stars" aria-label="4.9 out of 5 stars">★★★★★</div>
+              <span class="rating-overall__count">Based on 12,400+ reviews</span>
+            </div>
+          </div>
+          <div class="rating-bars">
+            <div class="rating-bar-row"><span>5 ★</span><div class="rating-bar"><div class="rating-bar__fill" style="width:88%"></div></div><span>88%</span></div>
+            <div class="rating-bar-row"><span>4 ★</span><div class="rating-bar"><div class="rating-bar__fill" style="width:9%"></div></div><span>9%</span></div>
+            <div class="rating-bar-row"><span>3 ★</span><div class="rating-bar"><div class="rating-bar__fill" style="width:2%"></div></div><span>2%</span></div>
+            <div class="rating-bar-row"><span>2 ★</span><div class="rating-bar"><div class="rating-bar__fill rating-bar__fill--low" style="width:1%"></div></div><span>1%</span></div>
+            <div class="rating-bar-row"><span>1 ★</span><div class="rating-bar"><div class="rating-bar__fill rating-bar__fill--low" style="width:0.5%"></div></div><span>0%</span></div>
+          </div>
+        </div>
+
+        <!-- Testimonial Cards -->
+        <div class="testimonials__grid" role="list">
+
+          <article class="testi-card reveal" data-delay="1" role="listitem">
+            <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testi-card__quote">
+              "VMM Traders has completely transformed how we stock our grocery store. We used to visit
+              4–5 different distributors every week. Now, one call or one tap on their app covers
+              everything. The prices are the best in the market, and delivery is always on time."
+            </blockquote>
+            <div class="testi-card__author">
+              <div class="testi-card__avatar" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=85"
+                  alt="Portrait of Rajesh Kumar, owner of Rajesh General Store"
+                  width="48" height="48"
+                  loading="lazy"
+                  style="border-radius: 50%;"
+                />
+              </div>
+              <div>
+                <strong class="testi-card__name">Rajesh Kumar</strong>
+                <span class="testi-card__role">Owner, Rajesh General Store — Mumbai</span>
+              </div>
+            </div>
+            <div class="testi-card__badge">Retail Customer · 3 Years</div>
+          </article>
+
+          <article class="testi-card testi-card--featured reveal" data-delay="2" role="listitem">
+            <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testi-card__quote">
+              "As a hotel manager, I source all our daily supplies — from pantry essentials to
+              cleaning products — through VMM Traders. Their wholesale pricing and bulk delivery
+              have reduced our procurement costs by nearly 22%. The app makes ordering so effortless.
+              I cannot imagine going back to the old way."
+            </blockquote>
+            <div class="testi-card__author">
+              <div class="testi-card__avatar" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&q=85"
+                  alt="Portrait of Priya Sharma, manager of The Comfort Inn hotel"
+                  width="48" height="48"
+                  loading="lazy"
+                  style="border-radius: 50%;"
+                />
+              </div>
+              <div>
+                <strong class="testi-card__name">Priya Sharma</strong>
+                <span class="testi-card__role">Hotel Manager, The Comfort Inn — Pune</span>
+              </div>
+            </div>
+            <div class="testi-card__badge">Wholesale Client · 5 Years</div>
+          </article>
+
+          <article class="testi-card reveal" data-delay="3" role="listitem">
+            <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testi-card__quote">
+              "I discovered VMM Traders through their mobile app and I have been a loyal customer
+              for two years. The product selection is incredible — everything from premium spices to
+              international snack brands. Their customer support is genuinely exceptional. A trusted
+              name you can rely on completely."
+            </blockquote>
+            <div class="testi-card__author">
+              <div class="testi-card__avatar" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&q=85"
+                  alt="Portrait of Arjun Mehta, regular retail customer"
+                  width="48" height="48"
+                  loading="lazy"
+                  style="border-radius: 50%;"
+                />
+              </div>
+              <div>
+                <strong class="testi-card__name">Arjun Mehta</strong>
+                <span class="testi-card__role">Regular Retail Customer — Bangalore</span>
+              </div>
+            </div>
+            <div class="testi-card__badge">App User · 2 Years</div>
+          </article>
+
+        </div><!-- /testimonials__grid -->
+
+        <!-- Trust logos strip -->
+        <div class="brand-strip reveal" data-delay="2" aria-label="Brands we stock">
+          <p class="brand-strip__label">500+ Trusted Brands We Stock</p>
+          <div class="brand-strip__logos">
+            <div class="brand-strip__logo brand-strip__logo--text">Tata</div>
+            <div class="brand-strip__logo brand-strip__logo--text">Amul</div>
+            <div class="brand-strip__logo brand-strip__logo--text">ITC</div>
+            <div class="brand-strip__logo brand-strip__logo--text">HUL</div>
+            <div class="brand-strip__logo brand-strip__logo--text">Nestlé</div>
+            <div class="brand-strip__logo brand-strip__logo--text">Dabur</div>
+            <div class="brand-strip__logo brand-strip__logo--text">Godrej</div>
+            <div class="brand-strip__logo brand-strip__logo--text">Britannia</div>
+            <div class="brand-strip__logo brand-strip__logo--text">P&amp;G</div>
+            <div class="brand-strip__logo brand-strip__logo--text">Marico</div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /testimonials -->
+
+
+    <!-- ╔═══════════════════════════════════════════════════════
+         §9  FINAL CTA — Premium Banner
+         ═══════════════════════════════════════════════════════╗ -->
+    <section class="final-cta" id="cta-section" aria-label="Get started with VMM Traders">
+      <!-- Background image -->
+      <div class="final-cta__bg" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80&fit=crop"
+          alt=""
+          class="final-cta__bg-img"
+          width="1600" height="900"
+          loading="lazy"
+        />
+        <div class="final-cta__overlay"></div>
+      </div>
+
+      <!-- Orange orbs -->
+      <div class="final-cta__orbs" aria-hidden="true">
+        <div class="final-cta__orb final-cta__orb--1"></div>
+        <div class="final-cta__orb final-cta__orb--2"></div>
+      </div>
+
+      <div class="container final-cta__container">
+
+        <div class="final-cta__content">
+          <canvas id="cta-three-canvas" class="final-cta__canvas"></canvas>
+
+          <span class="label reveal" style="color:rgba(255,255,255,0.75);">Ready to Begin?</span>
+
+          <h2 class="final-cta__headline reveal" data-delay="1">
+            Join 50,000+ Customers Who Trust
+            <span class="final-cta__highlight">VMM Traders</span>
+          </h2>
+
+          <p class="final-cta__sub reveal" data-delay="2">
+            Whether you are stocking a retail store, managing a restaurant, or simply shopping
+            for your household — VMM Traders delivers quality, variety, and value straight to
+            your door. Download our app today and get <strong>₹200 off your first order.</strong>
+          </p>
+
+          <div class="final-cta__actions reveal" data-delay="3">
+            <a href="#app-section" class="btn btn-white btn-xl" id="final-app-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              Download the App — Free
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-xl final-cta__contact-btn">
+              Talk to Our Team
+            </a>
+          </div>
+
+          <!-- Proof points -->
+          <div class="final-cta__proofs reveal" data-delay="4">
+            <div class="final-cta__proof">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              No subscription fees
+            </div>
+            <div class="final-cta__proof">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Free delivery on first order
+            </div>
+            <div class="final-cta__proof">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Cancel anytime
+            </div>
+            <div class="final-cta__proof">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              GST invoice on every order
+            </div>
+          </div>
+
+        </div><!-- /final-cta__content -->
+
+      </div>
+    </section><!-- /final-cta -->
+
+
+  </main><!-- /main -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       §10  FOOTER (global component)
+       ══════════════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+
+      <!-- Newsletter strip -->
+      <div class="footer__newsletter">
+        <div class="footer__newsletter-text">
+          <h4>Stay Updated with VMM Traders</h4>
+          <p>New arrivals, exclusive offers, and wholesale deals — delivered to your inbox weekly.</p>
+        </div>
+        <form class="footer__newsletter-form" id="newsletter-form" aria-label="Newsletter subscription form" novalidate>
+          <label for="newsletter-email" class="sr-only">Your email address</label>
+          <div class="footer__newsletter-field">
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              class="footer__newsletter-input"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required
+              aria-describedby="newsletter-error"
+            />
+            <span id="newsletter-error" class="footer__newsletter-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="newsletter-submit">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Main footer grid -->
+      <div class="footer__main">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <a href="index.html" class="footer__brand-logo" aria-label="VMM Traders — Home">
+            <div style="width:42px;height:42px;background:#F57C00;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 44 44" fill="none" width="28" height="28"><path d="M10 30L16 14L22 26L28 18L34 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="footer__brand-name">VMM <span>Traders</span></span>
+          </a>
+          <p class="footer__brand-desc">
+            India's trusted wholesale and departmental store partner. Quality products, competitive prices,
+            and reliable delivery — since 2004.
+          </p>
+          <div class="footer__apps">
+            <a href="#" class="footer__app-btn" aria-label="Download on App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a href="#" class="footer__app-btn" aria-label="Get on Google Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.2.98.08l12.76-7.37-2.83-2.83-10.91 10.12zm-1.18-2.3V2.54c0-.42.12-.78.32-1.05L13.2 12 2.32 22.51c-.2-.27-.32-.63-.32-1.05zM21.47 10.6l-2.45-1.42-3.27 3.27 3.27 3.27 2.48-1.43c.7-.41.7-1.29-.03-1.69zm-18.29-8.3l10.91 10.13-2.83 2.83L3.52 1.02c-.33-.19-.68-.16-.98.08.14-.08.31-.13.49-.13.37 0 .76.13 1.06.33z"/></svg>
+              Google Play
+            </a>
+          </div>
+          <div class="footer__socials" style="margin-top:1.25rem;" aria-label="VMM Traders social media">
+            <a href="#" class="footer__social" aria-label="VMM Traders on Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="VMM Traders on Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="VMM Traders on WhatsApp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="VMM Traders on LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer__col-title">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="index.html"    class="footer__link">Home</a></li>
+            <li><a href="about.html"    class="footer__link">About Us</a></li>
+            <li><a href="solutions.html" class="footer__link">Our Services</a></li>
+            <li><a href="contact.html"  class="footer__link">Contact Us</a></li>
+            <li><a href="#app-section"  class="footer__link">Download App</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h3 class="footer__col-title">Categories</h3>
+          <ul class="footer__links">
+            <li><a href="solutions.html" class="footer__link">Grocery &amp; FMCG</a></li>
+            <li><a href="solutions.html" class="footer__link">Beverages</a></li>
+            <li><a href="solutions.html" class="footer__link">Household &amp; Cleaning</a></li>
+            <li><a href="solutions.html" class="footer__link">Personal Care</a></li>
+            <li><a href="solutions.html" class="footer__link">Dairy &amp; Fresh</a></li>
+            <li><a href="solutions.html" class="footer__link">Snacks &amp; Confectionery</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="footer__col-title">Get In Touch</h3>
+          <div class="footer__contact-row">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <address style="font-style:normal; font-size:0.875rem; color:rgba(255,255,255,0.65);">
+              123 Trade Centre, Business District,<br>
+              Mumbai, Maharashtra — 400001
+            </address>
+          </div>
+          <div class="footer__contact-row">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.7 12.1a19.79 19.79 0 01-3.07-8.67A2 2 0 013.62 1.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 8.91a16 16 0 006 6z"/></svg>
+            </div>
+            <a href="tel:+911234567890" class="footer__contact-link">+91 12345 67890</a>
+          </div>
+          <div class="footer__contact-row">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <a href="mailto:info@vmmtraders.com" class="footer__contact-link">info@vmmtraders.com</a>
+          </div>
+          <div class="footer__contact-row">
+            <div class="footer__contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span style="font-size:0.875rem;color:rgba(255,255,255,0.65);">Mon–Sat: 7:00 AM – 9:00 PM</span>
+          </div>
+        </div>
+
+      </div><!-- /footer__main -->
+    </div><!-- /container -->
+
+    <hr class="footer__divider" />
+
+    <div class="container">
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; <span id="footer-year"></span> VMM Traders. All rights reserved. Established 2004.
+        </p>
+        <nav class="footer__legal" aria-label="Legal pages">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+          <a href="#" class="footer__legal-link">Refund Policy</a>
+        </nav>
+      </div>
+    </div>
+
+  </footer><!-- /footer -->
+
+
+  <!-- Scroll to top button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll back to top" tabindex="0">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+
+  <!-- ══ SCRIPTS ═══════════════════════════════════════════════ -->
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/home.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script>
+    // Hero three.js torus animation
+    const heroCanvas = document.getElementById('hero-three-canvas');
+    if (heroCanvas) {
+      const heroRenderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true });
+      heroRenderer.setPixelRatio(window.devicePixelRatio);
+      heroRenderer.setSize(heroCanvas.offsetWidth, heroCanvas.offsetHeight);
+      const heroScene = new THREE.Scene();
+      const heroCamera = new THREE.PerspectiveCamera(75, heroCanvas.offsetWidth / heroCanvas.offsetHeight, 0.1, 100);
+      heroCamera.position.z = 3;
+      const torus = new THREE.Mesh(
+        new THREE.TorusGeometry(0.5, 0.2, 30, 100),
+        new THREE.MeshStandardMaterial({ color: 0xff8c00, metalness: 0.7, roughness: 0.2 })
+      );
+      heroScene.add(torus);
+      const light = new THREE.DirectionalLight(0xffffff, 1);
+      light.position.set(0, 1, 1);
+      heroScene.add(light);
+      function animateHero() {
+        requestAnimationFrame(animateHero);
+        torus.rotation.x += 0.01;
+        torus.rotation.y += 0.01;
+        heroRenderer.render(heroScene, heroCamera);
+      }
+      animateHero();
+      window.addEventListener('resize', () => {
+        const w = heroCanvas.offsetWidth;
+        const h = heroCanvas.offsetHeight;
+        heroRenderer.setSize(w, h);
+        heroCamera.aspect = w / h;
+        heroCamera.updateProjectionMatrix();
+      });
+    }
+
+    // CTA three.js particles animation
+    const ctaCanvas = document.getElementById('cta-three-canvas');
+    if (ctaCanvas) {
+      const ctaRenderer = new THREE.WebGLRenderer({ canvas: ctaCanvas, alpha: true });
+      ctaRenderer.setPixelRatio(window.devicePixelRatio);
+      ctaRenderer.setSize(ctaCanvas.offsetWidth, ctaCanvas.offsetHeight);
+      const ctaScene = new THREE.Scene();
+      const ctaCamera = new THREE.PerspectiveCamera(80, ctaCanvas.offsetWidth / ctaCanvas.offsetHeight, 0.1, 100);
+      ctaCamera.position.z = 2;
+      const particleCount = 200;
+      const positions = new Float32Array(particleCount * 3);
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 4;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 4;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 4;
+      }
+      const particles = new THREE.Points(
+        new THREE.BufferGeometry(),
+        new THREE.PointsMaterial({ color: 0xffffff, size: 0.02, sizeAttenuation: true })
+      );
+      particles.geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      ctaScene.add(particles);
+      function animateCTA() {
+        requestAnimationFrame(animateCTA);
+        particles.rotation.y += 0.001;
+        ctaRenderer.render(ctaScene, ctaCamera);
+      }
+      animateCTA();
+      window.addEventListener('resize', () => {
+        const w = ctaCanvas.offsetWidth;
+        const h = ctaCanvas.offsetHeight;
+        ctaRenderer.setSize(w, h);
+        ctaCamera.aspect = w / h;
+        ctaCamera.updateProjectionMatrix();
+      });
+    }
+  </script>
+</body>
+</html>
