@@ -367,6 +367,10 @@ const AnimationsModule = {
    * Re-observe new elements (e.g., after dynamic content injection).
    */
   refresh() {
+    this._revealObserver?.disconnect();
+    this._staggerObserver?.disconnect();
+    this._counterObserver?.disconnect();
+    this._timelineObserver?.disconnect();
     this.init();
   },
 };

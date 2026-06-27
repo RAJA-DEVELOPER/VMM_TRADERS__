@@ -112,7 +112,26 @@
   opacity: 1 !important;
 }
 
-/* ── 10. FOCUS INDICATORS ── */
+/* ── 10. SKIP TO CONTENT LINK ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: #BC6733;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── 11. FOCUS INDICATORS ── */
 :focus-visible {
   outline: 3px solid #BC6733 !important;
   outline-offset: 3px;

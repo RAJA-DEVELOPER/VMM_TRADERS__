@@ -45,13 +45,13 @@ VMM.register('ContactModule', {
       isValid = false;
       errorMsg = 'You must agree to the terms.';
     } else if (type === 'email' && input.value) {
-      const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(input.value)) {
         isValid = false;
         errorMsg = 'Please enter a valid email address.';
       }
     } else if (type === 'phone' && input.value) {
-      const phoneRegex = /^[0-9+\\-\\s()]{7,15}$/;
+      const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
       if (!phoneRegex.test(input.value)) {
         isValid = false;
         errorMsg = 'Please enter a valid phone number.';

@@ -136,60 +136,7 @@
 })();
 
 
-/* ─────────────────────────────────────────
-   SCROLL-REVEAL — reveal class handler
-   Uses IntersectionObserver on elements
-   with reveal / reveal-* classes.
-   ───────────────────────────────────────── */
-(function initScrollReveal() {
-  const revealClasses = [
-    '.reveal',
-    '.reveal-down',
-    '.reveal-left',
-    '.reveal-right',
-    '.reveal-scale',
-    '.reveal-zoom',
-    '.reveal-fade',
-    '.reveal-image',
-    '.img-reveal-wrap',
-  ];
-
-  const elements = document.querySelectorAll(revealClasses.join(','));
-  if (!elements.length) return;
-
-  // Respect reduced motion
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (prefersReduced) {
-    elements.forEach((el) => el.classList.add('revealed'));
-    return;
-  }
-
-  // Apply stagger delays from data-delay attribute
-  elements.forEach((el) => {
-    const delay = el.dataset.delay;
-    if (delay) {
-      el.style.transitionDelay = `${parseInt(delay, 10) * 0.15}s`;
-    }
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-    threshold: 0.08,
-        rootMargin: '0px 0px -80px 0px',
-    }
-  );
-
-  elements.forEach((el) => observer.observe(el));
-})();
+/* SCROLL-REVEAL handled by animations.js */
 
 
 /* ─────────────────────────────────────────
@@ -365,28 +312,7 @@
 })();
 
 
-/* ─────────────────────────────────────────
-   SMOOTH SCROLL — anchor links
-   ───────────────────────────────────────── */
-(function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const id     = link.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if (!target) return;
-
-      e.preventDefault();
-
-      const navbar = document.getElementById('navbar');
-      const navH   = navbar ? navbar.getBoundingClientRect().height : 72;
-
-      const top =
-        target.getBoundingClientRect().top + window.scrollY - navH - 20;
-
-      window.scrollTo({ top, behavior: 'smooth' });
-    });
-  });
-})();
+/* Smooth scroll handled by scroll.js */
 
 
 /* ─────────────────────────────────────────
