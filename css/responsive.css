@@ -336,8 +336,8 @@
   }
 
   .navbar__toggle {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
   }
 
   .btn-xl  { padding: 0.9375rem 1.75rem; font-size: var(--text-sm); }
@@ -345,13 +345,13 @@
   .btn-full-xs { width: 100%; }
 
   .footer__socials { gap: var(--sp-2); }
-  .footer__social  { width: 36px; height: 36px; }
+  .footer__social  { width: 44px; height: 44px; }
 
   .scroll-to-top {
     bottom: var(--sp-5);
     right: var(--sp-5);
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
 
   .card-body { padding: var(--sp-5); }
@@ -372,11 +372,13 @@
 /* Trust-stats: 4 columns on laptop before tablet collapse */
 @media (max-width: 1199px) {
   .trust-stats__grid { grid-template-columns: repeat(4, 1fr); }
+  .trust-stats__grid > :last-child { grid-column: span 2; justify-self: center; }
 }
 
 @media (max-width: 1023px) {
   .story__grid             { grid-template-columns: 1fr; gap: var(--sp-12); }
   .story__visual           { max-width: 600px; margin-inline: auto; }
+  .story__img              { height: 380px; }
 
   .mission-vision__grid    { grid-template-columns: 1fr; }
 
@@ -385,6 +387,7 @@
   .serve__block            { flex-direction: column; gap: var(--sp-8); }
   .serve__block--reverse   { flex-direction: column; }
   .serve__block-visual     { width: 100%; max-width: 600px; margin-inline: auto; }
+  .serve__img              { height: 300px; }
 
   .trust-stats__grid       { grid-template-columns: repeat(3, 1fr); }
 
@@ -401,6 +404,7 @@
   }
   .journey__track-inner {
     flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
     min-width: 0;
     gap: var(--sp-6);
@@ -437,7 +441,7 @@
 @media (max-width: 767px) {
   .story__grid             { gap: var(--sp-8); }
   .story__img              { height: 320px; }
-  .story__exp-badge        { width: 100px; height: 100px; bottom: -20px; right: -10px; }
+  .story__exp-badge        { width: 100px; height: 100px; bottom: 12px; right: 12px; }
   .story__exp-num          { font-size: var(--text-2xl); }
   .story__quote            { padding: var(--sp-6); }
   .story__quote-mark       { display: none; }
@@ -469,7 +473,7 @@
 
   .story__grid             { gap: var(--sp-6); }
   .story__img              { height: 220px; }
-  .story__exp-badge        { width: 72px; height: 72px; bottom: -12px; right: -4px; }
+  .story__exp-badge        { width: 72px; height: 72px; bottom: 8px; right: 8px; }
   .story__exp-num          { font-size: var(--text-lg); }
   .story__exp-text         { display: none; }
 
@@ -1285,9 +1289,9 @@ canvas {
     top: 50%;
     right: 0.55rem;
     z-index: 3;
-    flex: 0 0 42px;
-    width: 42px;
-    height: 42px;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
     align-items: center;
     justify-content: center;
     transform: translateY(-50%);
@@ -1994,6 +1998,14 @@ body {
   color: #4d4038 !important;
   -webkit-text-fill-color: #4d4038 !important;
 }
+.story__exp-badge>span{
+  -webkit-text-fill-color: #f3f2f1 !important;
+  color: white
+}
+.about-preview__exp-badge>span{
+   -webkit-text-fill-color: #f3f2f1 !important;
+  color: white
+}
 
 :is(main, .section) a:not(.btn):not(.navbar__cta):not(.sol-cta__btn):not(.contact-app-cta__btn):not(.app-store-btn):not(.sol-card__cta) {
   color: #833f1c !important;
@@ -2002,9 +2014,10 @@ body {
 
 :is(.section-title .highlight, .hero__headline-highlight, .about-cta__highlight, .sol-cta__heading-highlight, .contact-app-cta__highlight) {
   background: none !important;
-  color: #9a461e !important;
+  color: #cdaa9a !important;
   -webkit-text-fill-color: #9a461e !important;
 }
+
 
 :is(
   .hero,
@@ -2356,13 +2369,24 @@ select,
   -webkit-text-fill-color: var(--clr-orange) !important;
 }
 
-/* Ensure overridden orange white buttons keep white text */
+/* Ensure overridden about-cta white buttons */
 .about-cta__actions .btn-white {
+  color: #1c1713 !important;
+  -webkit-text-fill-color: #1c1713 !important;
+  background: rgba(255,255,255,0.92) !important;
+}
+.about-cta__actions .btn-white:hover {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: var(--clr-orange) !important;
+  border-color: var(--clr-orange) !important;
+}
+.about-cta__actions .btn-white:hover :is(span, svg) {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
 .about-cta__actions .btn-white :is(span, svg) {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  color: #1c1713 !important;
+  -webkit-text-fill-color: #1c1713 !important;
   stroke: currentColor !important;
 }

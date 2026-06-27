@@ -5,7 +5,7 @@ VMM.register('ContactPage', {
   init() {
     this._initFAQ();
     this._initOpenStatus();
-    this._initFormFeedback();
+    this._initFormSubmit();
     this._init3DTilt();
   },
 
@@ -120,38 +120,8 @@ VMM.register('ContactPage', {
     }
   },
 
-  /* ── Form Feedback Integration ───────────────────── */
-  _initFormFeedback() {
-    const form    = document.getElementById('contact-form-el');
-    const success = document.getElementById('form-success');
-    const error   = document.getElementById('form-error');
-    if (!form) return;
-
-    // Listen for custom events dispatched by ContactModule (contact.js)
-    form.addEventListener('vmm:submit:success', () => {
-      if (success) { success.hidden = false; success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-      if (error)   { error.hidden   = true; }
-    });
-
-    form.addEventListener('vmm:submit:error', (e) => {
-      if (error) {
-        error.hidden = false;
-        const detail = error.querySelector('[data-error-detail]');
-        if (detail && e.detail && e.detail.message) detail.textContent = e.detail.message;
-        error.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      if (success) { success.hidden = true; }
-    });
-
-    // Reset button clears feedback banners
-    const resetBtn = document.getElementById('btn-reset');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        if (success) success.hidden = true;
-        if (error)   error.hidden   = true;
-      });
-    }
-
+  /* ── Form Submit Integration ─────────────────────── */
+  _initFormSubmit() {
     // Smooth scroll from hero CTA → form
     document.querySelectorAll('a[href="#contact-form"]').forEach((link) => {
       link.addEventListener('click', (e) => {
@@ -159,7 +129,6 @@ VMM.register('ContactPage', {
         const target = document.getElementById('contact-form');
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Focus the first field after scroll
           setTimeout(() => {
             const firstField = target.querySelector('input, textarea');
             if (firstField) firstField.focus();

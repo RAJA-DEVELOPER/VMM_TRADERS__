@@ -8,7 +8,7 @@
    §0  SHARED UTILITIES
    ───────────────────────────────────────────────────────────── */
 .contact-section-header { margin-bottom: 3.5rem; }
-.contact-section-header .label { display: inline-block; margin-bottom: 0.75rem; }
+.contact-section-header .label { margin-bottom: 0.75rem; }
 .contact-section-header .section-title { margin-bottom: 1rem; }
 .mx-auto { max-width: 600px; margin-left: auto; margin-right: auto; }
 .text-center { text-align: center; }
@@ -99,7 +99,13 @@
   align-items: center;
 }
 
-.contact-hero__content {}
+.contact-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 600px;
+}
 
 /* Floating stat cards */
 .contact-hero__stats {
@@ -378,7 +384,7 @@
   top: 100px;
 }
 
-.contact-form-sidebar .label { margin-bottom: 0.75rem; display: block; }
+.contact-form-sidebar .label { margin-bottom: 0.75rem; }
 
 .contact-form-sidebar__heading {
   font-family: var(--font-heading);
@@ -645,7 +651,9 @@
 .required { color: var(--clr-orange); margin-left: 0.1rem; }
 
 /* Consent */
-.contact-form__consent {}
+.contact-form__consent {
+  margin-top: 0.5rem;
+}
 .form-checkbox {
   display: flex;
   align-items: flex-start;
@@ -902,8 +910,8 @@
   align-items: start;
 }
 
-.contact-faq__header { position: sticky; top: 100px; }
-.contact-faq__header .label { margin-bottom: 0.75rem; display: block; }
+.contact-faq__header { position: sticky; top: 100px; text-align: center; }
+.contact-faq__header .label { margin-bottom: 0.75rem; }
 .contact-faq__header .section-title { margin-bottom: 1rem; }
 
 .contact-faq__desc {
@@ -913,10 +921,12 @@
   font-size: var(--text-base);
 }
 
-.contact-faq__list { display: flex; flex-direction: column; gap: 0; }
+.contact-faq__list { display: flex; flex-direction: column; gap: var(--sp-4); }
 
 .faq-item {
+  padding-left: var(--sp-8);
   border-bottom: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
   transition: background 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease, margin 0.4s ease, border-color 0.4s ease;
 }
 .faq-item:first-child { border-top: 1px solid var(--clr-border); }
@@ -962,6 +972,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  right: 8px;
 }
 .faq-item__chevron svg { width: 20px; height: 20px; stroke: currentColor; }
 .faq-item__trigger[aria-expanded="true"] .faq-item__chevron {
@@ -1148,17 +1160,20 @@
 .contact-app-cta__btn strong { font-size: var(--text-sm); line-height: 1.4; }
 
 .contact-app-cta__explore {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  color: rgba(255, 255, 255,0.65);
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
   font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: rgba(255, 255, 255,0.9) !important;
   text-decoration: none;
-  font-weight: var(--weight-medium);
-  transition: color var(--tr-fast), gap var(--tr-fast);
+  border: 1px solid rgba(255, 255, 255,0.25);
+  border-radius: var(--radius-lg);
+  transition: background var(--tr-fast), border-color var(--tr-fast), gap var(--tr-fast);
 }
-.contact-app-cta__explore:hover { color: var(--clr-orange); gap: 0.65rem; }
-.contact-app-cta__explore svg { width: 16px; height: 16px; stroke: currentColor; }
+.contact-app-cta__explore:hover { background: rgba(188, 103, 51,0.2); border-color: var(--clr-orange); color: var(--clr-orange) !important; gap: 0.75rem; }
+.contact-app-cta__explore svg { width: 16px; height: 16px; stroke: currentColor !important; }
 
 /* Visual — QR + bubbles */
 .contact-app-cta__visual {
@@ -1217,14 +1232,14 @@
 
 .contact-app-cta__bubble--1 {
   top: 10%;
-  right: -20px;
+  right: 10px;
   animation: bubbleFloat1 3s ease-in-out infinite;
 }
 .contact-app-cta__bubble--1 svg { stroke: #22c55e; }
 
 .contact-app-cta__bubble--2 {
   bottom: 10%;
-  left: -20px;
+  left: 10px;
   animation: bubbleFloat2 3.5s ease-in-out infinite 0.5s;
 }
 .contact-app-cta__bubble--2 svg { stroke: var(--clr-orange); }
@@ -1296,6 +1311,8 @@
   .contact-hero__stats { flex-direction: column; }
   .contact-hero__stat-card { min-width: unset; }
    .contact-app-cta__bubble { display: none; }
+  .contact-form__input,
+  .contact-form__textarea { padding-right: 2.5rem; }
 
 /* Hide old visual container */
 .contact-app-cta__visual { display:none; }

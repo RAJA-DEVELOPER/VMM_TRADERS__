@@ -147,9 +147,16 @@ VMM.register('ContactModule', {
       document.head.appendChild(style);
     }
 
-    // Simulate API call
-    setTimeout(() => {
-      // Morph into success state
+    // Send form data
+    const formData = new FormData(this.form);
+
+    fetch(this.form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(res => res.ok ? res.json() : Promise.reject(res))
+    .then(() => {
       this.submitBtn.innerHTML = `
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 24px; height: 24px;">
           <polyline points="20 6 9 17 4 12"></polyline>
@@ -158,17 +165,35 @@ VMM.register('ContactModule', {
       `;
       this.submitBtn.style.backgroundColor = '#22c55e';
       this.submitBtn.style.borderColor = '#22c55e';
-      
+
       setTimeout(() => {
-        // Reset to original state
         this.submitBtn.disabled = false;
         this.submitBtn.innerHTML = originalText;
         this.submitBtn.style.width = '';
         this.submitBtn.style.backgroundColor = '';
         this.submitBtn.style.borderColor = '';
         this.form.reset();
-        this.form.dispatchEvent(new CustomEvent('vmm:submit:success'));
-      }, 2000);
-    }, 1500);
+      }, 3000);
+    })
+    .catch(() => {
+      this.submitBtn.disabled = false;
+      this.submitBtn.innerHTML = originalText;
+      this.submitBtn.style.width = '';
+      this.submitBtn.style.backgroundColor = '';
+      this.submitBtn.style.borderColor = '';
+      this.submitBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        Failed — Try Again
+      `;
+      this.submitBtn.style.backgroundColor = '#ef4444';
+      this.submitBtn.style.borderColor = '#ef4444';
+      setTimeout(() => {
+        this.submitBtn.innerHTML = originalText;
+        this.submitBtn.style.backgroundColor = '';
+        this.submitBtn.style.borderColor = '';
+      }, 3000);
+    });
   },
 });

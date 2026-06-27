@@ -381,16 +381,6 @@ body {
   height: 100%;
 }
 
-.sol-card--featured,
-.testi-card--featured {
-  background:
-    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.05), transparent 32%),
-    linear-gradient(145deg, #A84E1F 0%, #833F1C 58%, #4E240F 100%) !important;
-  border-color: rgba(255,255,255,0.36) !important;
-}
-
-.sol-card--featured *,
-.testi-card--featured *,
 .sol-why *,
 .sol-testimonials *,
 .sol-cta *,
@@ -507,10 +497,8 @@ body {
 .about-cta__actions .btn-white,
 .sol-card__featured-badge,
 .contact-map__badge {
-  background:
-    radial-gradient(circle at 28% 20%, rgba(255,255,255,0.34), transparent 38%),
-    var(--grad-primary) !important;
-  border-color: rgba(255,255,255,0.78);
+  background: var(--grad-primary) !important;
+  border: 2px solid rgba(255,255,255,0.2);
 }
 
 .future__phone-frame,

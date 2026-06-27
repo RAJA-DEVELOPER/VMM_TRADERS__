@@ -129,6 +129,7 @@
 /* Visual */
 .about-preview__visual {
   position: relative;
+  overflow: hidden;
 }
 
 .about-preview__img-wrap {
@@ -2101,10 +2102,8 @@ body {
 
 .hero__headline-highlight {
   font-family: var(--font-display);
-  font-size: 0.88em;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.035em;
   background: linear-gradient(90deg, #fff 0%, #ffb46f 36%, #ff6a00 68%, #fff2e5 100%);
   background-size: 180% auto;
   -webkit-background-clip: text;
@@ -2166,7 +2165,7 @@ body {
 
 .section {
   position: relative;
-  padding-block: clamp(5.5rem, 9vw, 9.5rem);
+  padding-block: var(--section-py, clamp(5.5rem, 9vw, 9.5rem));
 }
 
 .section-title,
