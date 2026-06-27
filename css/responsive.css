@@ -90,6 +90,7 @@
     padding: 0.625rem 0.75rem 0.625rem 1rem;
     height: 3.5rem;
     border-radius: var(--radius-xl);
+    gap: 0.5rem;
   }
 
   .navbar--glass .navbar__inner,
@@ -110,6 +111,21 @@
   .navbar__mobile-link svg {
     width: 20px;
     height: 20px;
+  }
+
+  .navbar__logo {
+    min-width: 0;
+  }
+
+  .navbar__logo-wordmark {
+    min-width: 0;
+  }
+
+  .navbar--transparent .navbar__logo-tagline,
+  .navbar--glass .navbar__logo-tagline,
+  .navbar--solid .navbar__logo-tagline,
+  .navbar__logo-tagline {
+    display: none !important;
   }
 
   /* Footer — 2 columns */
@@ -269,6 +285,7 @@
     padding: 0.375rem 0.5rem 0.375rem 0.75rem;
     height: 2.75rem;
     border-radius: var(--radius-xl);
+    gap: 0.5rem;
   }
 
   .navbar--glass .navbar__inner,
@@ -291,6 +308,37 @@
   .navbar__mobile-cta {
     padding: var(--sp-3) var(--sp-5) !important;
     font-size: var(--text-sm) !important;
+  }
+
+  .navbar__logo {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .navbar__logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar__logo-wordmark {
+    min-width: 0;
+  }
+
+  .navbar__logo-name {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .navbar--transparent .navbar__logo-tagline,
+  .navbar--glass .navbar__logo-tagline,
+  .navbar--solid .navbar__logo-tagline,
+  .navbar__logo-tagline {
+    display: none !important;
+  }
+
+  .navbar__toggle {
+    width: 36px;
+    height: 36px;
   }
 
   .btn-xl  { padding: 0.9375rem 1.75rem; font-size: var(--text-sm); }
@@ -523,4 +571,963 @@
     outline: 3px solid var(--clr-orange);
     box-shadow: none;
   }
+}
+
+
+/* =============================================================
+   FINAL ACCESSIBILITY + STRUCTURE PASS
+   Last-loaded cross-page fixes for contrast, card flow, and forms.
+   ============================================================= */
+
+/* Light surfaces: keep text dark even when earlier page CSS used white. */
+.stat-glass-card,
+.why-card,
+.cat-card,
+.testi-card:not(.testi-card--featured),
+.story__quote,
+.journey__card,
+.mission-vision__card,
+.value-card,
+.serve__card,
+.trust-stat-card,
+.future__feature,
+.sol-card:not(.sol-card--featured),
+.sol-cat-card,
+.sol-workflow__step,
+.sol-app__float,
+.contact-info-card,
+.contact-form-wrapper,
+.contact-form-sidebar__item,
+.contact-map__info,
+.contact-why-card,
+.faq-item.is-open,
+.hero__qr-card,
+.contact-app-cta__qr-card,
+.contact-app-cta__bubble {
+  color: #241c16 !important;
+}
+
+.stat-glass-card__number,
+.stat-glass-card__label,
+.why-card__title,
+.cat-card__title,
+.testi-card:not(.testi-card--featured) .testi-card__name,
+.story__quote blockquote,
+.journey__card-title,
+.mission-vision__heading,
+.value-card__title,
+.serve__card-title,
+.trust-stat-card__label,
+.future__feature-text strong,
+.sol-card:not(.sol-card--featured) .sol-card__title,
+.sol-cat-card__title,
+.sol-workflow__step-title,
+.sol-app__float strong,
+.contact-info-card__title,
+.contact-info-card__phone,
+.contact-info-card__email,
+.contact-form-sidebar__heading,
+.contact-form-sidebar__item a,
+.contact-form-sidebar__item span,
+.contact-map__biz-name,
+.contact-map__detail-value,
+.contact-why-card h3,
+.faq-item__trigger,
+.hero__qr-text strong,
+.contact-app-cta__bubble,
+.contact-app-cta__qr-label {
+  color: #1c1713 !important;
+  -webkit-text-fill-color: currentColor;
+}
+
+.stat-glass-card__desc,
+.why-card__desc,
+.cat-card__desc,
+.testi-card:not(.testi-card--featured) blockquote,
+.journey__card-desc,
+.mission-vision__text,
+.value-card__desc,
+.serve__card-desc,
+.trust-stat-card__desc,
+.future__feature-text span,
+.sol-card:not(.sol-card--featured) .sol-card__desc,
+.sol-card:not(.sol-card--featured) .sol-card__features li,
+.sol-cat-card__desc,
+.sol-workflow__step-desc,
+.sol-app__float span,
+.contact-info-card__detail,
+.contact-info-card__hours-row,
+.contact-form-sidebar__desc,
+.contact-faq__desc,
+.contact-map__biz-tag,
+.contact-map__detail-label,
+.contact-why-card p,
+.faq-item__panel p,
+.hero__qr-rating,
+.section-subtitle {
+  color: #5a4c43 !important;
+}
+
+/* Dark image and CTA sections: keep text bright over overlays. */
+.hero,
+.final-cta,
+.about-cta,
+.sol-why,
+.sol-testimonials,
+.sol-cta,
+.contact-app-cta {
+  color: #ffffff !important;
+}
+
+.hero__headline,
+.final-cta__headline,
+.about-cta__title,
+.sol-why__header .section-title,
+.sol-testimonials__header .section-title,
+.sol-cta__heading,
+.contact-app-cta__heading,
+.contact-hero__stat-card strong,
+.sol-card--featured .sol-card__title,
+.testi-card--featured .testi-card__name {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.hero__subtext,
+.hero__trust-pill,
+.final-cta__sub,
+.final-cta__proof,
+.about-cta__desc,
+.about-cta__proof,
+.sol-why__header .section-subtitle,
+.sol-why-card__desc,
+.sol-testimonials__header .section-subtitle,
+.sol-testi-card__text,
+.sol-testi-card__role,
+.sol-cta__desc,
+.sol-cta__proof,
+.contact-app-cta__desc,
+.contact-app-cta__features li,
+.contact-app-cta__rating,
+.contact-app-cta__explore,
+.contact-hero__stat-card span {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.hero__badge,
+.hero .label,
+.final-cta .label,
+.about-cta .label,
+.sol-cta__label,
+.contact-app-cta__badge {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.btn-white,
+.btn-secondary,
+.sol-cta__btn--primary {
+  color: #1c1713 !important;
+}
+
+.btn-primary,
+.navbar__cta,
+.contact-form__submit,
+.sol-cta__btn--outline,
+.contact-app-cta__btn {
+  color: #ffffff !important;
+}
+
+/* Navbar: use one readable light island across transparent and solid pages. */
+.navbar__inner {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 244, 0.82)) !important;
+  border-color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.navbar__logo-name,
+.navbar__link,
+.navbar__toggle {
+  color: #1c1713 !important;
+}
+
+.navbar__logo-tagline {
+  color: #675a50 !important;
+}
+
+.navbar__bar {
+  background: #1c1713 !important;
+}
+
+/* Forms: light fields and readable floating labels. */
+.contact-form__input,
+.contact-form__textarea,
+.footer__newsletter-input,
+.form-control {
+  color: #1c1713 !important;
+  background: #ffffff !important;
+}
+
+.footer__newsletter-input {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.contact-form__label {
+  color: #6d5f55 !important;
+}
+
+.contact-form__input:focus ~ .contact-form__label,
+.contact-form__input:not(:placeholder-shown) ~ .contact-form__label,
+.contact-form__textarea:focus ~ .contact-form__label,
+.contact-form__textarea:not(:placeholder-shown) ~ .contact-form__label,
+.contact-form__textarea:focus ~ .contact-form__label--ta,
+.contact-form__textarea:not(:placeholder-shown) ~ .contact-form__label--ta {
+  color: #833f1c !important;
+  background: #ffffff !important;
+}
+
+.contact-form__feedback--success {
+  color: #17633a !important;
+}
+
+.contact-form__feedback--error {
+  color: #9f2020 !important;
+}
+
+/* Footer: raise muted copy above the dark background. */
+.footer__brand-desc,
+.footer__link,
+.footer__contact-row,
+.footer__contact-link,
+.footer__app-btn,
+.footer__copyright,
+.footer__legal-link {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.footer__col-title,
+.footer__brand-name,
+.footer__newsletter-text h4 {
+  color: #ffffff !important;
+}
+
+.footer__newsletter-text p,
+.footer__contact-row address,
+.footer__contact-row span {
+  color: rgba(255, 255, 255, 0.74) !important;
+}
+
+/* Structure: equal-height cards and safer wrapping in every grid. */
+.stats-grid,
+.why-choose__grid,
+.categories__grid,
+.testimonials__grid,
+.values__grid,
+.trust-stats__grid,
+.sol-solutions__grid,
+.sol-categories__grid,
+.sol-why__grid,
+.sol-testimonials__grid,
+.contact-info__grid,
+.contact-why__grid {
+  align-items: stretch;
+}
+
+.stat-glass-card,
+.why-card,
+.cat-card,
+.testi-card,
+.value-card,
+.trust-stat-card,
+.sol-card,
+.sol-cat-card,
+.sol-why-card,
+.sol-testi-card,
+.contact-info-card,
+.contact-why-card {
+  min-width: 0;
+}
+
+.hero__headline,
+.section-title,
+.final-cta__headline,
+.about-cta__title,
+.sol-cta__heading,
+.contact-app-cta__heading {
+  overflow-wrap: break-word;
+}
+
+.hero__actions,
+.final-cta__actions,
+.about-cta__actions,
+.sol-cta__actions,
+.contact-app-cta__buttons,
+.footer__newsletter-form {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container,
+  .hero__container,
+  .contact-hero__container {
+    max-width: 100vw !important;
+    box-sizing: border-box;
+  }
+
+  .navbar {
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar__inner {
+    width: calc(100vw - 1.5rem) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+    min-width: 0 !important;
+    margin-inline: auto;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__container {
+    width: 100%;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero__content-grid,
+  .contact-hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero__content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero__visual {
+    display: none !important;
+  }
+
+  .hero__headline,
+  .hero__subtext,
+  .hero__actions,
+  .hero__trust,
+  .hero__badge {
+    width: 100% !important;
+    max-width: calc(100vw - 2.5rem) !important;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero__headline {
+    white-space: normal;
+    font-size: clamp(2.2rem, 11vw, 3.3rem);
+    line-height: 1.02;
+  }
+
+  .hero__subtext {
+    overflow-wrap: break-word;
+  }
+
+  .hero__badge {
+    white-space: normal;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer__legal,
+  .footer__apps,
+  .footer__socials,
+  .sol-cta__proofs,
+  .about-cta__proofs {
+    justify-content: center;
+  }
+
+  .sol-cta__proofs,
+  .contact-app-cta__features {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero__stats,
+  .contact-app-cta__buttons,
+  .footer__apps {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__content,
+  .hero__headline,
+  .hero__subtext,
+  .hero__actions,
+  .hero__trust,
+  .hero__badge {
+    max-width: min(100%, 350px) !important;
+  }
+
+  .hero__actions .btn,
+  .hero__trust-pill {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 479px) {
+  .navbar__inner {
+    width: calc(100vw - 1rem) !important;
+    max-width: calc(100vw - 1rem) !important;
+  }
+
+  .hero__container {
+    padding-inline: 1.25rem;
+  }
+
+  .hero__headline {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+}
+
+/* =============================================================
+   CROSS-PAGE RESPONSIVE + CONTRAST TUNE
+   Final loaded overrides for mobile fit, softer elevation, and
+   stronger text contrast across all public pages.
+   ============================================================= */
+
+:root {
+  --clr-muted: #6f6258;
+  --clr-text-secondary: #62574f;
+  --clr-text-muted: #71665d;
+  --clr-placeholder: #766b62;
+  --clr-footer-muted: rgba(255, 255, 255, 0.68);
+  --shadow-xs: 0 1px 2px rgba(30, 24, 20, 0.04);
+  --shadow-sm: 0 4px 12px rgba(30, 24, 20, 0.05);
+  --shadow-md: 0 10px 26px rgba(30, 24, 20, 0.07);
+  --shadow-lg: 0 18px 48px rgba(30, 24, 20, 0.09);
+  --shadow-xl: 0 24px 64px rgba(30, 24, 20, 0.10);
+  --shadow-2xl: 0 28px 72px rgba(20, 16, 12, 0.12);
+  --shadow-card: 0 3px 14px rgba(30, 24, 20, 0.055);
+  --shadow-card-hover: 0 10px 28px rgba(30, 24, 20, 0.08);
+  --shadow-card-glow: 0 10px 28px rgba(30, 24, 20, 0.075), 0 0 0 1px rgba(188, 103, 51, 0.08);
+  --shadow-accent-sm: 0 4px 14px rgba(188, 103, 51, 0.16);
+  --shadow-accent: 0 10px 30px rgba(188, 103, 51, 0.22);
+  --shadow-accent-lg: 0 16px 42px rgba(188, 103, 51, 0.24);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+.navbar__inner,
+.hero__badge,
+.contact-hero__stat-card,
+.about-cta__proof,
+.sol-cta__proof,
+.contact-app-cta__features li {
+  overflow-wrap: anywhere;
+}
+
+/* Reduce the glow-heavy premium treatment that was creating unwanted shadows. */
+.navbar__inner,
+.navbar--glass .navbar__inner,
+.navbar--solid .navbar__inner {
+  box-shadow: 0 10px 28px rgba(45, 29, 16, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.74) !important;
+}
+
+.navbar::before,
+.orb,
+.hero__shape,
+.about-hero__shape,
+.sol-hero__shape,
+.contact-hero__shape {
+  opacity: 0.35 !important;
+}
+
+.btn-primary,
+.navbar__cta,
+.contact-form__submit,
+.sol-cta__btn--primary,
+.contact-app-cta__btn {
+  box-shadow: 0 10px 28px rgba(188, 103, 51, 0.20), inset 0 1px 0 rgba(255, 255, 255, 0.30) !important;
+}
+
+.btn-primary:hover,
+.navbar__cta:hover,
+.contact-form__submit:hover,
+.sol-cta__btn:hover,
+.contact-app-cta__btn:hover {
+  box-shadow: 0 14px 36px rgba(188, 103, 51, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
+}
+
+.btn-white,
+.btn-secondary,
+.app-store-btn,
+.footer__app-btn,
+.sol-cta__btn--outline {
+  box-shadow: 0 8px 22px rgba(44, 26, 12, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.76) !important;
+}
+
+.stat-glass-card,
+.why-card,
+.cat-card,
+.testi-card,
+.mission-vision__card,
+.value-card,
+.serve__card,
+.trust-stat-card,
+.future__feature,
+.sol-card,
+.sol-cat-card,
+.sol-workflow__step,
+.sol-app__float,
+.sol-why-card,
+.sol-testi-card,
+.contact-info-card,
+.contact-form-wrapper,
+.contact-form-sidebar__item,
+.contact-map__info,
+.contact-why-card,
+.faq-item,
+.hero__qr-card,
+.contact-app-cta__qr-card,
+.contact-app-cta__bubble {
+  box-shadow: var(--shadow-card) !important;
+}
+
+.stat-glass-card:hover,
+.why-card:hover,
+.cat-card:hover,
+.testi-card:hover,
+.value-card:hover,
+.trust-stat-card:hover,
+.sol-card:hover,
+.sol-cat-card:hover,
+.sol-why-card:hover,
+.contact-info-card:hover,
+.contact-why-card:hover,
+.faq-item.is-open {
+  box-shadow: var(--shadow-card-hover) !important;
+}
+
+/* Stronger contrast for common muted copy on light and dark surfaces. */
+.text-muted,
+.section-subtitle,
+.card-text,
+.feature-card__text,
+.footer__newsletter-text p,
+.contact-form-sidebar__desc,
+.contact-info-card__detail,
+.contact-faq__desc,
+.sol-card__desc,
+.sol-cat-card__desc,
+.value-card__desc,
+.serve__card-desc,
+.mission-vision__text,
+.why-card__desc,
+.cat-card__desc {
+  color: #5f5249 !important;
+}
+
+.hero__subtext,
+.hero__trust-pill,
+.contact-breadcrumb__link,
+.contact-breadcrumb__sep,
+.contact-hero__stat-card span,
+.sol-why__header .section-subtitle,
+.sol-testimonials__header .section-subtitle,
+.sol-why-card__desc,
+.sol-testi-card__role,
+.about-cta__desc,
+.about-cta__proof,
+.final-cta__sub,
+.final-cta__proof,
+.contact-app-cta__desc,
+.contact-app-cta__features li,
+.contact-app-cta__rating {
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+
+.footer__brand-desc,
+.footer__link,
+.footer__contact-row,
+.footer__contact-link,
+.footer__app-btn,
+.footer__copyright,
+.footer__legal-link,
+.footer__newsletter-text p,
+.footer__contact-row address,
+.footer__contact-row span {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+.footer__newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+@media (max-width: 1023px) {
+  .container,
+  .hero__container,
+  .contact-hero__container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero__content-grid,
+  .contact-hero__layout,
+  .final-cta__content,
+  .sol-cta__content,
+  .contact-app-cta__content {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .navbar {
+    display: block !important;
+    top: 0.75rem !important;
+    padding-inline: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .navbar__inner,
+  .navbar--glass .navbar__inner,
+  .navbar--solid .navbar__inner {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin-inline: 0.75rem !important;
+    height: 3.5rem !important;
+    min-height: 0 !important;
+    padding: 0.45rem 0.55rem 0.45rem 0.55rem !important;
+    overflow: visible;
+  }
+
+  .navbar__logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 0.625rem;
+    padding-right: 3.25rem;
+  }
+
+  .navbar__logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .navbar__logo-wordmark {
+    min-width: 0;
+  }
+
+  .navbar__logo-name {
+    display: block;
+    max-width: 13rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navbar__toggle {
+    display: flex !important;
+    position: absolute;
+    top: 50%;
+    right: 0.55rem;
+    z-index: 3;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    margin-left: auto;
+    background: rgba(188, 103, 51, 0.10) !important;
+    border: 1px solid rgba(188, 103, 51, 0.16) !important;
+    color: #1c1713 !important;
+  }
+
+  .navbar__toggle:hover {
+    transform: translateY(-50%);
+  }
+
+  .navbar__toggle.is-open {
+    transform: translateY(-50%) !important;
+  }
+
+  .navbar__toggle .navbar__bar {
+    display: block !important;
+    background: #1c1713 !important;
+    opacity: 1;
+  }
+
+  .navbar__mobile {
+    padding-top: 5.5rem;
+  }
+
+  .hero__container,
+  .contact-hero__container {
+    padding-inline: 1.25rem !important;
+    padding-top: 6.5rem !important;
+  }
+
+  .hero__headline,
+  .contact-hero__title {
+    max-width: 100% !important;
+    text-wrap: balance;
+  }
+
+  .hero__actions,
+  .final-cta__actions,
+  .about-cta__actions,
+  .sol-cta__actions,
+  .contact-app-cta__buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .hero__actions .btn,
+  .final-cta__actions .btn,
+  .about-cta__actions .btn,
+  .sol-cta__actions .btn,
+  .contact-app-cta__buttons .btn,
+  .contact-app-cta__buttons a {
+    width: 100%;
+    min-height: 3.25rem;
+    justify-content: center;
+    white-space: normal;
+  }
+
+  .hero__trust,
+  .contact-hero__stats,
+  .about-cta__proofs,
+  .sol-cta__proofs,
+  .contact-app-cta__features {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .scroll-indicator,
+  .hero__scroll,
+  .scroll-down {
+    display: none !important;
+  }
+
+  .section {
+    overflow: clip;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar__inner,
+  .navbar--glass .navbar__inner,
+  .navbar--solid .navbar__inner {
+    width: min(360px, calc(100vw - 1.5rem)) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+    margin-left: 0.75rem !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .navbar__inner,
+  .navbar--glass .navbar__inner,
+  .navbar--solid .navbar__inner {
+    width: min(360px, calc(100vw - 1rem)) !important;
+    max-width: calc(100vw - 1rem) !important;
+    margin-left: 0.5rem !important;
+    margin-right: auto !important;
+  }
+
+  .navbar__logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar__logo-name {
+    max-width: 11.5rem;
+    font-size: 0.98rem;
+  }
+}
+
+/* Hover contrast pass: keep text readable when surfaces shift on interaction. */
+.navbar__link:hover,
+.navbar__link:focus-visible,
+.navbar__link.active,
+.navbar__mobile-link:hover,
+.navbar__mobile-link:focus-visible,
+.navbar__mobile-link.active {
+  color: #1c1713 !important;
+  -webkit-text-fill-color: #1c1713 !important;
+}
+
+.navbar__link:hover,
+.navbar__link:focus-visible,
+.navbar__link.active {
+  background: rgba(188, 103, 51, 0.12) !important;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link:focus-visible,
+.navbar__mobile-link.active {
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+
+.btn-white:hover,
+.btn-white:focus-visible,
+.btn-secondary:hover,
+.btn-secondary:focus-visible,
+.app-store-btn:hover,
+.app-store-btn:focus-visible,
+.footer__app-btn:hover,
+.footer__app-btn:focus-visible,
+.sol-cta__btn--primary:hover,
+.sol-cta__btn--primary:focus-visible {
+  color: #1c1713 !important;
+  -webkit-text-fill-color: #1c1713 !important;
+  background: #ffffff !important;
+  border-color: rgba(28, 23, 19, 0.14) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible,
+.navbar__cta:hover,
+.navbar__cta:focus-visible,
+.contact-form__submit:hover,
+.contact-form__submit:focus-visible,
+.sol-cta__btn--outline:hover,
+.sol-cta__btn--outline:focus-visible,
+.contact-app-cta__btn:hover,
+.contact-app-cta__btn:focus-visible {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.stat-glass-card:hover,
+.why-card:hover,
+.cat-card:hover,
+.testi-card:not(.testi-card--featured):hover,
+.journey__card:hover,
+.mission-vision__card:hover,
+.value-card:hover,
+.serve__card:hover,
+.trust-stat-card:hover,
+.future__feature:hover,
+.sol-card:not(.sol-card--featured):hover,
+.sol-cat-card:hover,
+.sol-workflow__step:hover,
+.sol-app__float:hover,
+.contact-info-card:hover,
+.contact-form-sidebar__item:hover,
+.contact-map__info:hover,
+.contact-why-card:hover,
+.faq-item.is-open {
+  color: #241c16 !important;
+}
+
+.stat-glass-card:hover :is(h1, h2, h3, h4, strong, a),
+.why-card:hover :is(h1, h2, h3, h4, strong, a),
+.cat-card:hover :is(h1, h2, h3, h4, strong, a),
+.testi-card:not(.testi-card--featured):hover :is(h1, h2, h3, h4, strong, a),
+.journey__card:hover :is(h1, h2, h3, h4, strong, a),
+.mission-vision__card:hover :is(h1, h2, h3, h4, strong, a),
+.value-card:hover :is(h1, h2, h3, h4, strong, a),
+.serve__card:hover :is(h1, h2, h3, h4, strong, a),
+.trust-stat-card:hover :is(h1, h2, h3, h4, strong, a),
+.future__feature:hover :is(h1, h2, h3, h4, strong, a),
+.sol-card:not(.sol-card--featured):hover :is(h1, h2, h3, h4, strong, a),
+.sol-cat-card:hover :is(h1, h2, h3, h4, strong, a),
+.sol-workflow__step:hover :is(h1, h2, h3, h4, strong, a),
+.sol-app__float:hover :is(h1, h2, h3, h4, strong, a),
+.contact-info-card:hover :is(h1, h2, h3, h4, strong, a),
+.contact-form-sidebar__item:hover :is(h1, h2, h3, h4, strong, a),
+.contact-map__info:hover :is(h1, h2, h3, h4, strong, a),
+.contact-why-card:hover :is(h1, h2, h3, h4, strong, a),
+.faq-item.is-open :is(h1, h2, h3, h4, strong, a) {
+  color: #1c1713 !important;
+  -webkit-text-fill-color: #1c1713 !important;
+}
+
+.stat-glass-card:hover :is(p, li, span, blockquote),
+.why-card:hover :is(p, li, span, blockquote),
+.cat-card:hover :is(p, li, span, blockquote),
+.testi-card:not(.testi-card--featured):hover :is(p, li, span, blockquote),
+.journey__card:hover :is(p, li, span, blockquote),
+.mission-vision__card:hover :is(p, li, span, blockquote),
+.value-card:hover :is(p, li, span, blockquote),
+.serve__card:hover :is(p, li, span, blockquote),
+.trust-stat-card:hover :is(p, li, span, blockquote),
+.future__feature:hover :is(p, li, span, blockquote),
+.sol-card:not(.sol-card--featured):hover :is(p, li, span, blockquote),
+.sol-cat-card:hover :is(p, li, span, blockquote),
+.sol-workflow__step:hover :is(p, li, span, blockquote),
+.sol-app__float:hover :is(p, li, span, blockquote),
+.contact-info-card:hover :is(p, li, span, blockquote),
+.contact-form-sidebar__item:hover :is(p, li, span, blockquote),
+.contact-map__info:hover :is(p, li, span, blockquote),
+.contact-why-card:hover :is(p, li, span, blockquote),
+.faq-item.is-open :is(p, li, span, blockquote) {
+  color: #5a4c43 !important;
+  -webkit-text-fill-color: #5a4c43 !important;
+}
+
+.sol-card--featured:hover,
+.sol-why-card:hover,
+.sol-testi-card:hover,
+.contact-hero__stat-card:hover,
+.about-cta__proof:hover,
+.sol-cta__proof:hover,
+.contact-app-cta__features li:hover {
+  color: #ffffff !important;
+}
+
+.sol-card--featured:hover :is(h1, h2, h3, h4, strong, a),
+.sol-why-card:hover :is(h1, h2, h3, h4, strong, a),
+.sol-testi-card:hover :is(h1, h2, h3, h4, strong, a),
+.contact-hero__stat-card:hover :is(strong, span),
+.about-cta__proof:hover,
+.sol-cta__proof:hover,
+.contact-app-cta__features li:hover {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.sol-card--featured:hover :is(p, li, span, blockquote),
+.sol-why-card:hover :is(p, li, span, blockquote),
+.sol-testi-card:hover :is(p, li, span, blockquote) {
+  color: rgba(255, 255, 255, 0.90) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.90) !important;
 }

@@ -1,0 +1,768 @@
+/* =============================================================
+   VMM TRADERS - SHARED PREMIUM UI PASS
+   Applies the home-page visual upgrade to about, solutions, contact.
+   ============================================================= */
+
+:root {
+  --premium-orange: #ff6a00;
+  --premium-orange-2: #bc6733;
+  --premium-ink: #17110c;
+  --premium-ivory: #fffaf4;
+  --premium-line: rgba(103, 61, 29, 0.14);
+  --premium-glass: rgba(255, 255, 255, 0.72);
+  --premium-ease: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+body {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 106, 0, 0.12), transparent 22rem),
+    radial-gradient(circle at 92% 6%, rgba(255, 255, 255, 0.92), transparent 26rem),
+    linear-gradient(135deg, #fffaf4 0%, #ffffff 48%, #f7eadc 100%);
+}
+
+.grain-overlay {
+  opacity: 0.115;
+  mix-blend-mode: multiply;
+}
+
+.scroll-progress {
+  height: 3px;
+  background: linear-gradient(90deg, #fff, var(--premium-orange), #ffb36a);
+  box-shadow: 0 0 24px rgba(255, 106, 0, 0.42);
+}
+
+.navbar {
+  top: 18px;
+  padding-inline: 1rem;
+  background: transparent !important;
+}
+
+.navbar__inner {
+  min-height: 70px;
+  width: min(1120px, calc(100vw - 2rem));
+  border-radius: 999px;
+  padding: 0.55rem 0.75rem 0.55rem 0.7rem;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.86), rgba(255,255,255,0.54)),
+    rgba(255,255,255,0.72);
+  border: 1px solid rgba(255,255,255,0.72);
+  box-shadow:
+    0 24px 70px rgba(45, 29, 16, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.88);
+  backdrop-filter: blur(24px) saturate(1.35);
+}
+
+.navbar__inner::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  border: 1px solid rgba(188,103,51,0.10);
+  pointer-events: none;
+}
+
+.navbar__logo-icon,
+.footer__brand-logo > div {
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255,255,255,0.44), transparent 34%),
+    linear-gradient(145deg, #ff7a18, #a84e1f) !important;
+  box-shadow: 0 12px 34px rgba(188,103,51,0.32);
+}
+
+.navbar__logo-name,
+.footer__brand-name {
+  letter-spacing: -0.045em;
+}
+
+.navbar__logo-name { color: var(--premium-ink); }
+.navbar__logo-name span { color: var(--premium-orange-2); }
+
+.navbar__logo-tagline,
+.navbar--transparent .navbar__logo-tagline,
+.navbar--glass .navbar__logo-tagline,
+.navbar--solid .navbar__logo-tagline {
+  color: rgba(23,17,12,0.56);
+}
+
+.navbar__link {
+  border-radius: 999px;
+  padding: 0.66rem 1.05rem;
+  color: rgba(23,17,12,0.74);
+  transition: color 520ms var(--premium-ease), background 520ms var(--premium-ease), transform 520ms var(--premium-ease);
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--premium-ink) !important;
+  background: rgba(255,106,0,0.10);
+  transform: translateY(-1px);
+}
+
+.navbar__cta,
+.btn,
+.sol-cta__btn,
+.contact-app-cta__btn {
+  border-radius: 999px;
+  transform: translateZ(0);
+  transition: transform 620ms var(--premium-ease), box-shadow 620ms var(--premium-ease), background 620ms var(--premium-ease), color 620ms var(--premium-ease), border-color 620ms var(--premium-ease);
+}
+
+.btn-primary,
+.navbar__cta,
+.sol-cta__btn--primary,
+.contact-form__submit {
+  position: relative;
+  overflow: hidden;
+  color: #fff !important;
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255,255,255,0.34), transparent 35%),
+    linear-gradient(135deg, #ff7a18 0%, #e65f00 42%, #ad4d1e 100%) !important;
+  border: 1px solid rgba(255, 132, 42, 0.52);
+  box-shadow:
+    0 18px 42px rgba(188,103,51,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.36);
+}
+
+.btn-primary:hover,
+.navbar__cta:hover,
+.sol-cta__btn:hover,
+.contact-app-cta__btn:hover,
+.contact-form__submit:hover {
+  transform: translateY(-4px) scale(1.018);
+  box-shadow:
+    0 28px 72px rgba(188,103,51,0.38),
+    inset 0 1px 0 rgba(255,255,255,0.44);
+}
+
+.btn-white,
+.btn-secondary,
+.app-store-btn,
+.footer__app-btn,
+.sol-cta__btn--outline {
+  border: 1px solid rgba(255,255,255,0.56);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.62));
+  box-shadow:
+    0 18px 52px rgba(44, 26, 12, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.86);
+}
+
+.hero {
+  min-height: 100dvh;
+  background: #160f0a;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(90deg, rgba(0,0,0,0.72), transparent 78%);
+  animation: premiumGridDrift 18s var(--premium-ease) infinite alternate;
+}
+
+.hero::after {
+  height: 52%;
+  background:
+    radial-gradient(circle at 68% 50%, rgba(255,106,0,0.34), transparent 20rem),
+    linear-gradient(to top, rgba(10,7,5,0.86), transparent);
+}
+
+.hero__bg-img {
+  opacity: 0.54;
+  filter: saturate(0.94) contrast(1.16) brightness(0.86);
+  transform-origin: 70% 42%;
+}
+
+.hero__overlay {
+  background:
+    radial-gradient(circle at 72% 34%, rgba(255, 106, 0, 0.34), transparent 20rem),
+    linear-gradient(108deg, rgba(12,8,5,0.91) 0%, rgba(31,18,10,0.77) 44%, rgba(255,106,0,0.08) 100%);
+}
+
+.hero__content-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, 430px);
+}
+
+.hero__badge,
+.section-eyebrow,
+.label,
+.section .label {
+  border-radius: 999px;
+  letter-spacing: 0.14em;
+}
+
+.label,
+.section .label,
+.section-eyebrow {
+  color: var(--clr-orange-dark);
+  background: rgba(255,106,0,0.09);
+  border: 1px solid rgba(188,103,51,0.16);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.72);
+}
+
+.hero .label,
+.hero__badge,
+.final-cta .label,
+.about-cta .label,
+.sol-cta__label,
+.contact-app-cta__badge {
+  color: rgba(255,255,255,0.88);
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+}
+
+.hero__headline {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(3.1rem, 7vw, 6.9rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  max-width: 900px;
+  text-shadow: 0 26px 80px rgba(0,0,0,0.34);
+}
+
+.hero__headline-highlight,
+.section-title .highlight,
+.about-cta__highlight,
+.sol-cta__heading-highlight,
+.contact-app-cta__highlight {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(90deg, #fff 0%, #ffb46f 36%, #ff6a00 68%, #fff2e5 100%);
+  background-size: 180% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: premiumTextSweep 6s var(--premium-ease) infinite;
+}
+
+.section-title .highlight {
+  background: none;
+  color: var(--premium-orange);
+  -webkit-text-fill-color: var(--premium-orange);
+  animation: none;
+}
+
+.hero__subtext {
+  max-width: 730px;
+  color: rgba(255,255,255,0.78);
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+}
+
+.hero__trust-pill {
+  min-height: 38px;
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.16);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.hero__qr-card,
+.contact-hero__stat-card,
+.contact-app-cta__qr-card {
+  border: 1px solid rgba(255,255,255,0.82);
+  outline: 8px solid rgba(255,255,255,0.18);
+  background:
+    radial-gradient(circle at 28% 0%, rgba(255,255,255,0.94), transparent 28%),
+    linear-gradient(160deg, rgba(255,255,255,0.92), rgba(255,250,244,0.72));
+  box-shadow:
+    0 34px 100px rgba(0,0,0,0.34),
+    0 0 0 1px rgba(255,106,0,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.92);
+  backdrop-filter: blur(22px) saturate(1.2);
+}
+
+.hero__qr-card {
+  max-width: 330px;
+  padding: 3.1rem 2rem 2rem;
+  animation: premiumFloat 6s var(--premium-ease) infinite;
+}
+
+.hero__qr-code {
+  width: 158px;
+  height: 158px;
+  border-radius: 28px;
+  border: 1px solid rgba(188,103,51,0.12);
+  box-shadow: 0 18px 46px rgba(32,20,12,0.14), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(5.5rem, 9vw, 9.5rem);
+}
+
+.section-title,
+.final-cta__headline,
+.about-cta__title,
+.sol-cta__heading,
+.contact-app-cta__heading {
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.story,
+.mission-vision,
+.values,
+.serve,
+.future,
+.sol-solutions,
+.sol-categories,
+.sol-workflow,
+.contact-info,
+.contact-form-section,
+.contact-map-section,
+.contact-faq {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255,106,0,0.10), transparent 18rem),
+    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,250,244,0.78)) !important;
+}
+
+.journey,
+.trust-stats,
+.contact-why {
+  background:
+    linear-gradient(90deg, rgba(255,106,0,0.06) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(188,103,51,0.055) 1px, transparent 1px),
+    linear-gradient(135deg, #fffaf4 0%, #ffffff 50%, #f8eadc 100%) !important;
+  background-size: 72px 72px, 72px 72px, auto !important;
+}
+
+.stat-glass-card,
+.why-card,
+.cat-card,
+.testi-card,
+.story__quote,
+.journey__card,
+.mission-vision__card,
+.value-card,
+.serve__card,
+.trust-stat-card,
+.trust-stats__badges,
+.future__feature,
+.sol-card,
+.sol-cat-card,
+.sol-workflow__step,
+.contact-info-card,
+.contact-form-wrapper,
+.contact-form-sidebar__item,
+.contact-map__info,
+.contact-why-card,
+.faq-item.is-open,
+.footer__newsletter {
+  border: 1px solid rgba(255,255,255,0.68);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.86), rgba(255,250,244,0.58)) !important;
+  box-shadow:
+    0 24px 70px rgba(56, 34, 18, 0.11),
+    0 1px 0 rgba(255,255,255,0.74) inset,
+    0 0 0 1px rgba(188,103,51,0.07);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+
+.sol-card,
+.sol-cat-card,
+.sol-workflow__step,
+.contact-info-card,
+.contact-why-card,
+.mission-vision__card,
+.value-card,
+.trust-stat-card {
+  height: 100%;
+}
+
+.sol-card--featured,
+.testi-card--featured {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.18), transparent 32%),
+    linear-gradient(145deg, #ff7a18 0%, #b85a27 58%, #743115 100%) !important;
+  border-color: rgba(255,255,255,0.36) !important;
+}
+
+.sol-card--featured *,
+.testi-card--featured *,
+.sol-why *,
+.sol-testimonials *,
+.sol-cta *,
+.contact-app-cta * {
+  color: inherit;
+}
+
+.sol-card__title,
+.sol-cat-card__title,
+.sol-workflow__step-title,
+.contact-info-card__title,
+.contact-why-card h3,
+.mission-vision__heading,
+.value-card__title,
+.journey__card-title,
+.trust-stat-card__label,
+.future__feature-text strong {
+  color: var(--premium-ink) !important;
+}
+
+.sol-card--featured .sol-card__title,
+.sol-card--featured .sol-card__desc,
+.sol-card--featured .sol-card__features li,
+.sol-card--featured .sol-card__tag,
+.sol-card--featured .sol-card__cta {
+  color: #fff !important;
+}
+
+.sol-card__desc,
+.sol-cat-card__desc,
+.sol-workflow__step-desc,
+.contact-info-card__detail,
+.contact-why-card p,
+.journey__card-desc,
+.value-card__desc,
+.mission-vision__text,
+.trust-stat-card__desc,
+.future__feature-text span,
+.section-subtitle {
+  color: #5e5148;
+}
+
+.stat-glass-card:hover,
+.why-card:hover,
+.cat-card:hover,
+.testi-card:hover,
+.journey__card:hover,
+.mission-vision__card:hover,
+.value-card:hover,
+.trust-stat-card:hover,
+.sol-card:hover,
+.sol-cat-card:hover,
+.sol-workflow__step:hover,
+.contact-info-card:hover,
+.contact-why-card:hover {
+  transform: translateY(-12px) scale(1.012);
+  border-color: rgba(255,106,0,0.28);
+  box-shadow:
+    0 34px 90px rgba(78, 42, 18, 0.16),
+    0 18px 44px rgba(255,106,0,0.10),
+    0 1px 0 rgba(255,255,255,0.84) inset;
+}
+
+.stat-glass-card__icon,
+.why-card__icon,
+.cat-card__icon,
+.app-feature__icon,
+.footer__contact-icon,
+.mission-vision__icon,
+.value-card__icon-wrap,
+.trust-stat-card__icon,
+.future__feature-icon,
+.sol-card__illus-icon,
+.sol-cat-card__icon,
+.sol-workflow__step-icon,
+.contact-info-card__icon,
+.contact-form-sidebar__item-icon,
+.contact-map__detail-icon,
+.contact-why-card__icon {
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255,255,255,0.72), transparent 32%),
+    linear-gradient(145deg, rgba(255,106,0,0.18), rgba(255,255,255,0.72)) !important;
+  box-shadow:
+    0 12px 34px rgba(188,103,51,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.story__img-wrap,
+.serve__img-wrap,
+.contact-map__embed {
+  position: relative;
+  border-radius: 38px;
+  border: 1px solid rgba(255,255,255,0.75);
+  outline: 10px solid rgba(255,255,255,0.45);
+  box-shadow:
+    0 38px 100px rgba(45, 29, 16, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.story__img,
+.serve__img,
+.sol-cat-card__img {
+  filter: saturate(1.05) contrast(1.04);
+  transition: transform 1200ms var(--premium-ease), filter 1200ms var(--premium-ease);
+}
+
+.story__img-wrap:hover .story__img,
+.serve__img-wrap:hover .serve__img,
+.sol-cat-card:hover .sol-cat-card__img {
+  transform: scale(1.08);
+  filter: saturate(1.14) contrast(1.08);
+}
+
+.story__exp-badge,
+.about-cta__actions .btn-white,
+.sol-card__featured-badge,
+.contact-map__badge {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255,255,255,0.34), transparent 38%),
+    linear-gradient(145deg, #ff7a18, #a84e1f) !important;
+  border-color: rgba(255,255,255,0.78);
+}
+
+.future__phone-frame,
+.sol-app__phone,
+.app-phone__frame {
+  border: 1px solid rgba(255,255,255,0.14);
+  background:
+    radial-gradient(circle at 35% 0%, rgba(255,255,255,0.16), transparent 26%),
+    linear-gradient(155deg, #2a1a10, #090604 58%, #21130a);
+  box-shadow:
+    0 46px 120px rgba(23,17,12,0.28),
+    0 20px 54px rgba(255,106,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.14);
+}
+
+.sol-why,
+.sol-testimonials,
+.sol-cta,
+.about-cta,
+.contact-app-cta {
+  background:
+    radial-gradient(circle at 22% 0%, rgba(255,106,0,0.18), transparent 24rem),
+    linear-gradient(160deg, #1b120c, #0d0906) !important;
+}
+
+.sol-cta__overlay,
+.about-cta__overlay {
+  background:
+    radial-gradient(circle at 52% 36%, rgba(255,106,0,0.28), transparent 22rem),
+    linear-gradient(135deg, rgba(12,7,3,0.91), rgba(31,14,4,0.82)) !important;
+}
+
+.sol-cta__content,
+.about-cta__content,
+.contact-app-cta__content {
+  max-width: 900px;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: 42px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow:
+    0 34px 110px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.16);
+  backdrop-filter: blur(20px) saturate(1.2);
+}
+
+.footer {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,106,0,0.16), transparent 24rem),
+    linear-gradient(180deg, #1b120c, #0d0906) !important;
+}
+
+.footer__newsletter {
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255,106,0,0.20), transparent 18rem),
+    linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)) !important;
+}
+
+.contact-app-cta__image {
+  display: none;
+}
+
+@keyframes premiumGridDrift {
+  from { transform: translate3d(0, 0, 0); opacity: 0.46; }
+  to { transform: translate3d(-28px, 18px, 0); opacity: 0.72; }
+}
+
+@keyframes premiumTextSweep {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+@keyframes premiumFloat {
+  0%, 100% { transform: translateY(0) rotate(1.5deg); }
+  50% { transform: translateY(-18px) rotate(-1deg); }
+}
+
+@media (max-width: 1023px) {
+  .navbar__inner {
+    width: min(760px, calc(100vw - 2rem));
+  }
+
+  .hero__content-grid,
+  .contact-hero__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__visual {
+    display: none;
+  }
+
+  .hero__headline {
+    font-size: clamp(3rem, 10vw, 5.2rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    top: 10px;
+    padding-inline: 0.75rem;
+  }
+
+  .navbar__inner {
+    width: calc(100vw - 1.5rem) !important;
+    max-width: calc(100vw - 1.5rem);
+    min-width: 0;
+    box-sizing: border-box;
+    border-radius: 24px;
+    min-height: 58px;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .navbar__logo-name {
+    max-width: calc(100vw - 128px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .navbar__bar {
+    background: var(--premium-ink);
+  }
+
+  .hero::before {
+    background-size: 54px 54px;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 86%);
+  }
+
+  .hero__container,
+  .contact-hero__container {
+    padding-top: 8.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero__headline {
+    max-width: 100%;
+    font-size: 2.9rem;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    overflow-wrap: break-word;
+  }
+
+  .hero__headline-highlight {
+    font-size: 0.78em;
+    line-height: 1.03;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+  }
+
+  .hero__content {
+    min-width: 0;
+  }
+
+  .hero__badge {
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.35;
+    white-space: normal;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero__actions,
+  .hero__trust {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero__trust {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__trust-pill {
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .hero__subtext,
+  .hero__actions,
+  .hero__trust,
+  .hero__badge {
+    max-width: 100%;
+  }
+
+  .hero__actions .btn,
+  .sol-cta__btn,
+  .contact-app-cta__btn {
+    width: 100%;
+    min-height: 52px;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .section {
+    padding-block: 4.5rem;
+  }
+
+  .story__img-wrap,
+  .serve__img-wrap,
+  .contact-map__embed {
+    border-radius: 28px;
+    outline-width: 6px;
+  }
+
+  .sol-cta__content,
+  .about-cta__content,
+  .contact-app-cta__content {
+    border-radius: 28px;
+    padding: 1.35rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .navbar {
+    padding-inline: 0.5rem;
+  }
+
+  .navbar__inner {
+    width: calc(100vw - 1rem) !important;
+    max-width: calc(100vw - 1rem);
+  }
+
+  .hero__headline {
+    font-size: 2.45rem;
+    letter-spacing: -0.045em;
+  }
+
+  .hero__headline-highlight {
+    font-size: 0.72em;
+  }
+
+  .hero__container,
+  .contact-hero__container {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero__headline-highlight,
+  .section-title .highlight,
+  .about-cta__highlight,
+  .sol-cta__heading-highlight,
+  .contact-app-cta__highlight,
+  .hero__qr-card {
+    animation: none !important;
+  }
+}
