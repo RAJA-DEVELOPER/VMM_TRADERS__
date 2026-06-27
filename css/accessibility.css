@@ -1,0 +1,119 @@
+/* ============================================================
+   VMM TRADERS — ACCESSIBILITY OVERRIDES
+   Light theme · WCAG AA/AAA compliance
+   ============================================================ */
+
+/* ── 1. NAVIGATION — dark glass bg → light text ── */
+.navbar__link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.navbar__link:hover,
+.navbar__link.active {
+  color: #FFFFFF !important;
+}
+.navbar__logo-tagline {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.navbar__mobile-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* ── 2. HERO QR — inverted on hero bg ── */
+.hero__qr-text strong {
+  color: #1A1A1A !important;
+}
+.hero__qr-rating {
+  color: #555555 !important;
+}
+.hero__qr-badge {
+  background: #1A1A1A !important;
+  color: #FFFFFF !important;
+}
+
+/* ── 3. APP STORE BUTTONS ── */
+.app-store-btn {
+  background: #1A1A1A !important;
+}
+.app-store-btn:hover {
+  background: #000000 !important;
+}
+.app-store-btn__icon,
+.app-store-btn__name {
+  color: #FFFFFF !important;
+}
+.app-store-btn__sub {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* ── 4. PHONE SCREEN MOCKUP ── */
+.app-screen__title,
+.app-screen__product-name {
+  color: #1A1A1A !important;
+}
+.app-screen__subtitle {
+  color: #555555 !important;
+}
+.app-screen__search svg {
+  color: #888888 !important;
+}
+
+/* ── 5. DECORATIVE BADGES & FLOATS ── */
+.app-float-badge,
+.sol-app__float strong,
+.future__float-badge,
+.about-preview__deco-card strong {
+  color: #1A1A1A !important;
+}
+.about-preview__deco-card span,
+.app-qr-label,
+.app-qr-rating span:last-child,
+.sol-app__float span,
+.sol-workflow__step-desc {
+  color: #555555 !important;
+}
+
+/* ── 6. CARD TITLES ON WHITE BG ── */
+.sol-card__title,
+.sol-cat-card__title,
+.sol-workflow__step-title,
+.journey__card-title,
+.trust-stat-card__label,
+.trust-stat-card__number,
+.stat-glass-card__label,
+.why-card__title,
+.cat-card__title,
+.value-card__title,
+.card-title {
+  color: #1A1A1A !important;
+}
+
+/* Featured card titles use white text on orange bg */
+.sol-card--featured .sol-card__title,
+.testi-card--featured .testi-card__name {
+  color: #FFFFFF !important;
+}
+
+/* ── 7. FORM INPUTS ── */
+.form-control {
+  color: #1A1A1A !important;
+}
+
+/* ── 8. FUTURE ELEMENTS ── */
+.future__screen-product-name {
+  color: #1A1A1A !important;
+}
+.mission-vision__heading {
+  color: #1A1A1A !important;
+}
+
+/* ── 9. FOOTER — dark bg → light text ── */
+.footer__newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.50) !important;
+  opacity: 1 !important;
+}
+
+/* ── 10. FOCUS INDICATORS ── */
+:focus-visible {
+  outline: 3px solid #BC6733 !important;
+  outline-offset: 3px;
+}

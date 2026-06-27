@@ -38,6 +38,9 @@ const AnimationsModule = {
     this.setupStaggerObserver();
     this.setupParallax();
     this.setup3DTilt();
+    this.setupCursorGlow();
+    this.setupMagneticButtons();
+    this.setupImageParallax();
   },
 
 
@@ -228,6 +231,128 @@ const AnimationsModule = {
         el.style.transform = '';
       });
     });
+  },
+
+  /* ─────────────────────────────────────────
+     MAGNETIC CURSOR GLOW
+     Subtle glow dot that follows the mouse
+     ───────────────────────────────────────── */
+  setupCursorGlow() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    document.body.appendChild(glow);
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let isVisible = false;
+    let rafId = null;
+
+    const updateGlow = () => {
+      currentX += (mouseX - currentX) * 0.12;
+      currentY += (mouseY - currentY) * 0.12;
+
+      glow.style.transform = `translate(${currentX - 10}px, ${currentY - 10}px)`;
+
+      if (Math.abs(currentX - mouseX) > 0.5 || Math.abs(currentY - mouseY) > 0.5) {
+        rafId = requestAnimationFrame(updateGlow);
+      } else {
+        glow.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
+        rafId = null;
+      }
+    };
+
+    const startGlow = () => {
+      glow.classList.add('is-visible');
+      isVisible = true;
+      if (!rafId) rafId = requestAnimationFrame(updateGlow);
+    };
+
+    const moveGlow = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!rafId && isVisible) rafId = requestAnimationFrame(updateGlow);
+    };
+
+    const stopGlow = () => {
+      glow.classList.remove('is-visible');
+      isVisible = false;
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    };
+
+    // Expand glow on interactive elements
+    const expandTargets = document.querySelectorAll('a, button, [data-tilt], [data-magnetic]');
+    expandTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => glow.classList.add('is-expanded'));
+      el.addEventListener('mouseleave', () => glow.classList.remove('is-expanded'));
+    });
+
+    document.addEventListener('mouseenter', startGlow);
+    document.addEventListener('mousemove', moveGlow);
+    document.addEventListener('mouseleave', stopGlow);
+  },
+
+  /* ─────────────────────────────────────────
+     MAGNETIC BUTTON
+     Buttons with [data-magnetic] follow mouse
+     ───────────────────────────────────────── */
+  setupMagneticButtons() {
+    const buttons = document.querySelectorAll('[data-magnetic]');
+    if (!buttons.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  },
+
+  /* ─────────────────────────────────────────
+     IMAGE PARALLAX
+     Images inside .parallax-image-wrap shift
+     on scroll for a subtle depth effect.
+     ───────────────────────────────────────── */
+  setupImageParallax() {
+    const wraps = document.querySelectorAll('.parallax-image-wrap');
+    if (!wraps.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let ticking = false;
+
+    const update = () => {
+      const scrollY = window.scrollY;
+      wraps.forEach(wrap => {
+        const img = wrap.querySelector('.parallax-image');
+        if (!img) return;
+        const rect = wrap.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const viewCenter = window.innerHeight / 2;
+        const offset = (viewCenter - center) * 0.08;
+        img.style.transform = `translateY(${offset}px) scale(1.05)`;
+      });
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
   },
 
   /* ─────────────────────────────────────────

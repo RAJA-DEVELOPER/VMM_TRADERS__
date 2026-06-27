@@ -65,15 +65,15 @@
 
 /* ── Spring reveals ── */
 @keyframes revealUp {
-  0%   { opacity: 0; transform: translateY(40px) scale(0.96); filter: blur(6px); }
-  60%  { opacity: 1; transform: translateY(-4px) scale(1.01); filter: blur(0); }
-  100% { opacity: 1; transform: translateY(0) scale(1);       filter: blur(0); }
+  0%   { opacity: 0; transform: translateY(40px) scale(0.96); }
+  60%  { opacity: 1; transform: translateY(-4px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1);       }
 }
 
 @keyframes revealScale {
-  0%   { opacity: 0; transform: scale(0.85); filter: blur(8px); }
-  60%  { opacity: 1; transform: scale(1.02); filter: blur(0); }
-  100% { opacity: 1; transform: scale(1);    filter: blur(0); }
+  0%   { opacity: 0; transform: scale(0.85); }
+  60%  { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1);    }
 }
 
 /* ── Shimmer ── */
@@ -129,8 +129,8 @@
 
 /* ── Orange glow pulse ── */
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(245,124,0,0.22); }
-  50%       { box-shadow: 0 0 50px rgba(245,124,0,0.55); }
+  0%, 100% { box-shadow: 0 0 20px rgba(188, 103, 51,0.22); }
+  50%       { box-shadow: 0 0 50px rgba(188, 103, 51,0.55); }
 }
 
 /* ── Shimmer sweep ── */
@@ -276,76 +276,64 @@
    JavaScript (animations.js) adds .revealed when in viewport.
    ───────────────────────────────────────────────────────────── */
 
-/* Fade Up — premium blur-in */
+/* Fade Up */
 .reveal {
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
   opacity: 0;
   transform: translateY(50px);
-  filter: blur(6px);
   transition:
     opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 /* Fade Down */
 .reveal-down {
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
   opacity: 0;
   transform: translateY(-50px);
-  filter: blur(6px);
   transition:
     opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 /* Fade Left */
 .reveal-left {
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
   opacity: 0;
   transform: translateX(-60px);
-  filter: blur(6px);
   transition:
     opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 /* Fade Right */
 .reveal-right {
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
   opacity: 0;
   transform: translateX(60px);
-  filter: blur(6px);
   transition:
     opacity   0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1),
-    filter    0.90s cubic-bezier(0.32, 0.72, 0, 1);
+    transform 0.90s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-/* Scale In — with blur */
+/* Scale In */
 .reveal-scale {
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
   opacity: 0;
   transform: scale(0.85);
-  filter: blur(4px);
   transition:
     opacity   0.80s cubic-bezier(0.32, 0.72, 0, 1),
-    transform 0.80s cubic-bezier(0.34, 1.56, 0.64, 1),
-    filter    0.80s cubic-bezier(0.32, 0.72, 0, 1);
+    transform 0.80s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Zoom In */
 .reveal-zoom {
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
   opacity: 0;
   transform: scale(0.65);
-  filter: blur(8px);
   transition:
     opacity   0.80s cubic-bezier(0.32, 0.72, 0, 1),
-    transform 0.80s cubic-bezier(0.34, 1.56, 0.64, 1),
-    filter    0.80s cubic-bezier(0.32, 0.72, 0, 1);
+    transform 0.80s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Fade only */
@@ -374,7 +362,6 @@
 .revealed {
   opacity:   1 !important;
   transform: none !important;
-  filter: blur(0) !important;
   clip-path: inset(0 0% 0 0) !important;
 }
 
@@ -464,7 +451,7 @@
 .hover-glow {
   transition: box-shadow var(--tr-base);
 }
-.hover-glow:hover { box-shadow: var(--shadow-orange); }
+.hover-glow:hover { box-shadow: var(--shadow-accent); }
 
 /* Underline grow */
 .hover-underline {
@@ -519,7 +506,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255,255,255,0.18) 50%,
+    rgba(255, 255, 255,0.18) 50%,
     transparent 100%
   );
   transform: skewX(-18deg);
@@ -537,7 +524,7 @@
   transition: border-color var(--tr-base), box-shadow var(--tr-base);
 }
 .hover-orange-border:hover {
-  border-color: rgba(245,124,0,0.45);
+  border-color: rgba(255, 107, 0, 0.45);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -549,7 +536,7 @@
 /* Floating UI card widget */
 .floating-card {
   position: absolute;
-  background: var(--clr-white);
+  background: var(--grad-card);
   border-radius: var(--radius-card);
   border: 1px solid var(--clr-border);
   box-shadow: var(--shadow-xl);
@@ -573,7 +560,7 @@
   align-items: center;
   justify-content: center;
   color: var(--clr-white);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-accent);
   animation: floatIcon 3.5s cubic-bezier(0.32, 0.72, 0, 1) infinite;
   z-index: var(--z-raised);
 }
@@ -650,14 +637,14 @@
   background: var(--clr-orange);
   border: 3px solid var(--clr-white);
   border-radius: 50%;
-  box-shadow: var(--shadow-orange-sm);
+  box-shadow: var(--shadow-accent-sm);
   z-index: var(--z-raised);
   transition: transform var(--tr-bounce), box-shadow var(--tr-base);
 }
 
 .timeline__item--visible .timeline__dot {
   transform: scale(1.2);
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-accent);
 }
 
 
@@ -766,53 +753,311 @@
   display: inline-block;
   width: 22px;
   height: 22px;
-  border: 2.5px solid rgba(245,124,0,0.20);
+  border: 2.5px solid rgba(188, 103, 51,0.20);
   border-top-color: var(--clr-orange);
   border-radius: 50%;
   animation: spin 0.75s linear infinite;
 }
 
 .spinner--white {
-  border-color: rgba(255,255,255,0.25);
+  border-color: rgba(255, 255, 255,0.25);
   border-top-color: var(--clr-white);
 }
 
 
 /* ─────────────────────────────────────────────────────────────
-   §12  ACCESSIBILITY — REDUCED MOTION
+   §13  PREMIUM MESH GRADIENT
+   Animated gradient mesh for hero / CTA backgrounds
+   ───────────────────────────────────────────────────────────── */
+
+.mesh-gradient {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mesh-gradient__blob {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  animation: meshBlob 20s cubic-bezier(0.45, 0.05, 0.20, 1) infinite;
+}
+
+.mesh-gradient__blob--1 {
+  width: 600px;
+  height: 600px;
+  background: rgba(188, 103, 51, 0.08);
+  top: -15%;
+  right: -10%;
+  animation-duration: 22s;
+}
+
+.mesh-gradient__blob--2 {
+  width: 450px;
+  height: 450px;
+  background: rgba(188, 103, 51, 0.05);
+  bottom: -20%;
+  left: -5%;
+  animation-duration: 18s;
+  animation-delay: -6s;
+}
+
+.mesh-gradient__blob--3 {
+  width: 350px;
+  height: 350px;
+  background: rgba(30, 24, 20, 0.04);
+  top: 30%;
+  left: 40%;
+  animation-duration: 25s;
+  animation-delay: -12s;
+}
+
+.mesh-gradient__blob--dark-1 {
+  background: rgba(188, 103, 51, 0.12);
+}
+
+.mesh-gradient__blob--dark-2 {
+  background: rgba(188, 103, 51, 0.08);
+}
+
+.mesh-gradient__blob--dark-3 {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+@keyframes meshBlob {
+  0%   { transform: translate(0, 0) scale(1); }
+  20%  { transform: translate(40px, -50px) scale(1.1); }
+  40%  { transform: translate(-30px, 20px) scale(0.9); }
+  60%  { transform: translate(50px, 30px) scale(1.05); }
+  80%  { transform: translate(-20px, -40px) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §14  MAGNETIC CURSOR FOLLOWER
+   Subtle glow dot that follows the mouse
+   ───────────────────────────────────────────────────────────── */
+
+.cursor-glow {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+              height 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+              opacity 0.3s ease;
+  will-change: transform;
+  opacity: 0;
+}
+
+.cursor-glow.is-visible {
+  opacity: 1;
+}
+
+.cursor-glow.is-expanded {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.15) 0%, transparent 70%);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §15  MAGNETIC BUTTON
+   Button follows mouse slightly on hover
+   ───────────────────────────────────────────────────────────── */
+
+.magnetic-btn {
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   §16  IMAGE PARALLAX ON SCROLL
+   ───────────────────────────────────────────────────────────── */
+
+.parallax-image-wrap {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.parallax-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §17  DECORATIVE FLOATING GEOMETRY
+   Animated geometric shapes for visual interest
+   ───────────────────────────────────────────────────────────── */
+
+.geo-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+}
+
+.geo-shape--circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-orange);
+  animation: geoFloat 25s cubic-bezier(0.45, 0.05, 0.20, 1) infinite;
+}
+
+.geo-shape--square {
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--clr-orange);
+  border-radius: 30px;
+  transform: rotate(45deg);
+  animation: geoFloat 30s cubic-bezier(0.45, 0.05, 0.20, 1) infinite reverse;
+}
+
+.geo-shape--diamond {
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--clr-neutral-400);
+  transform: rotate(45deg) scale(0.7);
+  border-radius: 10px;
+  animation: geoFloat 20s cubic-bezier(0.45, 0.05, 0.20, 1) infinite;
+}
+
+@keyframes geoFloat {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25%  { transform: translate(30px, -40px) rotate(5deg) scale(1.05); }
+  50%  { transform: translate(-20px, 20px) rotate(-3deg) scale(0.95); }
+  75%  { transform: translate(40px, 30px) rotate(4deg) scale(1.02); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+.geo-shape--delayed-1 { animation-delay: -5s; }
+.geo-shape--delayed-2 { animation-delay: -10s; }
+.geo-shape--delayed-3 { animation-delay: -15s; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   §18  SECTION DIVIDER WAVES
+   Premium wavy dividers between sections
+   ───────────────────────────────────────────────────────────── */
+
+.section-divider {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-divider svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill: var(--clr-bg);
+}
+
+.section-divider--flip svg {
+  transform: rotate(180deg);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §19  CONTENT HOVER SHINE
+   Premium shiny overlay on hover
+   ───────────────────────────────────────────────────────────── */
+
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.10) 45%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.10) 55%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: none;
+  pointer-events: none;
+}
+
+.hover-shine:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §20  SMOOTH PAGE LOAD
+   Premium entrance for entire page
+   ───────────────────────────────────────────────────────────── */
+
+.page-enter {
+  animation: pageEnter 0.8s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+@keyframes pageEnter {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §21  COUNTER - Number Pulse
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes countReveal {
+  0%   { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.counter-digit {
+  display: inline-block;
+  animation: countReveal 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   §22  REDUCED MOTION — additions
    ───────────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration:       0.01ms !important;
-    animation-iteration-count: 1    !important;
-    transition-duration:      0.01ms !important;
-    scroll-behavior:          auto  !important;
-  }
-
-  /* Instantly reveal scroll-reveal elements */
-  .reveal,
-  .reveal-down,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale,
-  .reveal-zoom,
-  .reveal-fade,
-  .reveal-image,
-  .timeline__item {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-    transition: none !important;
-  }
-
-  .orb { display: none; }
-
-  .floating-card,
-  .floating-icon {
+  .mesh-gradient__blob {
     animation: none;
-    position: static;
+    opacity: 0.05;
+  }
+
+  .geo-shape {
+    animation: none;
+    opacity: 0.03;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  .hover-shine::after {
+    display: none;
+  }
+
+  .section-divider {
+    display: none;
   }
 }

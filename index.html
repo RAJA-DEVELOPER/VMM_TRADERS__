@@ -38,6 +38,7 @@
   <!-- Global Design System -->
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/accessibility.css" />
 
   <!-- Page CSS -->
   <link rel="stylesheet" href="css/home.css" />
@@ -45,7 +46,7 @@
   <!-- Responsive last -->
   <link rel="stylesheet" href="css/responsive.css" />
 
-  <meta name="theme-color" content="#F57C00" />
+  <meta name="theme-color" content="#BC6733" />
 
   <!-- Preload hero image for LCP -->
   <link rel="preload" as="image"
@@ -82,7 +83,7 @@
       <a href="index.html" class="navbar__logo" aria-label="VMM Traders — Go to homepage">
         <div class="navbar__logo-icon" aria-hidden="true">
           <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="44" height="44" rx="12" fill="#F57C00"/>
+            <rect width="44" height="44" rx="12" fill="#BC6733"/>
             <path d="M10 30L16 14L22 26L28 18L34 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="22" cy="11" r="3" fill="white"/>
           </svg>
@@ -147,7 +148,7 @@
   <!-- ══════════════════════════════════════════════════════════
        MAIN CONTENT
        ══════════════════════════════════════════════════════════ -->
-  <main id="main-content" role="main">
+  <main id="main-content" role="main" class="page-enter">
 
 
     <!-- ╔═══════════════════════════════════════════════════════
@@ -166,6 +167,11 @@
             fetchpriority="high"
           />
         <div class="hero__overlay anim-gradient-shift"></div>
+        <div class="mesh-gradient" aria-hidden="true">
+          <div class="mesh-gradient__blob mesh-gradient__blob--1"></div>
+          <div class="mesh-gradient__blob mesh-gradient__blob--2"></div>
+          <div class="mesh-gradient__blob mesh-gradient__blob--3"></div>
+        </div>
         <canvas id="hero-three-canvas" class="hero__three-canvas"></canvas>
       </div>
 
@@ -190,9 +196,7 @@
 
             <!-- Headline -->
             <h1 class="hero__headline">
-              Your Trusted Partner for
-              <span class="hero__headline-highlight">Wholesale &amp; Retail</span>
-              Excellence
+              Your&nbsp;Trusted Partner<br><span class="hero__headline-highlight anim-shimmer-text">for Wholesale &amp; Retail Excellence</span>
             </h1>
 
             <!-- Supporting paragraph -->
@@ -205,11 +209,11 @@
 
             <!-- CTAs -->
             <div class="hero__actions">
-              <a href="solutions.html" class="btn btn-primary btn-lg" id="hero-explore-btn">
+              <a href="solutions.html" class="btn btn-primary btn-lg magnetic-btn" id="hero-explore-btn" data-magnetic>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 Explore Our Services
               </a>
-              <a href="#app-section" class="btn btn-white btn-lg" id="hero-app-btn">
+              <a href="#app-section" class="btn btn-white btn-lg magnetic-btn" id="hero-app-btn" data-magnetic>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                 Download Free App
               </a>
@@ -250,38 +254,38 @@
                   <rect x="10" y="65" width="25" height="25" rx="3" fill="#222"/>
                   <rect x="13" y="68" width="19" height="19" rx="2" fill="white"/>
                   <rect x="17" y="72" width="11" height="11" rx="1" fill="#222"/>
-                  <rect x="42" y="10" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="42" y="10" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="52" y="10" width="6" height="6" rx="1" fill="#222"/>
                   <rect x="42" y="18" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="52" y="18" width="6" height="6" rx="1" fill="#F57C00"/>
-                  <rect x="42" y="26" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="52" y="18" width="6" height="6" rx="1" fill="#BC6733"/>
+                  <rect x="42" y="26" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="10" y="42" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="18" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="18" y="42" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="26" y="42" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="42" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="42" y="42" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="52" y="42" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="60" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="60" y="42" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="68" y="42" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="76" y="42" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="76" y="42" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="84" y="42" width="6" height="6" rx="1" fill="#222"/>
                   <rect x="42" y="52" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="52" y="52" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="52" y="52" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="60" y="52" width="6" height="6" rx="1" fill="#222"/>
                   <rect x="68" y="52" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="76" y="52" width="6" height="6" rx="1" fill="#F57C00"/>
-                  <rect x="42" y="60" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="76" y="52" width="6" height="6" rx="1" fill="#BC6733"/>
+                  <rect x="42" y="60" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="52" y="60" width="6" height="6" rx="1" fill="#222"/>
                   <rect x="42" y="68" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="52" y="68" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="52" y="68" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="60" y="68" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="68" y="76" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="68" y="76" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="76" y="76" width="6" height="6" rx="1" fill="#222"/>
                   <rect x="84" y="76" width="6" height="6" rx="1" fill="#222"/>
                   <rect x="42" y="76" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="52" y="76" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="52" y="76" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="60" y="84" width="6" height="6" rx="1" fill="#222"/>
                   <rect x="68" y="84" width="6" height="6" rx="1" fill="#222"/>
-                  <rect x="76" y="84" width="6" height="6" rx="1" fill="#F57C00"/>
+                  <rect x="76" y="84" width="6" height="6" rx="1" fill="#BC6733"/>
                   <rect x="84" y="84" width="6" height="6" rx="1" fill="#222"/>
                 </svg>
               </div>
@@ -329,6 +333,10 @@
     <section class="stats-section section" id="stats" aria-label="VMM Traders by the numbers">
       <div class="container">
 
+        <!-- Decorative shapes -->
+        <div class="geo-shape geo-shape--circle" style="top: -80px; right: -60px;" aria-hidden="true"></div>
+        <div class="geo-shape geo-shape--square geo-shape--delayed-1" style="bottom: -40px; left: -40px;" aria-hidden="true"></div>
+
         <div class="stats-section__header text-center reveal">
           <span class="label">Our Achievements</span>
           <h2 class="section-title">Decades of Trust, <span class="highlight">Numbers Prove It</span></h2>
@@ -340,7 +348,7 @@
 
         <div class="stats-grid" role="list">
 
-          <div class="stat-glass-card reveal" data-delay="1" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+          <div class="stat-glass-card reveal hover-shine" data-delay="1" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
             <div class="stat-glass-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
@@ -351,7 +359,7 @@
             <div class="stat-glass-card__desc">Serving India since 2004 with unwavering commitment to quality and trust.</div>
           </div>
 
-          <div class="stat-glass-card reveal" data-delay="2" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+          <div class="stat-glass-card reveal hover-shine" data-delay="2" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
             <div class="stat-glass-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
             </div>
@@ -362,7 +370,7 @@
             <div class="stat-glass-card__desc">A massive catalogue covering every department of your daily needs.</div>
           </div>
 
-          <div class="stat-glass-card reveal" data-delay="3" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+          <div class="stat-glass-card reveal hover-shine" data-delay="3" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
             <div class="stat-glass-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
             </div>
@@ -373,7 +381,7 @@
             <div class="stat-glass-card__desc">Partnered with 500+ leading FMCG and consumer goods brands nationally.</div>
           </div>
 
-          <div class="stat-glass-card reveal" data-delay="4" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
+          <div class="stat-glass-card reveal hover-shine" data-delay="4" role="listitem" data-tilt="true" data-tilt-x="8" data-tilt-y="8">
             <div class="stat-glass-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
@@ -534,7 +542,7 @@
 
         <div class="why-choose__grid" role="list">
 
-          <article class="why-card reveal" data-delay="1" role="listitem">
+          <article class="why-card reveal hover-shine" data-delay="1" role="listitem">
             <div class="why-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
@@ -547,7 +555,7 @@
             <div class="why-card__tag">100% Authentic</div>
           </article>
 
-          <article class="why-card reveal" data-delay="2" role="listitem">
+          <article class="why-card reveal hover-shine" data-delay="2" role="listitem">
             <div class="why-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20H4a2 2 0 01-2-2V6a2 2 0 012-2h3.93a2 2 0 011.66.9l.82 1.2a2 2 0 001.66.9H20a2 2 0 012 2v1"/><circle cx="16" cy="17" r="3"/><path d="M22 22l-2-2"/></svg>
             </div>
@@ -560,7 +568,7 @@
             <div class="why-card__tag">10,000+ Products</div>
           </article>
 
-          <article class="why-card reveal" data-delay="3" role="listitem">
+          <article class="why-card reveal hover-shine" data-delay="3" role="listitem">
             <div class="why-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
@@ -573,7 +581,7 @@
             <div class="why-card__tag">Best Market Price</div>
           </article>
 
-          <article class="why-card reveal" data-delay="1" role="listitem">
+          <article class="why-card reveal hover-shine" data-delay="1" role="listitem">
             <div class="why-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
@@ -586,7 +594,7 @@
             <div class="why-card__tag">Same-Day Dispatch</div>
           </article>
 
-          <article class="why-card reveal" data-delay="2" role="listitem">
+          <article class="why-card reveal hover-shine" data-delay="2" role="listitem">
             <div class="why-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
@@ -599,7 +607,7 @@
             <div class="why-card__tag">7-Day Support</div>
           </article>
 
-          <article class="why-card reveal" data-delay="3" role="listitem">
+          <article class="why-card reveal hover-shine" data-delay="3" role="listitem">
             <div class="why-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
@@ -624,6 +632,10 @@
     <section class="categories section section--cream" id="categories" aria-label="Product and service categories">
       <div class="container">
 
+        <!-- Decorative shapes -->
+        <div class="geo-shape geo-shape--diamond geo-shape--delayed-2" style="top: 60px; right: 10%;" aria-hidden="true"></div>
+        <div class="geo-shape geo-shape--square geo-shape--delayed-3" style="bottom: 80px; left: 5%;" aria-hidden="true"></div>
+
         <div class="categories__header text-center">
           <span class="label reveal">What We Offer</span>
           <h2 class="section-title reveal" data-delay="1">
@@ -638,7 +650,7 @@
         <div class="categories__grid" role="list">
 
           <!-- Grocery & FMCG -->
-          <article class="cat-card reveal" data-delay="1" role="listitem">
+          <article class="cat-card reveal hover-shine" data-delay="1" role="listitem">
             <div class="cat-card__img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80&fit=crop"
@@ -664,7 +676,7 @@
           </article>
 
           <!-- Beverages -->
-          <article class="cat-card reveal" data-delay="2" role="listitem">
+          <article class="cat-card reveal hover-shine" data-delay="2" role="listitem">
             <div class="cat-card__img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80&fit=crop"
@@ -689,7 +701,7 @@
           </article>
 
           <!-- Household Items -->
-          <article class="cat-card reveal" data-delay="3" role="listitem">
+          <article class="cat-card reveal hover-shine" data-delay="3" role="listitem">
             <div class="cat-card__img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80&fit=crop"
@@ -714,7 +726,7 @@
           </article>
 
           <!-- Personal Care -->
-          <article class="cat-card reveal" data-delay="1" role="listitem">
+          <article class="cat-card reveal hover-shine" data-delay="1" role="listitem">
             <div class="cat-card__img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80&fit=crop"
@@ -739,7 +751,7 @@
           </article>
 
           <!-- Dairy & Fresh -->
-          <article class="cat-card reveal" data-delay="2" role="listitem">
+          <article class="cat-card reveal hover-shine" data-delay="2" role="listitem">
             <div class="cat-card__img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&q=80&fit=crop"
@@ -765,7 +777,7 @@
           </article>
 
           <!-- Snacks & Confectionery -->
-          <article class="cat-card reveal" data-delay="3" role="listitem">
+          <article class="cat-card reveal hover-shine" data-delay="3" role="listitem">
             <div class="cat-card__img-wrap">
               <img
                 src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=600&q=80&fit=crop"
@@ -977,42 +989,42 @@
                 <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="5" y="5" width="20" height="20" rx="3" fill="#222"/>
                   <rect x="7" y="7" width="16" height="16" rx="2" fill="white"/>
-                  <rect x="10" y="10" width="10" height="10" rx="1" fill="#F57C00"/>
+                  <rect x="10" y="10" width="10" height="10" rx="1" fill="#BC6733"/>
                   <rect x="55" y="5" width="20" height="20" rx="3" fill="#222"/>
                   <rect x="57" y="7" width="16" height="16" rx="2" fill="white"/>
-                  <rect x="60" y="10" width="10" height="10" rx="1" fill="#F57C00"/>
+                  <rect x="60" y="10" width="10" height="10" rx="1" fill="#BC6733"/>
                   <rect x="5" y="55" width="20" height="20" rx="3" fill="#222"/>
                   <rect x="7" y="57" width="16" height="16" rx="2" fill="white"/>
-                  <rect x="10" y="60" width="10" height="10" rx="1" fill="#F57C00"/>
+                  <rect x="10" y="60" width="10" height="10" rx="1" fill="#BC6733"/>
                   <rect x="30" y="5" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="38" y="5" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="38" y="5" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="46" y="5" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="30" y="12" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="30" y="12" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="38" y="12" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="5" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="5" y="30" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="12" y="30" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="30" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="30" y="30" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="38" y="30" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="46" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="46" y="30" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="55" y="30" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="63" y="30" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="63" y="30" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="30" y="38" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="38" y="38" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="38" y="38" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="46" y="38" width="5" height="5" rx="1" fill="#222"/>
                   <rect x="55" y="38" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="63" y="38" width="5" height="5" rx="1" fill="#F57C00"/>
-                  <rect x="30" y="46" width="5" height="5" rx="1" fill="#F57C00"/>
-                  <rect x="46" y="46" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="63" y="38" width="5" height="5" rx="1" fill="#BC6733"/>
+                  <rect x="30" y="46" width="5" height="5" rx="1" fill="#BC6733"/>
+                  <rect x="46" y="46" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="55" y="46" width="5" height="5" rx="1" fill="#222"/>
                   <rect x="30" y="55" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="38" y="55" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="38" y="55" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="46" y="55" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="30" y="63" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="30" y="63" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="38" y="63" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="55" y="63" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="55" y="63" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="63" y="63" width="5" height="5" rx="1" fill="#222"/>
                   <rect x="30" y="70" width="5" height="5" rx="1" fill="#222"/>
-                  <rect x="46" y="70" width="5" height="5" rx="1" fill="#F57C00"/>
+                  <rect x="46" y="70" width="5" height="5" rx="1" fill="#BC6733"/>
                   <rect x="63" y="70" width="5" height="5" rx="1" fill="#222"/>
                 </svg>
               </div>
@@ -1169,7 +1181,7 @@
         <!-- Testimonial Cards -->
         <div class="testimonials__grid" role="list">
 
-          <article class="testi-card reveal" data-delay="1" role="listitem">
+          <article class="testi-card reveal hover-shine" data-delay="1" role="listitem">
             <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testi-card__quote">
               "VMM Traders has completely transformed how we stock our grocery store. We used to visit
@@ -1194,7 +1206,7 @@
             <div class="testi-card__badge">Retail Customer · 3 Years</div>
           </article>
 
-          <article class="testi-card testi-card--featured reveal" data-delay="2" role="listitem">
+          <article class="testi-card testi-card--featured reveal hover-shine" data-delay="2" role="listitem">
             <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testi-card__quote">
               "As a hotel manager, I source all our daily supplies — from pantry essentials to
@@ -1220,7 +1232,7 @@
             <div class="testi-card__badge">Wholesale Client · 5 Years</div>
           </article>
 
-          <article class="testi-card reveal" data-delay="3" role="listitem">
+          <article class="testi-card reveal hover-shine" data-delay="3" role="listitem">
             <div class="testi-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testi-card__quote">
               "I discovered VMM Traders through their mobile app and I have been a loyal customer
@@ -1385,7 +1397,7 @@
         <!-- Brand column -->
         <div class="footer__brand">
           <a href="index.html" class="footer__brand-logo" aria-label="VMM Traders — Home">
-            <div style="width:42px;height:42px;background:#F57C00;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <div style="width:42px;height:42px;background:#BC6733;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg viewBox="0 0 44 44" fill="none" width="28" height="28"><path d="M10 30L16 14L22 26L28 18L34 30" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <span class="footer__brand-name">VMM <span>Traders</span></span>

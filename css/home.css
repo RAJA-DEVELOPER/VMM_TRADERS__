@@ -1242,7 +1242,6 @@
 .final-cta__orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
   animation: floatSlow 12s ease-in-out infinite;
 }
 

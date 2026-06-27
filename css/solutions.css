@@ -21,12 +21,11 @@
 /* Solution card */
 .sol-card {
   position: relative;
-  background: var(--clr-white);
+  background: var(--grad-card);
   border-radius: var(--radius-xl);
   border: 1px solid var(--clr-border);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--tr-slow), box-shadow var(--tr-slow);
+  transition: transform var(--tr-slow), box-shadow var(--tr-slow), background var(--tr-base);
   display: flex;
   flex-direction: column;
   transform: translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
@@ -34,18 +33,33 @@
 
 .sol-card:hover {
   transform: translateY(-8px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-glow);
+  background:
+    radial-gradient(600px circle at 50% 30%, rgba(255, 107, 0, 0.04), transparent 50%),
+    var(--grad-card-hover);
 }
 
 /* Featured card */
 .sol-card--featured {
-  border-color: var(--clr-orange);
-  box-shadow: var(--shadow-orange-sm), var(--shadow-card);
+  background: var(--clr-orange-600, #B86122) !important;
+  border-color: var(--clr-orange-800, #733A15) !important;
+  box-shadow:
+    0 12px 40px rgba(188, 103, 51, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255,0.10) !important;
 }
 
 .sol-card--featured:hover {
-  box-shadow: var(--shadow-orange), var(--shadow-card-hover);
+  box-shadow:
+    var(--shadow-card-hover),
+    0 0 30px rgba(188, 103, 51,0.20) !important;
 }
+
+.sol-card--featured .sol-card__tag { color: var(--clr-orange-100, #FCE8D6); }
+.sol-card--featured .sol-card__title { color: #fff; }
+.sol-card--featured .sol-card__desc { color: rgba(255, 255, 255, 0.88); }
+.sol-card--featured .sol-card__features li { color: rgba(255, 255, 255, 0.82); }
+.sol-card--featured .sol-card__features li svg { color: rgba(255, 255, 255, 0.80); }
+.sol-card--featured .sol-card__cta { color: #fff; }
 
 .sol-card__featured-badge {
   position: absolute;
@@ -60,7 +74,7 @@
   text-transform: uppercase;
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-orange-sm);
+  box-shadow: var(--shadow-accent-sm);
 }
 
 /* Card illustration */
@@ -79,9 +93,9 @@
   justify-content: center;
 }
 
-.sol-card__illus-bg--1 { background: linear-gradient(135deg, #FFF4E8 0%, #FDEBD0 100%); }
-.sol-card__illus-bg--2 { background: linear-gradient(135deg, #FFF8F1 0%, #FFF4E8 100%); }
-.sol-card__illus-bg--3 { background: linear-gradient(135deg, #FDEBD0 0%, #FFF8F1 100%); }
+.sol-card__illus-bg--1 { background: linear-gradient(135deg, rgba(188, 103, 51,0.10) 0%, rgba(188, 103, 51,0.02) 100%); }
+.sol-card__illus-bg--2 { background: linear-gradient(135deg, rgba(188, 103, 51,0.08) 0%, rgba(188, 103, 51,0.02) 100%); }
+.sol-card__illus-bg--3 { background: linear-gradient(135deg, rgba(188, 103, 51,0.12) 0%, rgba(188, 103, 51,0.02) 100%); }
 
 .sol-card__illus-svg {
   width: 100%;
@@ -105,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-orange-sm);
+  box-shadow: var(--shadow-accent-sm);
 }
 .sol-card__illus-icon svg { width: 18px; height: 18px; }
 
@@ -189,19 +203,19 @@
 
 .sol-card__cta--featured {
   color: var(--clr-white);
-  background: var(--clr-orange);
+  background: var(--grad-primary);
   border: none;
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius-btn);
   justify-content: center;
   margin-top: auto;
-  box-shadow: var(--shadow-orange-sm);
+  box-shadow: var(--shadow-accent-sm);
   transition: background var(--tr-base), box-shadow var(--tr-base), gap var(--tr-base), transform var(--tr-base);
 }
 
 .sol-card__cta--featured:hover {
-  background: var(--clr-orange-hover);
-  box-shadow: var(--shadow-orange);
+  background: var(--grad-primary-hover);
+  box-shadow: var(--shadow-accent);
   transform: translateY(-2px);
 }
 
@@ -223,19 +237,21 @@
 
 .sol-cat-card {
   position: relative;
-  background: var(--clr-white);
+  background: var(--grad-card);
   border-radius: var(--radius-xl);
   border: 1px solid var(--clr-border);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--tr-slow), box-shadow var(--tr-slow);
+  transition: transform var(--tr-slow), box-shadow var(--tr-slow), background var(--tr-base);
   display: flex;
   flex-direction: column;
 }
 
 .sol-cat-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-glow);
+  background:
+    radial-gradient(600px circle at 50% 30%, rgba(255, 107, 0, 0.04), transparent 50%),
+    var(--grad-card-hover);
 }
 
 .sol-cat-card__img-wrap {
@@ -309,7 +325,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: var(--weight-bold);
-  color: var(--clr-heading);
+  color: #fff;
   margin-bottom: var(--sp-3);
   letter-spacing: -0.015em;
 }
@@ -376,7 +392,7 @@
 
 .sol-why__header .section-title .highlight { color: var(--clr-orange); }
 
-.sol-why__header .section-subtitle { color: rgba(255,255,255,0.60); }
+.sol-why__header .section-subtitle { color: rgba(255, 255, 255,0.60); }
 
 .sol-why__grid {
   display: grid;
@@ -385,8 +401,8 @@
 }
 
 .sol-why-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255, 255, 255,0.04);
+  border: 1px solid rgba(255, 255, 255,0.09);
   border-radius: var(--radius-card);
   padding: 1.5rem;
   transition: background var(--tr-slow), border-color var(--tr-slow), transform var(--tr-slow), box-shadow var(--tr-slow);
@@ -399,25 +415,38 @@
   position: absolute;
   inset: 0;
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, rgba(245,124,0,0.12), transparent 60%);
+  background: linear-gradient(135deg, rgba(188, 103, 51,0.15), transparent 60%);
   opacity: 0;
   transition: opacity var(--tr-slow);
 }
 
-.sol-why-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(245,124,0,0.35);
-  transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(245,124,0,0.18);
+.sol-why-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(480px circle at 50% 30%, rgba(255, 107, 0, 0.10), transparent 50%);
+  opacity: 0;
+  transition: opacity var(--tr-slow);
+  pointer-events: none;
 }
+
+.sol-why-card:hover {
+  background: rgba(255, 255, 255,0.08);
+  border-color: rgba(255, 107, 0, 0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(188, 103, 51,0.18);
+}
+
+.sol-why-card:hover::before { opacity: 1; }
+.sol-why-card:hover::after { opacity: 1; }
 
 .sol-why-card:hover::before { opacity: 1; }
 
 .sol-why-card__icon-wrap {
   width: 40px;
   height: 40px;
-  background: rgba(245,124,0,0.15);
-  border: 1px solid rgba(245,124,0,0.25);
+  background: rgba(188, 103, 51,0.15);
+  border: 1px solid rgba(188, 103, 51,0.25);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -431,14 +460,14 @@
 .sol-why-card:hover .sol-why-card__icon-wrap {
   background: var(--clr-orange);
   color: white;
-  box-shadow: var(--shadow-orange-sm);
+  box-shadow: var(--shadow-accent-sm);
 }
 
 .sol-why-card__title {
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: var(--weight-bold);
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255,0.92);
   margin-bottom: var(--sp-3);
   letter-spacing: -0.015em;
 }
@@ -446,7 +475,7 @@
 .sol-why-card__desc {
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255,0.55);
 }
 
 
@@ -493,24 +522,26 @@
 .sol-workflow__step {
   position: relative;
   width: 210px;
-  background: var(--clr-white);
+  background: var(--grad-card);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-card);
   padding: 1.25rem 1.25rem;
-  box-shadow: var(--shadow-card);
   flex-shrink: 0;
-  transition: transform var(--tr-slow), box-shadow var(--tr-slow), border-color var(--tr-slow);
+  transition: transform var(--tr-slow), box-shadow var(--tr-slow), border-color var(--tr-slow), background var(--tr-base);
 }
 
 .sol-workflow__step:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-glow);
   border-color: var(--clr-orange);
+  background:
+    radial-gradient(480px circle at 50% 30%, rgba(255, 107, 0, 0.05), transparent 50%),
+    var(--grad-card-hover);
 }
 
 .sol-workflow__step--final {
   border-color: var(--clr-orange);
-  box-shadow: var(--shadow-orange-sm);
+  box-shadow: var(--shadow-accent-sm);
 }
 
 .sol-workflow__step-num {
@@ -551,7 +582,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-base);
   font-weight: var(--weight-bold);
-  color: var(--clr-heading);
+  color: #fff;
   margin-bottom: var(--sp-3);
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -637,7 +668,7 @@
 .sol-app__feature-text strong {
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--clr-heading);
+  color: #fff;
 }
 
 .sol-app__feature-text span {
@@ -667,7 +698,7 @@
 }
 
 .sol-app__rating-text strong {
-  color: var(--clr-heading);
+  color: #fff;
   font-weight: var(--weight-semibold);
 }
 
@@ -699,7 +730,7 @@
     0 0 0 6px #2a2a2a,
     0 0 0 8px #333,
     var(--shadow-2xl),
-    inset 0 2px 0 rgba(255,255,255,0.15);
+    inset 0 2px 0 rgba(255, 255, 255,0.15);
   position: relative;
 }
 
@@ -737,7 +768,7 @@
   font-family: var(--font-heading);
   font-size: 0.5rem;
   font-weight: var(--weight-black);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255,0.7);
   letter-spacing: 0.1em;
   margin-bottom: 0.2rem;
 }
@@ -751,7 +782,7 @@
 
 .sol-app__screen-sub {
   font-size: 0.45rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255,0.75);
   margin-top: 0.1rem;
 }
 
@@ -861,7 +892,7 @@
   display: block;
   font-size: var(--text-xs);
   font-weight: var(--weight-semibold);
-  color: var(--clr-heading);
+  color: #fff;
   line-height: 1.2;
 }
 
@@ -910,9 +941,9 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,
-    rgba(195, 80, 0, 0.92) 0%,
-    rgba(245, 124, 0, 0.88) 50%,
-    rgba(249, 168, 37, 0.85) 100%
+    rgba(139, 67, 28, 0.95) 0%,
+    rgba(160, 80, 35, 0.90) 50%,
+    rgba(188, 103, 51, 0.85) 100%
   );
 }
 
@@ -925,7 +956,7 @@
 .sol-cta__orb--1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255,0.12), transparent 70%);
   top: -20%;
   right: -5%;
   animation: floatSlow 12s cubic-bezier(0.32, 0.72, 0, 1) infinite;
@@ -934,7 +965,7 @@
 .sol-cta__orb--2 {
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255,0.08), transparent 70%);
   bottom: -10%;
   left: 5%;
   animation: floatSlow 16s cubic-bezier(0.32, 0.72, 0, 1) infinite reverse;
@@ -957,11 +988,11 @@
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  background: rgba(255,255,255,0.15);
+  color: rgba(255, 255, 255,0.75);
+  background: rgba(255, 255, 255,0.15);
   padding: 0.4rem 1.25rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255, 255, 255,0.25);
   margin-bottom: 1.75rem;
 }
 
@@ -977,14 +1008,14 @@
 
 .sol-cta__heading-highlight {
   display: block;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255,0.88);
   text-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
 .sol-cta__desc {
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
-  color: rgba(255,255,255,0.82);
+  color: rgba(255, 255, 255,0.82);
   margin-bottom: 2.5rem;
 }
 
@@ -1021,19 +1052,19 @@
 }
 
 .sol-cta__btn--primary:hover {
-  background: var(--clr-soft-cream);
+  background: var(--clr-neutral-25);
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 
 .sol-cta__btn--outline {
   background: transparent;
   color: white;
-  border: 2px solid rgba(255,255,255,0.55);
+  border: 2px solid rgba(255, 255, 255,0.55);
 }
 
 .sol-cta__btn--outline:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255,0.12);
+  border-color: rgba(255, 255, 255,0.85);
 }
 
 .sol-cta__proofs {
@@ -1048,11 +1079,11 @@
   align-items: center;
   gap: var(--sp-2);
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.80);
+  color: rgba(255, 255, 255,0.80);
   white-space: nowrap;
 }
 
-.sol-cta__proof svg { width: 16px; height: 16px; color: rgba(255,255,255,0.90); flex-shrink: 0; }
+.sol-cta__proof svg { width: 16px; height: 16px; color: rgba(255, 255, 255,0.90); flex-shrink: 0; }
 
 
 /* ─────────────────────────────────────────────────────────────
@@ -1097,7 +1128,7 @@
   font-size: 0.625rem;
   font-weight: var(--weight-medium);
   letter-spacing: 0.06em;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255,0.65);
   text-transform: uppercase;
 }
 
@@ -1142,7 +1173,7 @@
 
 .sol-testimonials__header .section-title .highlight { color: var(--clr-orange); }
 
-.sol-testimonials__header .section-subtitle { color: rgba(255,255,255,0.60); margin-inline: auto; }
+.sol-testimonials__header .section-subtitle { color: rgba(255, 255, 255,0.60); margin-inline: auto; }
 
 .sol-testimonials__grid {
   display: grid;
@@ -1152,8 +1183,8 @@
 }
 
 .sol-testi-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255, 255, 255,0.04);
+  border: 1px solid rgba(255, 255, 255,0.09);
   border-radius: var(--radius-card);
   padding: 1.5rem;
   transition: background var(--tr-slow), border-color var(--tr-slow), transform var(--tr-slow);
@@ -1173,19 +1204,32 @@
   line-height: 1;
   pointer-events: none;
   transition: opacity var(--tr-slow), transform var(--tr-slow);
+  z-index: 1;
+}
+
+.sol-testi-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(480px circle at 50% 30%, rgba(255, 107, 0, 0.08), transparent 50%);
+  opacity: 0;
+  transition: opacity var(--tr-slow);
+  pointer-events: none;
 }
 
 .sol-testi-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(245,124,0,0.35);
+  background: rgba(255, 255, 255,0.08);
+  border-color: rgba(255, 107, 0, 0.35);
   transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(245,124,0,0.15);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(188, 103, 51,0.15);
 }
 
 .sol-testi-card:hover::before {
   opacity: 0.35;
   transform: scale(1.1) translateY(-4px);
 }
+
+.sol-testi-card:hover::after { opacity: 1; }
 
 .sol-testi-card__stars {
   display: flex;
@@ -1202,7 +1246,7 @@
 .sol-testi-card__text {
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
-  color: rgba(255,255,255,0.72);
+  color: rgba(255, 255, 255,0.72);
   margin-bottom: 1.5rem;
   font-style: italic;
 }
@@ -1234,13 +1278,13 @@
 .sol-testi-card__name {
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: rgba(255,255,255,0.90);
+  color: rgba(255, 255, 255,0.90);
   line-height: 1.2;
 }
 
 .sol-testi-card__role {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,0.45);
+  color: rgba(255, 255, 255,0.45);
 }
 
 .sol-testimonials__trust-row {
@@ -1250,7 +1294,7 @@
   justify-content: center;
   gap: 2.5rem;
   padding: 2rem 0 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255, 255, 255,0.08);
 }
 
 .sol-testimonials__trust-stat {
@@ -1268,7 +1312,7 @@
 
 .sol-testimonials__trust-stat span {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,0.50);
+  color: rgba(255, 255, 255,0.50);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
