@@ -15,15 +15,15 @@
   --clr-orange-200:    #F0D5BD;
   --clr-orange-300:    #E4B896;
   --clr-orange-400:    #D39264;
-  --clr-orange:        #BC6733;
+  --clr-orange:        #B85317;
   --clr-orange-600:    #A05023;
   --clr-orange-dark:   #833F1C;
   --clr-orange-800:    #693115;
   --clr-orange-900:    #4E240F;
   --clr-orange-950:    #2C1407;
-  --clr-orange-hover:  #A95B2C;
-  --clr-orange-pressed:#9A5024;
-  --clr-orange-mid:    #BC6733;
+  --clr-orange-hover:  #9C4511;
+  --clr-orange-pressed:#833F1C;
+  --clr-orange-mid:    #B85317;
   --clr-orange-light:  #FDF6F0;
   --clr-orange-soft:   rgba(188, 103, 51, 0.10);
   --clr-orange-glow:   rgba(188, 103, 51, 0.14);
@@ -76,7 +76,7 @@
   --clr-text-muted:    #9F968C;
   --clr-text-white:    #FFFFFF;
   --clr-footer-text:   #D4CBC2;
-  --clr-muted:         #9F968C;
+  --clr-muted:         #766E64;
   --clr-placeholder:   #BFB6AB;
 
   /* ── Borders ── */
@@ -105,17 +105,17 @@
   --clr-footer-heading:rgba(255,255,255,0.90);
 
   /* ── Gradients — Heritage Enterprise ── */
-  --grad-primary:      linear-gradient(135deg, #FF6B00, #F05A00);
-  --grad-primary-hover:linear-gradient(135deg, #F05A00, #D94A00);
-  --grad-accent:       linear-gradient(135deg, #FF6B00, #4E240F);
+  --grad-primary:      linear-gradient(135deg, #B85317, #833F1C);
+  --grad-primary-hover:linear-gradient(135deg, #9C4511, #693115);
+  --grad-accent:       linear-gradient(135deg, #B85317, #4E240F);
   --grad-hero-overlay: linear-gradient(180deg, rgba(18, 16, 14, 0.60), rgba(18, 16, 14, 0.20));
   --grad-premium:      linear-gradient(135deg, #F6F3EE, #FDFCFB);
   --grad-warm:         linear-gradient(135deg, #FBF9F6, #F6F3EE);
   --grad-dark:         linear-gradient(160deg, #1C1815, #14110E);
   --grad-glass:        linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.25) 100%);
-  --grad-shimmer:      linear-gradient(90deg, transparent 0%, rgba(255,107,0,0.06) 40%, rgba(255,107,0,0.12) 50%, rgba(255,107,0,0.06) 60%, transparent 100%);
+  --grad-shimmer:      linear-gradient(90deg, transparent 0%, rgba(184,83,23,0.06) 40%, rgba(184,83,23,0.12) 50%, rgba(184,83,23,0.06) 60%, transparent 100%);
   --grad-hero:         linear-gradient(160deg, #F7F4EF, #FBF9F6 55%, #FFFFFF);
-  --grad-text-gradient:linear-gradient(135deg, #1E1B18 30%, #FF6B00 100%);
+  --grad-text-gradient:linear-gradient(135deg, #1E1B18 30%, #B85317 100%);
   --grad-card:         linear-gradient(135deg, #FDFCFB 0%, #F6F3EE 100%);
   --grad-card-hover:   linear-gradient(135deg, #FEFDFC 0%, #F8F5F0 100%);
 
@@ -2386,6 +2386,8 @@ body { animation: bodyFadeIn 0.40s ease both; }
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1.125rem;
+  margin-top: -2rem;
+  margin-bottom: 1.5rem;
   background: rgba(255,255,255,0.15);
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: var(--radius-full);
@@ -2429,7 +2431,7 @@ body { animation: bodyFadeIn 0.40s ease both; }
 
 .hero__actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
@@ -2553,10 +2555,12 @@ body { animation: bodyFadeIn 0.40s ease both; }
   padding: 0.5rem 0.625rem;
   background: var(--clr-heading);
   color: white;
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: var(--radius-btn);
   font-size: var(--text-xs);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .hero__qr-badge svg {
@@ -2570,28 +2574,6 @@ body { animation: bodyFadeIn 0.40s ease both; }
   inset: 0;
   pointer-events: none;
   z-index: 1;
-}
-
-/* Card hover shine effect */
-.stat-glass-card::before,
-.why-card::before,
-.cat-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
-  opacity: 0;
-  transition: opacity var(--tr-base), background-position var(--tr-base);
-  background-size: 200% 200%;
-  background-position: 100% 0;
-  pointer-events: none;
-}
-.stat-glass-card:hover::before,
-.why-card:hover::before,
-.cat-card:hover::before {
-  opacity: 1;
-  background-position: 0 0;
 }
 
 /* Final CTA background canvas */

@@ -25,9 +25,14 @@
 .hero__qr-rating {
   color: #555555 !important;
 }
-.hero__qr-badge {
+.hero__qr-card .hero__qr-badge {
   background: #1A1A1A !important;
   color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+}
+.hero__qr-text span {
+  color: #8A3E0A !important;
 }
 
 /* ── 3. APP STORE BUTTONS ── */
@@ -119,7 +124,7 @@
   left: 1rem;
   z-index: 10000;
   padding: 0.75rem 1.5rem;
-  background: #BC6733;
+  background: var(--clr-orange-dark);
   color: #FFFFFF;
   font-size: 0.875rem;
   font-weight: 600;

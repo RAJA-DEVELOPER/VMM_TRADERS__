@@ -1348,7 +1348,6 @@
   height: 40px;
   border-radius: var(--radius-xs);
   flex-shrink: 0;
-  border: 1px solid var(--clr-border);
 }
 
 .future__screen-product-info {

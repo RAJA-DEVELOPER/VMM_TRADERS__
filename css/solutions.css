@@ -325,7 +325,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: var(--weight-bold);
-  color: #fff;
+  color: var(--clr-heading);
   margin-bottom: var(--sp-3);
   letter-spacing: -0.015em;
 }
@@ -513,7 +513,7 @@
 
 .sol-workflow__track {
   display: flex;
-  gap: 2rem;
+  gap: 0;
   min-width: max-content;
   align-items: flex-start;
   padding-bottom: var(--sp-4);
@@ -521,7 +521,12 @@
 
 .sol-workflow__step {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 210px;
+  height: 260px;
+  overflow: hidden;
+  min-height: 0;
   background: var(--grad-card);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-card);
@@ -548,7 +553,7 @@
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: var(--weight-black);
-  color: var(--clr-orange-light);
+  color: var(--clr-orange);
   line-height: 1;
   margin-bottom: var(--sp-2);
   letter-spacing: -0.04em;
@@ -595,13 +600,21 @@
 }
 
 .sol-workflow__step-connector {
-  position: absolute;
-  top: 50%;
-  right: -1.75rem;
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 260px;
+  flex-shrink: 0;
   color: var(--clr-orange);
   opacity: 0.5;
   pointer-events: none;
+}
+
+.sol-workflow__step-connector svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 
@@ -920,7 +933,7 @@
 
 .sol-cta {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   padding-block: 5rem;
 }
 
@@ -1396,6 +1409,14 @@
     grid-template-columns: 1fr;
   }
 
+  .sol-app__content { max-width: 100%; }
+  .sol-app__mockup-wrap { width: 280px; height: auto; }
+  .sol-app__phone-frame { width: 180px; }
+  .sol-app__download { flex-direction: column; align-items: flex-start; }
+  .sol-app__intro { font-size: var(--text-base); }
+  .sol-app__feature-text strong { font-size: var(--text-xs); }
+  .sol-app__feature-text span { font-size: var(--text-xs); }
+
   .sol-cta {
     padding-block: 5rem;
   }
@@ -1405,9 +1426,12 @@
     align-items: center;
   }
 
-  .sol-workflow__step {
-    width: 210px;
-  }
+  .sol-workflow__header { margin-bottom: 2rem; }
+  .sol-workflow__track { gap: 0; }
+  .sol-workflow__step { width: 190px; height: 240px; padding: 1rem; }
+  .sol-workflow__step-connector { width: 1.25rem; height: 240px; }
+  .sol-workflow__step-num { font-size: 1.5rem; }
+  .sol-workflow__step-title { font-size: var(--text-sm); }
 
   .sol-testimonials__grid {
     grid-template-columns: 1fr;
@@ -1424,7 +1448,17 @@
    ───────────────────────────────────────────────────────────── */
 
 @media (max-width: 480px) {
-  .sol-workflow__step { width: 195px; padding: 1.25rem 1rem; }
+  .sol-workflow__step { width: 160px; height: 220px; padding: 0.875rem; }
+  .sol-workflow__step-connector { width: 1rem; height: 220px; }
+  .sol-workflow__step-desc { font-size: 0.625rem; }
+
+  .sol-app__mockup-wrap { width: 240px; }
+  .sol-app__phone-frame { width: 160px; border-radius: 28px; padding: 6px 5px 10px; }
+  .sol-app__phone-notch { width: 56px; height: 16px; }
+  .sol-app__feature { gap: var(--sp-2); }
+  .sol-app__feature-icon { width: 28px; height: 28px; flex-shrink: 0; }
+  .sol-app__feature-icon svg { width: 14px; height: 14px; }
+  .sol-app__rating { flex-direction: column; align-items: flex-start; gap: var(--sp-2); }
 
   .sol-cta__heading { font-size: 1.75rem; }
   .sol-cta__desc { font-size: var(--text-base); }

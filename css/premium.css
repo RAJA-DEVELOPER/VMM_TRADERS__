@@ -117,7 +117,7 @@ body {
   color: #fff !important;
   background:
     radial-gradient(circle at 25% 0%, rgba(255,255,255,0.34), transparent 35%),
-    linear-gradient(135deg, #ff7a18 0%, #e65f00 42%, #ad4d1e 100%) !important;
+    var(--grad-primary) !important;
   border: 1px solid rgba(255, 132, 42, 0.52);
   box-shadow:
     0 18px 42px rgba(188,103,51,0.28),
@@ -298,7 +298,6 @@ body {
 
 .section {
   position: relative;
-  overflow: hidden;
   padding-block: clamp(5.5rem, 9vw, 9.5rem);
 }
 
@@ -385,8 +384,8 @@ body {
 .sol-card--featured,
 .testi-card--featured {
   background:
-    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.18), transparent 32%),
-    linear-gradient(145deg, #ff7a18 0%, #b85a27 58%, #743115 100%) !important;
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.05), transparent 32%),
+    linear-gradient(145deg, #A84E1F 0%, #833F1C 58%, #4E240F 100%) !important;
   border-color: rgba(255,255,255,0.36) !important;
 }
 
@@ -485,8 +484,6 @@ body {
 .contact-map__embed {
   position: relative;
   border-radius: 38px;
-  border: 1px solid rgba(255,255,255,0.75);
-  outline: 10px solid rgba(255,255,255,0.45);
   box-shadow:
     0 38px 100px rgba(45, 29, 16, 0.22),
     inset 0 1px 0 rgba(255,255,255,0.9);
@@ -512,7 +509,7 @@ body {
 .contact-map__badge {
   background:
     radial-gradient(circle at 28% 20%, rgba(255,255,255,0.34), transparent 38%),
-    linear-gradient(145deg, #ff7a18, #a84e1f) !important;
+    var(--grad-primary) !important;
   border-color: rgba(255,255,255,0.78);
 }
 

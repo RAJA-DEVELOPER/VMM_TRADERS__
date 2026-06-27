@@ -81,7 +81,6 @@
   /* Show hamburger, hide desktop nav */
   .navbar__toggle { display: flex; }
   .navbar__nav    { display: none; }
-  .navbar__mobile { display: flex; }
 
   /* Floating island full-width on tablet */
   .navbar__inner {
@@ -436,16 +435,29 @@
 }
 
 @media (max-width: 767px) {
+  .story__grid             { gap: var(--sp-8); }
   .story__img              { height: 320px; }
   .story__exp-badge        { width: 100px; height: 100px; bottom: -20px; right: -10px; }
   .story__exp-num          { font-size: var(--text-2xl); }
+  .story__quote            { padding: var(--sp-6); }
+  .story__quote-mark       { display: none; }
+
+  .mission-vision__grid    { gap: var(--sp-6); }
+  .mission-vision__card    { padding: var(--sp-6); }
 
   .values__grid            { grid-template-columns: 1fr; }
+  .value-card              { padding: var(--sp-6); }
+
+  .serve__img              { height: 250px; }
+  .serve__block            { margin-bottom: var(--sp-8); gap: var(--sp-6); }
 
   .trust-stats__grid       { grid-template-columns: repeat(2, 1fr); }
   .trust-stats__grid > :last-child { grid-column: span 2; }
   .trust-stats__badges     { gap: var(--sp-3); padding: var(--sp-5); }
   .trust-stats__badge-divider { display: none; }
+  .trust-stat-card         { padding: var(--sp-5); }
+
+  .future__grid            { gap: var(--sp-8); }
 
   .about-cta               { min-height: 440px; }
   .about-cta__actions      { flex-direction: column; }
@@ -455,24 +467,31 @@
 @media (max-width: 479px) {
   .about-cta__grain        { display: none; }
 
-  .story__img              { height: 240px; }
-  .story__exp-badge        { width: 80px; height: 80px; bottom: -16px; right: -8px; }
-  .story__exp-num          { font-size: var(--text-xl); }
-  .story__exp-text         { font-size: 0.5rem; }
+  .story__grid             { gap: var(--sp-6); }
+  .story__img              { height: 220px; }
+  .story__exp-badge        { width: 72px; height: 72px; bottom: -12px; right: -4px; }
+  .story__exp-num          { font-size: var(--text-lg); }
+  .story__exp-text         { display: none; }
 
-  .journey__node           { width: 70px; }
-  .journey__line           { left: 35px; }
+  .mission-vision__card    { padding: var(--sp-5); }
+
+  .journey__node           { width: 60px; }
+  .journey__line           { left: 30px; }
+  .journey__card           { padding: var(--sp-4); }
+
+  .serve__img              { height: 200px; }
 
   .trust-stats__grid       { grid-template-columns: 1fr; }
   .trust-stats__grid > :last-child { grid-column: auto; }
-  .trust-stat-card         { display: flex; align-items: center; gap: var(--sp-4); text-align: left; padding: var(--sp-5); }
+  .trust-stat-card         { display: flex; align-items: center; gap: var(--sp-3); text-align: left; padding: var(--sp-4); }
   .trust-stat-card__icon   { margin-inline: 0; margin-bottom: 0; flex-shrink: 0; }
-  .trust-stat-card__number { font-size: var(--text-2xl); }
+  .trust-stat-card__number { font-size: var(--text-xl); }
+  .trust-stat-card__desc   { display: none; }
 
   .future__float-badge     { display: none; }
-  .future__phone-frame     { width: 240px; height: 480px; border-radius: 32px; padding: 8px; }
-  .future__phone-notch     { width: 90px; height: 22px; }
-  .future__phone-screen    { border-radius: 26px; }
+  .future__phone-frame     { width: 220px; height: 440px; border-radius: 28px; padding: 6px; }
+  .future__phone-notch     { width: 80px; height: 20px; }
+  .future__phone-screen    { border-radius: 24px; }
 
   .about-cta               { min-height: 380px; }
 }
@@ -1530,4 +1549,820 @@ canvas {
 .sol-testi-card:hover :is(p, li, span, blockquote) {
   color: rgba(255, 255, 255, 0.90) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.90) !important;
+}
+
+/* Strict shadow cleanup: this file loads last, so these rules remove
+   decorative shadows and glow rings across every page. */
+:root {
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --shadow-card: none;
+  --shadow-card-hover: none;
+  --shadow-card-glow: none;
+  --shadow-accent-sm: none;
+  --shadow-accent: none;
+  --shadow-accent-lg: none;
+  --shadow-orange-lg: none;
+  --shadow-nav: none;
+}
+
+body *,
+body *::before,
+body *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body div,
+body div::before,
+body div::after {
+  outline: 0 !important;
+}
+
+:is(
+  .hero__qr-card,
+  .contact-hero__stat-card,
+  .contact-app-cta__qr-card,
+  .story__img-wrap,
+  .serve__img-wrap,
+  .contact-map__embed,
+  .premium-card,
+  .glow-border
+) {
+  outline: 0 !important;
+}
+
+/* Restore visible structure after shadow removal. */
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card,
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card,
+  .sol-cat-card,
+  .sol-workflow__step,
+  .sol-app__float,
+  .sol-why-card,
+  .sol-testi-card,
+  .contact-info-card,
+  .contact-form-wrapper,
+  .contact-form-sidebar__item,
+  .contact-map__info,
+  .contact-why-card,
+  .faq-item,
+  .hero__qr-card,
+  .contact-hero__stat-card,
+  .contact-app-cta__qr-card,
+  .contact-app-cta__bubble,
+  .footer__newsletter
+) {
+  border: 1px solid rgba(74, 48, 32, 0.22) !important;
+}
+
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card:not(.testi-card--featured),
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card:not(.sol-card--featured),
+  .sol-cat-card,
+  .sol-workflow__step,
+  .sol-app__float,
+  .contact-info-card,
+  .contact-form-sidebar__item,
+  .contact-map__info,
+  .contact-why-card,
+  .faq-item
+):hover {
+  border-color: rgba(131, 63, 28, 0.58) !important;
+}
+
+:is(
+  .sol-card--featured,
+  .testi-card--featured,
+  .sol-why-card,
+  .sol-testi-card,
+  .contact-hero__stat-card,
+  .about-cta__proof,
+  .sol-cta__proof,
+  .contact-app-cta__features li
+) {
+  border-color: rgba(255, 255, 255, 0.34) !important;
+}
+
+/* Icon contrast on base and hover states. */
+:is(
+  .stat-glass-card__icon,
+  .why-card__icon,
+  .cat-card__icon,
+  .app-feature__icon,
+  .footer__contact-icon,
+  .mission-vision__icon,
+  .value-card__icon-wrap,
+  .trust-stat-card__icon,
+  .future__feature-icon,
+  .sol-card__illus-icon,
+  .sol-cat-card__icon,
+  .sol-workflow__step-icon,
+  .contact-info-card__icon,
+  .contact-form-sidebar__item-icon,
+  .contact-map__detail-icon,
+  .contact-why-card__icon
+) {
+  color: #833f1c !important;
+  border: 1px solid rgba(131, 63, 28, 0.22) !important;
+  background: #fff8f1 !important;
+}
+
+:is(
+  .stat-glass-card__icon,
+  .why-card__icon,
+  .cat-card__icon,
+  .app-feature__icon,
+  .footer__contact-icon,
+  .mission-vision__icon,
+  .value-card__icon-wrap,
+  .trust-stat-card__icon,
+  .future__feature-icon,
+  .sol-card__illus-icon,
+  .sol-cat-card__icon,
+  .sol-workflow__step-icon,
+  .contact-info-card__icon,
+  .contact-form-sidebar__item-icon,
+  .contact-map__detail-icon,
+  .contact-why-card__icon
+) svg {
+  color: currentColor !important;
+  stroke: currentColor !important;
+}
+
+:is(
+  .stat-glass-card:hover,
+  .why-card:hover,
+  .cat-card:hover,
+  .testi-card:hover,
+  .journey__card:hover,
+  .mission-vision__card:hover,
+  .value-card:hover,
+  .serve__card:hover,
+  .trust-stat-card:hover,
+  .future__feature:hover,
+  .sol-card:hover,
+  .sol-cat-card:hover,
+  .sol-workflow__step:hover,
+  .sol-app__float:hover,
+  .contact-info-card:hover,
+  .contact-form-sidebar__item:hover,
+  .contact-map__info:hover,
+  .contact-why-card:hover
+) :is(
+  .stat-glass-card__icon,
+  .why-card__icon,
+  .cat-card__icon,
+  .app-feature__icon,
+  .footer__contact-icon,
+  .mission-vision__icon,
+  .value-card__icon-wrap,
+  .trust-stat-card__icon,
+  .future__feature-icon,
+  .sol-card__illus-icon,
+  .sol-cat-card__icon,
+  .sol-workflow__step-icon,
+  .contact-info-card__icon,
+  .contact-form-sidebar__item-icon,
+  .contact-map__detail-icon,
+  .contact-why-card__icon
+) {
+  color: #ffffff !important;
+  background: #833f1c !important;
+  border-color: #833f1c !important;
+}
+
+:is(
+  .sol-card--featured,
+  .sol-why-card,
+  .sol-testi-card,
+  .contact-hero__stat-card,
+  .about-cta__proof,
+  .sol-cta__proof
+) :is(svg, .sol-card__illus-icon, .contact-info-card__icon, .contact-why-card__icon) {
+  color: #ffffff !important;
+  stroke: currentColor !important;
+}
+
+/* Cross-page identity pass: structured trade-ledger sections instead of
+   repeated plain cream blocks. Uses borders and surface contrast, not shadows. */
+main > .section {
+  position: relative;
+  isolation: isolate;
+  border-top: 1px solid rgba(74, 48, 32, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+}
+
+main > .section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(131, 63, 28, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(74, 48, 32, 0.045) 1px, transparent 1px);
+  background-size: 76px 76px;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.62), transparent 88%);
+}
+
+main > .section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: max(1.25rem, calc((100vw - var(--max-width)) / 2));
+  width: min(11rem, 34vw);
+  height: 4px;
+  z-index: 0;
+  background: linear-gradient(90deg, #833f1c, #bc6733, transparent);
+  border-radius: 0 0 999px 999px;
+}
+
+:is(
+  .stats-section,
+  .about-preview,
+  .why-choose,
+  .categories,
+  .app-section,
+  .how-works,
+  .testimonials,
+  .story,
+  .mission-vision,
+  .values,
+  .journey,
+  .serve,
+  .trust-stats,
+  .future,
+  .sol-solutions,
+  .sol-categories,
+  .sol-workflow,
+  .sol-app,
+  .contact-info,
+  .contact-form-section,
+  .contact-map-section,
+  .contact-faq
+) {
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 251, 246, 0.90) 48%, rgba(241, 228, 214, 0.82) 100%) !important;
+}
+
+:is(
+  .about-preview,
+  .categories,
+  .how-works,
+  .story,
+  .values,
+  .serve,
+  .future,
+  .sol-solutions,
+  .sol-workflow,
+  .contact-form-section,
+  .contact-faq
+) {
+  background:
+    linear-gradient(135deg, rgba(252, 244, 235, 0.94) 0%, rgba(255, 255, 255, 0.90) 44%, rgba(238, 223, 207, 0.76) 100%) !important;
+}
+
+:is(.sol-why, .sol-testimonials, .sol-cta, .about-cta, .final-cta, .contact-app-cta, .contact-why) {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(145deg, #17100b 0%, #27150a 52%, #0d0906 100%) !important;
+  background-size: 74px 74px, 74px 74px, auto !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+}
+
+:is(.section-title, .final-cta__headline, .about-cta__title, .sol-cta__heading, .contact-app-cta__heading) {
+  max-width: 980px;
+  letter-spacing: -0.035em !important;
+}
+
+:is(.label, .section-eyebrow, .contact-app-cta__badge, .sol-cta__label) {
+  border: 1px solid rgba(131, 63, 28, 0.26) !important;
+  background: #fff7ef !important;
+  color: #833f1c !important;
+  -webkit-text-fill-color: #833f1c !important;
+}
+
+:is(.hero, .sol-why, .sol-testimonials, .sol-cta, .about-cta, .final-cta, .contact-app-cta, .contact-why)
+:is(.label, .section-eyebrow, .contact-app-cta__badge, .sol-cta__label) {
+  border-color: rgba(255, 255, 255, 0.26) !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card:not(.testi-card--featured),
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card:not(.sol-card--featured),
+  .sol-cat-card,
+  .sol-workflow__step,
+  .sol-app__float,
+  .contact-info-card,
+  .contact-form-wrapper,
+  .contact-form-sidebar__item,
+  .contact-map__info,
+  .contact-why-card,
+  .faq-item
+) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 244, 0.86)) !important;
+  border-color: rgba(74, 48, 32, 0.24) !important;
+}
+
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card:not(.testi-card--featured),
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card:not(.sol-card--featured),
+  .sol-cat-card,
+  .sol-workflow__step,
+  .contact-info-card,
+  .contact-why-card,
+  .faq-item
+)::before {
+  opacity: 1 !important;
+  background: linear-gradient(90deg, #833f1c, #bc6733, rgba(188, 103, 51, 0.18)) !important;
+}
+
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card:not(.testi-card--featured),
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card:not(.sol-card--featured),
+  .sol-cat-card,
+  .sol-workflow__step,
+  .contact-info-card,
+  .contact-why-card,
+  .faq-item
+):hover {
+  background:
+    linear-gradient(180deg, #ffffff, #fff6ee) !important;
+  border-color: rgba(131, 63, 28, 0.62) !important;
+}
+
+:is(.stats-grid, .contact-info__grid, .sol-cards, .sol-cat-grid, .values__grid, .serve__grid) {
+  gap: clamp(1rem, 2vw, 1.75rem) !important;
+}
+
+:is(.story__quote, .stats-trust-row, .trust-stats__badges, .contact-form-wrapper) {
+  border-left: 4px solid #833f1c !important;
+}
+
+:is(.story__img-wrap, .serve__img-wrap, .contact-map__embed, .about-preview__img-wrap) {
+  background: #fffaf4 !important;
+  padding: 0.45rem;
+}
+
+:is(.story__img, .serve__img, .about-preview__img, .sol-cat-card__img) {
+  border-radius: calc(var(--radius-img) - 8px) !important;
+}
+
+@media (max-width: 767px) {
+  main > .section::before {
+    background-size: 48px 48px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 78%);
+  }
+
+  main > .section::after {
+    left: 1.25rem;
+    width: 8rem;
+  }
+}
+
+/* Final contrast lock: keep text readable after all visual overrides. */
+body {
+  color: #3f332b !important;
+}
+
+:is(main, .section, .navbar__inner, .navbar__mobile) :is(h1, h2, h3, h4, h5, h6, strong, label),
+:is(.section-title, .card-title, .contact-form-sidebar__heading) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+}
+
+:is(main, .section, .navbar__inner, .navbar__mobile) :is(p, li, span, small, blockquote, address),
+:is(.section-subtitle, .card-text, .text-muted) {
+  color: #4d4038 !important;
+  -webkit-text-fill-color: #4d4038 !important;
+}
+
+:is(main, .section) a:not(.btn):not(.navbar__cta):not(.sol-cta__btn):not(.contact-app-cta__btn):not(.app-store-btn):not(.sol-card__cta) {
+  color: #833f1c !important;
+  -webkit-text-fill-color: #833f1c !important;
+}
+
+:is(.section-title .highlight, .hero__headline-highlight, .about-cta__highlight, .sol-cta__heading-highlight, .contact-app-cta__highlight) {
+  background: none !important;
+  color: #9a461e !important;
+  -webkit-text-fill-color: #9a461e !important;
+}
+
+:is(
+  .hero,
+  .final-cta,
+  .about-cta,
+  .sol-why,
+  .sol-testimonials,
+  .sol-cta,
+  .contact-app-cta,
+  .contact-why,
+  .footer
+) {
+  color: #ffffff !important;
+}
+
+:is(
+  .hero,
+  .final-cta,
+  .about-cta,
+  .sol-why,
+  .sol-testimonials,
+  .sol-cta,
+  .contact-app-cta,
+  .contact-why,
+  .footer
+) :is(h1, h2, h3, h4, h5, h6, strong, label, .section-title) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+:is(
+  .hero,
+  .final-cta,
+  .about-cta,
+  .sol-why,
+  .sol-testimonials,
+  .sol-cta,
+  .contact-app-cta,
+  .contact-why,
+  .footer
+) :is(p, li, span, small, blockquote, address, a) {
+  color: rgba(255, 255, 255, 0.88) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.88) !important;
+}
+
+:is(
+  .hero,
+  .final-cta,
+  .about-cta,
+  .sol-why,
+  .sol-testimonials,
+  .sol-cta,
+  .contact-app-cta,
+  .contact-why
+) :is(.section-title .highlight, .hero__headline-highlight, .about-cta__highlight, .sol-cta__heading-highlight, .contact-app-cta__highlight) {
+  color: #ffb46f !important;
+  -webkit-text-fill-color: #ffb46f !important;
+}
+
+/* Light cards keep dark text even when they sit inside a dark section. */
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card:not(.testi-card--featured),
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card:not(.sol-card--featured),
+  .sol-cat-card,
+  .sol-workflow__step,
+  .sol-app__float,
+  .contact-info-card,
+  .contact-form-wrapper,
+  .contact-form-sidebar__item,
+  .contact-map__info,
+  .contact-why-card,
+  .faq-item,
+  .hero__qr-card,
+  .contact-app-cta__qr-card,
+  .contact-app-cta__bubble
+) {
+  color: #241c16 !important;
+}
+
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card:not(.testi-card--featured),
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card:not(.sol-card--featured),
+  .sol-cat-card,
+  .sol-workflow__step,
+  .sol-app__float,
+  .contact-info-card,
+  .contact-form-wrapper,
+  .contact-form-sidebar__item,
+  .contact-map__info,
+  .contact-why-card,
+  .faq-item,
+  .hero__qr-card,
+  .contact-app-cta__qr-card,
+  .contact-app-cta__bubble
+) :is(h1, h2, h3, h4, h5, h6, strong, label, a) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+}
+
+:is(
+  .stat-glass-card,
+  .why-card,
+  .cat-card,
+  .testi-card:not(.testi-card--featured),
+  .journey__card,
+  .mission-vision__card,
+  .value-card,
+  .serve__card,
+  .trust-stat-card,
+  .future__feature,
+  .sol-card:not(.sol-card--featured),
+  .sol-cat-card,
+  .sol-workflow__step,
+  .sol-app__float,
+  .contact-info-card,
+  .contact-form-wrapper,
+  .contact-form-sidebar__item,
+  .contact-map__info,
+  .contact-why-card,
+  .faq-item,
+  .hero__qr-card,
+  .contact-app-cta__qr-card,
+  .contact-app-cta__bubble
+) :is(p, li, span:not(.hero__qr-badge), small, blockquote, address) {
+  color: #4d4038 !important;
+  -webkit-text-fill-color: #4d4038 !important;
+}
+
+/* Dark/featured cards keep white text. */
+:is(
+  .sol-card--featured,
+  .testi-card--featured,
+  .sol-why-card,
+  .sol-testi-card,
+  .contact-hero__stat-card,
+  .about-cta__proof,
+  .sol-cta__proof,
+  .contact-app-cta__features li
+) {
+  color: #ffffff !important;
+}
+
+:is(
+  .sol-card--featured,
+  .testi-card--featured,
+  .sol-why-card,
+  .sol-testi-card,
+  .contact-hero__stat-card,
+  .about-cta__proof,
+  .sol-cta__proof,
+  .contact-app-cta__features li
+) :is(h1, h2, h3, h4, h5, h6, strong, label, a, svg) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  stroke: currentColor !important;
+}
+
+:is(
+  .sol-card--featured,
+  .testi-card--featured,
+  .sol-why-card,
+  .sol-testi-card,
+  .contact-hero__stat-card,
+  .about-cta__proof,
+  .sol-cta__proof,
+  .contact-app-cta__features li
+) :is(p, li, span, small, blockquote) {
+  color: rgba(255, 255, 255, 0.90) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.90) !important;
+}
+
+:is(.btn-primary, .navbar__cta, .contact-form__submit, .sol-cta__btn--primary, .contact-app-cta__btn, .app-store-btn),
+:is(.btn-primary, .navbar__cta, .contact-form__submit, .sol-cta__btn--primary, .contact-app-cta__btn, .app-store-btn) :is(span, svg, .app-store-btn__sub, .app-store-btn__name) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  stroke: currentColor !important;
+}
+
+:is(.btn-white, .btn-secondary, .footer__app-btn, .sol-cta__btn--outline),
+:is(.btn-white, .btn-secondary, .footer__app-btn, .sol-cta__btn--outline) :is(span, svg) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+  stroke: currentColor !important;
+}
+
+:is(.label, .section-eyebrow, .contact-app-cta__badge, .sol-cta__label) {
+  color: #833f1c !important;
+  -webkit-text-fill-color: #833f1c !important;
+}
+
+:is(.hero, .final-cta, .about-cta, .sol-why, .sol-testimonials, .sol-cta, .contact-app-cta, .contact-why)
+:is(.label, .section-eyebrow, .contact-app-cta__badge, .sol-cta__label) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+input,
+textarea,
+select,
+.form-control,
+.footer__newsletter-input {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+  background: #ffffff !important;
+}
+
+::placeholder,
+.form-control::placeholder,
+.footer__newsletter-input::placeholder {
+  color: #67574d !important;
+  -webkit-text-fill-color: #67574d !important;
+  opacity: 1 !important;
+}
+
+:is(.highlight, .text-gradient, .trust-stat-card__number, .future__screen-stat-value) {
+  background: none !important;
+  color: #9a461e !important;
+  -webkit-text-fill-color: #9a461e !important;
+}
+
+:is(.hero, .final-cta, .about-cta, .sol-why, .sol-testimonials, .sol-cta, .contact-app-cta, .contact-why)
+:is(.highlight, .text-gradient, .trust-stat-card__number, .future__screen-stat-value) {
+  color: #ffb46f !important;
+  -webkit-text-fill-color: #ffb46f !important;
+}
+
+/* Contact hero stat cards are light surfaces inside a dark hero. */
+.contact-hero__stat-card {
+  color: #241c16 !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(74, 48, 32, 0.24) !important;
+}
+
+.contact-hero__stat-card :is(strong, h1, h2, h3, h4, a) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+}
+
+.contact-hero__stat-card :is(span, p, small) {
+  color: #5a4c43 !important;
+  -webkit-text-fill-color: #5a4c43 !important;
+}
+
+.contact-hero__stat-card svg {
+  color: #ffffff !important;
+  stroke: currentColor !important;
+}
+
+.hero.contact-hero .contact-hero__stat-card,
+.hero.contact-hero .contact-hero__stat-card:hover {
+  color: #241c16 !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(74, 48, 32, 0.24) !important;
+}
+
+.hero.contact-hero .contact-hero__stat-card :is(strong, h1, h2, h3, h4, a) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+}
+
+.hero.contact-hero .contact-hero__stat-card :is(span, p, small) {
+  color: #5a4c43 !important;
+  -webkit-text-fill-color: #5a4c43 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   §12  ADDITIONAL ACCESSIBILITY OVERRIDES
+   ───────────────────────────────────────────────────────────── */
+
+/* High contrast for workflow step description */
+.sol-workflow__step-desc {
+  color: #4d4038 !important;
+}
+
+/* Footer app download button high contrast dark text */
+.footer .footer__app-btn {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.78) !important;
+}
+.footer .footer__app-btn :is(span, svg) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+  fill: #17110c !important;
+}
+.footer .footer__app-btn:hover {
+  background: #ffffff !important;
+  color: var(--clr-orange) !important;
+  -webkit-text-fill-color: var(--clr-orange) !important;
+}
+.footer .footer__app-btn:hover :is(span, svg) {
+  color: var(--clr-orange) !important;
+  -webkit-text-fill-color: var(--clr-orange) !important;
+  fill: var(--clr-orange) !important;
+}
+
+/* Contact page breadcrumbs high contrast overrides (hero has dark background) */
+:is(main, .section) a.contact-breadcrumb__link {
+  color: rgba(255, 255, 255, 0.76) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.76) !important;
+}
+:is(main, .section) a.contact-breadcrumb__link:hover {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.contact-breadcrumb__sep {
+  color: rgba(255, 255, 255, 0.50) !important;
+}
+.contact-breadcrumb__current {
+  color: #ffb46f !important;
+  -webkit-text-fill-color: #ffb46f !important;
+}
+
+/* Ensure buttons with light backgrounds keep dark text even inside dark sections */
+:is(main, .section) :is(.btn-white, .btn-secondary, .sol-cta__btn--outline, .footer__app-btn):not(.about-cta__actions .btn-white) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+}
+:is(main, .section) :is(.btn-white, .btn-secondary, .sol-cta__btn--outline, .footer__app-btn):not(.about-cta__actions .btn-white) :is(span, svg) {
+  color: #17110c !important;
+  -webkit-text-fill-color: #17110c !important;
+  stroke: currentColor !important;
+}
+:is(main, .section) :is(.btn-white, .btn-secondary, .sol-cta__btn--outline, .footer__app-btn):not(.about-cta__actions .btn-white):hover {
+  color: var(--clr-orange) !important;
+  -webkit-text-fill-color: var(--clr-orange) !important;
+}
+:is(main, .section) :is(.btn-white, .btn-secondary, .sol-cta__btn--outline, .footer__app-btn):not(.about-cta__actions .btn-white):hover :is(span, svg) {
+  color: var(--clr-orange) !important;
+  -webkit-text-fill-color: var(--clr-orange) !important;
+}
+
+/* Ensure overridden orange white buttons keep white text */
+.about-cta__actions .btn-white {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.about-cta__actions .btn-white :is(span, svg) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  stroke: currentColor !important;
 }
